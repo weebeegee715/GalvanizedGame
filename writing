@@ -88,15 +88,15 @@ Large Argue (these buttons are fake, u js ffed up)
     
 Regular Argue (these buttons are real!)
 
-    What? That hardly makes sense...
+    v What? That hardly makes sense...
 
-    It doesn't _need_ to, Val! It's just the lie they're sold.
+    m It doesn't _need_ to, Val! It's just the lie they're sold.
 
-    No -- Why do they know you're _with_ me, Mira?
+    v No -- Why do they know you're _with_ me, Mira?
 
-    No, no they don't know it's _me_, they just think i'm some wench. They were there when we first met. 
+    m No, no they don't know it's _me_, they just think i'm some wench. They were there when we first met. 
 
-    And they still think you're _here?_ I figured they thought you were dead.
+    v And they still think you're _here?_ I figured they thought you were dead.
 
     1. How would I be running a practice if they thought _I_ was dead?
 
@@ -105,7 +105,29 @@ Regular Argue (these buttons are real!)
             v you're excused.
             m and you aren't funny.
         
+    2. Must you be so _morbid_ about everything.
 
-          
-    2. 
+        v But {bt}Miraa{bt}, am I not morbid in my very nature?
+        m You're not funny.
+    
+    m Does everything have to be like this with you? Just a big joke?
+
+    v I just don't take this very seriously.
+
+    m But I _am!_ You need to stop! Do you _know_ how badly you hurt Heinrich? _Do you?_
+
+    v Quite, I presume? 
+
+    1. m are you proud to have broken a man's legs?
+
+        v Well, if you put it like that...
+        m yes, im _putting_ it like that. It's not funny! _You're_ not funny!
+        m I have to tell this man that he is never going to walk again, and in all my miracle magical garbage there
+        is nothing more I could _ever_ do for a man as broken as he is!  
+        m {sc}and I have so sit here and listen to you joke about it..{/sc}
+
+    2. m What the hell is your _problem?_
+
+        v My _problem?_
+        m You just 
 
