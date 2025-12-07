@@ -3,25 +3,24 @@ argument!!
 v You're going to see Heinrich again, I presume?
 
 1. Well, yes. I don't know why you say it like that. (+1)
-2. No... (-2)
+    v Like what?
+    m like _that!_ 
+2. No... (-1)
+    v And now you are _lying_ about it? 
+    m what do you want me to _say_, Val?!
 3. I have to be confidential about these things, Val. (0)
-
-1. Like what?
-    like _that!_ 
-2. And now you are _lying_ about it? 
-    Oh, what do you want to _say_, Val?!
-3. I know, I know... But it _is_ him though?
+    3. I know, I know... But it _is_ him though?
     Val, I cant _do_ this with you!
 
 m He's a patient of mine, you understand that? I'm his doctor. 
 
 v I know that? What the hell are we even talking about Emie, you can go!
 
-m I *can* go! You don't need to tell me! You are always so weird about this?
+m I *can* go! You don't need to tell me! Why are you being so weird about this?
 
 v He tried to kill me. I can be weird about it, Mira. 
 
-1.You tried to kill him too. (-2)
+1.You tried to kill him too. (-1)
 
     -okay?? Was I supposed to coddle him when he was trying to my eye out of my skull? Please.
 
@@ -29,7 +28,7 @@ v He tried to kill me. I can be weird about it, Mira.
 
     Poor little _Jaeger_. It's their job to get mangled, Mira. They kill monsters for a living, it's not exactly a safe _job!.
 
-    1. And you just get to do that? Mangle people? (-1)
+    And you just get to do that? Mangle people?
 
     If someone turns a sword to me? I am well within my right, _Miracolina!_ (points like -3 jump LARGE argue)
 
@@ -37,12 +36,12 @@ v He tried to kill me. I can be weird about it, Mira.
 
     !! how so?
 
-    1. (I can't tell you...) (holy shit JUMP LARGE argument)
+    1. (I can't tell you...) (-1)
 
     2. They think that you are a monster! And that I'm some damsel you're holding captive.(jump REG argue)
 
 
-Large Argue (these buttons are fake, u js ffed up) 
+Large Argue (these buttons are fake) 
 
     I tire of this.
 
@@ -112,22 +111,30 @@ Regular Argue (these buttons are real!)
     
     m Does everything have to be like this with you? Just a big joke?
 
-    v I just don't take this very seriously.
+    v I just don't take this topic particularly seriously seriously.
 
-    m But I _am!_ You need to stop! Do you _know_ how badly you hurt Heinrich? _Do you?_
+    m But I _do!_ You need to stop! Do you _know_ how badly you hurt Heinrich? _Do you?_
 
     v Quite, I presume? 
 
-    1. m are you proud to have broken a man's legs?
+    1. m are you proud to have broken a man's legs? (0)
 
         v Well, if you put it like that...
         m yes, im _putting_ it like that. It's not funny! _You're_ not funny!
         m I have to tell this man that he is never going to walk again, and in all my miracle magical garbage there
-        is nothing more I could _ever_ do for a man as broken as he is!  
-        m {sc}and I have so sit here and listen to you joke about it..{/sc}
+        is nothing more I could _ever_ do for someone who has been hurt that _badly!_  
+        m {sc}and I have so sit here and listen to you try joke about it? You're just awful..{/sc}
 
-    2. m What the hell is your _problem?_
+    2. m What the hell is your _problem?_ (-1)
 
         v My _problem?_
-        m You just 
+        m Do you not understand this is serious? Or do you just not _care?!_, do you not care I have to tell a man that
+        I don't know if he'll ever walk again?
+        m {sc}Do you care about anyone but yourself? How awful can you be?{/sc}
 
+    v Mira, wait... <:c 
+    m I'm going into the city, I have a patient to see.
+    v That's quite the walk to take yourself-
+    m And that's exactly what I'll do!
+
+    [Hein time]

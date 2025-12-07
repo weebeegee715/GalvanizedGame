@@ -16,7 +16,13 @@ init python:
             renpy.music.stop(channel="sound")
             
 define v = Character("Val", callback=val_beep, color="#de9c01")
-define m = Character("Mira", callback=mira_beep, color="#329b15")
+define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
+
+
+# images of doom 
+
+image side mira = "side mira neutral.png"
+
 
 # Typography Pausemaker
 init python:
@@ -35,6 +41,9 @@ init python:
         return what
     
     config.say_menu_text_filter = typography
+    
+
+default chill_points = 0
 
 
 # The game starts here.
@@ -45,7 +54,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg house window with fade
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -53,19 +62,36 @@ label start:
 
     # These display lines of dialogue.
 
-    m "I bet this will be a {i}short scene{/i}, yeah?"
+    "Mira and Val are going to argue about a (TW) man! In my yuri!"
 
-    v "yeah, probably like one scene at most to learn to make it."
+    
+    show val annoyed with dissolve
 
-    m "It'll have a simple point system, probably."
+    v "You're going to see Heinrich again, I presume?"
 
-    v "I bet it will."
-
-    m "Looking forward to making the UI for it!"
-
-    v "Are we?"
-
-    m"...no."
+    menu argue_start:
+        "Yes, but I don't know why you say it like that.":
+            $ chill_points += 1
+            m annoyed "Yes, but I don't know why you say it like that."
+            show val angry
+            v "Like what?"
+            m "Like {i}that!{/i}"
+        "I have to be confidential about these things.":
+            show val smirk
+            m "Val, you know I'm not supposed to tell you that."
+            v "Yes, yes... but you {i}are{/i}, right?"
+            m annoyed "Val, I can't {i}do{/i} this with you!"
+        "No...":
+            $ chill_points -= 1
+            show val angry
+            v "And now you are {i}lying{/i} to me about it, Mira?"
+            m sad " Oh, what do you want me to {i}say{/i} Val?!"
+        
+    label ending_evaluation
+    if chill_points <= -1
+    jump large_argue
+    else 
+    jump regular_argue
 
     # This ends the game.
 
