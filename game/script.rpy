@@ -29,10 +29,10 @@ init python:
     def typography(what):
 
         replacements = [
-            (".", ". {w=.2}"),
-            ("?", "? {w=.25}"),
-            ("!", "! {w=.25}"),
-            (",", ", {w=.15}"),
+            (".", ". {w=.15}"),
+            ("?", "? {w=.15}"),
+            ("!", "! {w=.15}"),
+            (",", ", {w=.1}"),
         ]
 
         for item in replacements:
@@ -67,7 +67,7 @@ label start:
     
     show val annoyed with dissolve
 
-    v "You're going to see Heinrich again, I presume?"
+    v "Are you off to see Heinrich again, Mira?"
 
     menu argue_start:
         "Yes, but I don't know why you say it like that.":
@@ -87,11 +87,24 @@ label start:
             v "And now you are {i}lying{/i} to me about it, Mira?"
             m sad " Oh, what do you want me to {i}say{/i} Val?!"
         
-    label ending_evaluation
-    if chill_points <= -1
-    jump large_argue
-    else 
-    jump regular_argue
+    m angry "He's a patient of mine, you understand that? I'm his doctor."
+
+    show val annoyed
+
+    v "I know that? What the hell are we even talking about Emie, you can go!"
+
+    m annoyed "I can go You dont need to tell me! Why are you being so weird about this?"
+    
+    show val angry
+
+    v "He tried to kill me. I get to be weird about it, Mira. "
+
+    menu:
+        "And you almost killed him too.":
+            "I understand you're uncomfortable, but I only have to do this because you tried to kill him too."
+        "You {i}know how they lie to them, Val!":
+            #block of code to run
+        
 
     # This ends the game.
 
