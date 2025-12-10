@@ -102,7 +102,7 @@ label start:
     menu:
         "And you almost killed him too.":
             "I understand you're uncomfortable, but I only have to do this because you tried to kill him too."
-        "You {i}know how they lie to them, Val!":
+        "You {i}know{/i} how they lie to them, Val!":
             #block of code to run
         
 
