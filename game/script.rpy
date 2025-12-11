@@ -62,6 +62,8 @@ label start:
 
     # These display lines of dialogue.
 
+    "..."
+
     "Mira and Val are going to argue about a (TW) man! In my yuri!"
 
     
@@ -75,16 +77,16 @@ label start:
             m annoyed "Yes, but I don't know why you say it like that."
             show val angry
             v "Like what?"
-            m "Like {i}that!{/i}"
+            m "Like that"
         "I have to be confidential about these things.":
             show val smirk
             m "Val, you know I'm not supposed to tell you that."
             v "Yes, yes... but you {i}are{/i}, right?"
-            m annoyed "Val, I can't {i}do{/i} this with you!"
+            m annoyed "Val, I can't do this with you!"
         "No...":
             $ chill_points -= 1
             show val angry
-            v "And now you are {i}lying{/i} to me about it, Mira?"
+            v "And now you are lying to me about it, Mira?"
             m sad " Oh, what do you want me to {i}say{/i} Val?!"
         
     m angry "He's a patient of mine, you understand that? I'm his doctor."
@@ -101,10 +103,22 @@ label start:
 
     menu:
         "And you almost killed him too.":
-            "I understand you're uncomfortable, but I only have to do this because you tried to kill him too."
+            m sad "I understand you're uncomfortable, but I only have to do this because you tried to kill him too."
         "You {i}know{/i} how they lie to them, Val!":
-            #block of code to run
-        
+            m sad "You know the lies they tell about you! They don't know you like I do. No one does."
+            show val annoyed
+            v "They blame me for every little problem in their lives, and try to kill me for it! You expect me to kindly educate them about how I'm actually quite pleasant when you get to know me while they're trying to gouge out my eyes?"
+            m angry "I didn't say that! You just have to be better than them, Val."
+            show val smirk
+            v "I am better than them. What do you even mean by that?"
+            m annoyed "It means you can't hurt them like you do. It's a horrible thing to do."
+            show val angry 
+            v "I can't {i}defend{/i} myself? Don't be ridiculous Mira, they have fucking swords."
+            m angry "And you're... you."
+            show val smirk
+            v "I'm me?"
+            m smile "You have an axe, you have your magic,  "
+
 
     # This ends the game.
 

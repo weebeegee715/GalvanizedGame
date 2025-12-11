@@ -91,14 +91,14 @@ Regular Argue (these buttons are real!)
 
     m Val, why are you always like this with me?
 
-    v Like whatt?
+    v Like what?
 
-    m Like _this!_ You act like you're so cavalier about everything -- I'm just trying to have a serious conversation with you!
+    m Like _this!_ You act like you're so cavalier about everything -- I'm trying to have a serious conversation with you, Val!
 
-    v You're acting like this is a serious thing to be talking about. Do I look like I care I almost killed a guy?
-    You're acting like I'm your misbehaving child. You forget yourself.
+    v I don't _wan't_ to have a serious conversation with you. So I will not have it.
+    I value your knowledge, not your _opinion of me._ Do you forget yourself?
 
-    m Forget myself?!
+    m Forget myself? Do I have not have the _privelege_ of speaking with you? Do you hold me in such low regard? 
 
     v ... >=c
 
@@ -106,9 +106,9 @@ Regular Argue (these buttons are real!)
 
     v And in this meantime, this bothersome period where I have to deal with you, I will not be lectured abour every little percieved moral failure you see in me!
 
-    m I'm only telling you how I feel! You can't just treat me like this!
+    m And who are you to speak to me like this? Do you think you're better than me?!
 
-    v Or _what_, doctor?
+    v You think you ar.
 
     m ... <:c
 
@@ -121,11 +121,11 @@ Regular Argue (these buttons are real!)
         v _Good for you!~_ So free to let yourself be chased halfway across Ibleheim by a bunch of _men!_ 
         Not wizards or anything, just some guys with pointy sticks and useless books
 
-        m So "useless" for you to begging for me to teach them to you?
+        m So "useless" for you to be begging for me to teach them to you?
 
         v Beg! I do not beg. I take what I want.
 
-        m And what _do_ you want? Barrels of ale and piles of gold? Piles of _girls?
+        m And what _do_ you want? Barrels of ale and piles of gold? Piles of _girls?_
 
         v >:m No! (//>n<//)
 
@@ -144,6 +144,7 @@ Regular Argue (these buttons are real!)
 
         v _I prefer being alone.._
         
+        [this is clunky asl..]
 
 
 
