@@ -25,7 +25,7 @@ define config.check_conflicting_properties = True
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#336600'
+define gui.accent_color = '#57a404'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#707070'
@@ -50,20 +50,20 @@ define gui.muted_color = '#84a366'
 define gui.hover_muted_color = '#adc199'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#404040'
+define gui.text_color = '#cfcfcf'
 define gui.interface_text_color = '#404040'
 
 
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/fancy.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/fancy.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -111,7 +111,7 @@ define gui.name_ypos = 0
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5
 
 ## The width, height, and borders of the box containing the character's name,
 ## or None to automatically size it.
@@ -433,7 +433,7 @@ init python:
 
         ## Font sizes.
         gui.text_size = 45
-        gui.name_text_size = 54
+        gui.name_text_size = 100
         gui.notify_text_size = 38
         gui.interface_text_size = 45
         gui.button_text_size = 45

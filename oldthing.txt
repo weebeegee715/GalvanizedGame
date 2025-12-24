@@ -191,4 +191,98 @@ Regular Argue (these buttons are real!)
     v That's quite the walk to take yourself-
     m And that's exactly what I'll do!
 
+
+
+    "context for whoever I make play this: Mira and Val are fighting over this monster hunter guy that t"
+
+    
+    show val annoyed with dissolve
+
+    v "Are you off to see Heinrich again, Mira?"
+
+    menu argue_start:
+        "Yes, but I dont know why you say it like that.":
+            $ chill_points += 1
+            m annoyed "Yes, but I don't know why you say it like that."
+            show val angry
+            v "Like what?"
+            m "Like that"
+        "I have to be confidential about these things.":
+            show val smirk
+            m "Val, you know I'm not supposed to tell you that."
+            v "Yes, yes... but you {i}are{/i}, right?"
+            m annoyed "Val, I can't do this with you!"
+        "No...":
+            $ chill_points -= 1
+            show val angry
+            v "And now you are lying to me about it, Mira?"
+            m sad " Oh, what do you want me to {i}say{/i} Val?!"
+        
+    m angry "He's a patient of mine, you understand that? I'm his doctor."
+
+    show val annoyed
+
+    v "I know that, Mira. I guess you can go."
+
+    m annoyed "I {i}can{/i} go! I dont need your permission to do my job! Why are you being so weird about this?"
+    
+    show val angry
+
+    v "He tried to kill me. I get to be weird about it, Mira. "
+
+    menu:
+        "And you almost killed him too!":
+            $ chill_points -= 1
+            m sad "I understand you're uncomfortable, but I only have to do this because you tried to kill him too."
+            show val smirk
+            v "And I'm not sorry."
+            m sad "How could you say that?"
+            show val angry
+            v "These men have the nerve to seek me out in the comfort of my own home and take my life! Have I not the right to defend myself?"
+            m angry "But must you hurt them like you do? With such cruelty?"
+            v "They are cruel themselves! They reap what they sow!"
+            m sad "I just don't understand you... "
+            v "I could say the same. You want me to feel bad that a {i}monster hunter{/i} got hurt hunting monsters? I feel like that's part of his job."
+            m "He didn't just get hurt, {i}you{/i} hurt him. Badly."
+
+        "You {i}know{/i} how they lie to them, Val!":
+            m sad "You know the lies they tell about you! They don't know you like I do. No one does."
+            show val annoyed
+            v "They blame me for every little problem in their lives, and try to kill me for it! You expect me to kindly educate them about how I'm actually quite pleasant when you get to know me while they're trying to gouge out my eyes?"
+            m angry "I didn't say that! You just have to be better than them, Val."
+            show val smirk
+            v "I am better than them. What do you even mean by that?"
+            m annoyed "It means you can't hurt them like you do. It's a horrible thing to do."
+            show val angry 
+            v "I can't {i}defend{/i} myself? Don't be ridiculous Mira, they have swords."
+            m angry "And you're... you."
+            show val smirk
+            v "And who am I?"
+            m annoyed "I'm not joking with you Valencia!"
+            v "Ooh. Am I in trouble with-{nw=0.3}" 
+            m angry "{sc=0.5}Stop it!{/sc}"
+
+
+    m sad "It just scares me you did that, Val. It scares me you don't care."
+    
+    show val annoyed
+
+    v "Oh, it {sc}scared you{/sc}. You need to pick whether you fear me or not."
+
+    menu optional_name:
+        "I...":
+            $ chill_points -= 1 
+            m neutral "It's just- When you do stuff like this, it-{nw=0.5}"
+            v "{sc=0.3}Can't you just say what you mean?!{/sc}, It's always this sugarcoated stuff wrapped a nice little bow with you!"
+            m sad "Don't yell at me!"
+            v "{sc}Say what you think of me! {i}Say it to my face!{/i}{/sc}"
+            m sad "..."
+            
+        "Of course not, Val.":
+            m annoyed "I am definitely {i}not{/i} afraid of you."
+            show val annoyed 
+            v "Isn't that what you just said?"
+            m "No it wasn't!"
+            m "It's just that I fear you may lose yourself!"
+
     [Hein time]
