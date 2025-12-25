@@ -21,9 +21,14 @@ define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15"
 
 
 # images of doom 
+image mira test = "mira neutral.png"
 
-image side mira = "side mira neutral.png"
-
+image side mira neutral: 
+    "side mira neutral.png"
+    pause 3
+    "side mira neutral blink.png"
+    pause 0.3
+    repeat
 
 # Typography Pausemaker
 init python:
@@ -71,27 +76,35 @@ label start:
 
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
-    "Youth eternal, Midas' golden touch, and most importantly to you..."
+    "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
 
     scene paper2
     with dissolve
 
-    "The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form."
-    "Neither cancerous sulfur nor mercury will lead to you the stone. You have tried."
+    "The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form. The very pinnacle of medicine."
+    "You have tried mixing sulfur and mercury in every fashion to no avail. But there is one thing you haven't tried..."
 
     scene paper3
     with dissolve
 
-    "The Heart of Darkness will bring about the stone."
-    "You don't quite know what this Heart of Darkness is..."
-    "But you know it is here...{nw}"
+    "The Heart of Darkness, said to be the key to creating the mythical stone."
+    "But, you don't quite know what this Heart of Darkness is..."
+    "But you know it is somewhere here. Somewhere.{w=0.6}{nw}"
 
-    scene scarytree
+    scene scarytree 
+    with Dissolve (3.0)
 
-    m sad "God, how am I supposed to get through a place like this?"
+    m neutral "God, how am I supposed to get through a place like this?"
     m "{sc}This is absurd!{/sc} I thought the locals were exaggerating..."
         
 
+    show mira test with moveinleft
+    "Mira" "yoo wsg!!"
+    m neutral "AAA wtf"
+    "Mira" "I'm you bro"
+    m neutral "no tf you're not!!!"
+    "Mira" "tighten up z..."
+    hide mira test with moveoutright
 
     
    
