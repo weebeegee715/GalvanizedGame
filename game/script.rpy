@@ -20,24 +20,26 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
-## 2 Basic Male Voices
+##  Basic Male Voice 1
     def guy_beep(event, **kwargs):
         if event == "show":
             renpy.music.play("guy.wav", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+## Basic Male Voice 2
     def guylow_beep(event, **kwargs):
         if event == "show":
             renpy.music.play("guylow.wav", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
         
-## 2 Basic Female Voices
+##  Basic Female Voice 1
     def girl_beep(event, **kwargs):
         if event == "show":
             renpy.music.play("girl.wav", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+##  Basic Female Voice 2
     def girllow_beep(event, **kwargs):
         if event == "show":
             renpy.music.play("girllow.wav", channel="sound", loop=True)
@@ -47,7 +49,7 @@ init python:
             
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
-define k = Character("Knight", callback=girllow_beep, color="#417ce4")
+define k = Character("Knight", callback=guylow_beep, color="#417ce4")
 
 
 ### Mira's Images. Lots of them.
@@ -77,6 +79,40 @@ image side mira sad:
     pause 0.4
     repeat
 
+image side mira angry: 
+    "side mira angry.png"
+    pause 2
+    "side mira angry blink.png"
+    pause 0.4
+    "side mira angry.png"
+    pause 0.5
+    "side mira angry blink.png"
+    pause 0.4
+    repeat
+
+image side mira happy: 
+    "side mira happy.png"
+    pause 2
+    "side mira happy blink.png"
+    pause 0.4
+    "side mira happy.png"
+    pause 0.5
+    "side mira happy blink.png"
+    pause 0.4
+    repeat
+
+image side mira confused: 
+    "side mira confused.png"
+    pause 2
+    "side mira confused blink.png"
+    pause 0.4
+    "side mira confused.png"
+    pause 0.5
+    "side mira confused blink.png"
+    pause 0.4
+    repeat
+
+
 
 ### Typography Pausemaker
 init python:
@@ -100,7 +136,7 @@ init python:
 # The game starts here.
 
 label start:
-    play music 'audio/fallingleaves.mp3' fadein 0.3 volume 0.5
+    play music [ "fallingleaves.mp3", "Pirate4.mp3", "Jonquill.mp3" , "Pirate5.mp3" ] fadeout 1.0 fadein 1.0 volume 0.5
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -132,8 +168,8 @@ label start:
     scene paper3
     with dissolve
 
-    "The Heart of Darkness, said to be the key to creating the mythical stone."
-    "But, you don't quite know what this Heart of Darkness is..."
+    "The Sylvanian Heart, said to be the key to creating the mythical stone."
+    "But, you don't quite know what this Sylvanian Heart is..."
     "But you know it is somewhere here. Somewhere.{w=0.67}{nw}"
 
     scene scarytree 
@@ -146,14 +182,14 @@ label start:
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
-    "{i}You make your way into the wood.{/i}"
+    "{i}You make your way into the woods.{/i}"
 
     scene placeholderforest
     with fade
 
     m neutral "I'm getting tired..."
-    "You've been walking for hours, but haven't made any progress."
-    "You'd figured the Heart would've been some kind of odd flower, but there is nothing here but gnarled, dark roots."
+    "I've been walking for hours, but haven't made any progress!"
+    "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
 
     
     show small mira test with dissolve
@@ -163,24 +199,42 @@ label start:
     k "You! get away from here!"
 
     m neutral "Why? What's going on? Are you ok, sir?"
-    "Clearly, he's not. You don't need your training to know this man is injured."
+    "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
     k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
-    m neutral "I'm a doctor! At least let me help you before you go!"
-    k "...Alright."
+    m neutral "I'm a doctor! At least let me help you before you go."
+    "He calms down a bit."
+    k ". . . Alright. Think I've ran far enough to be safe."
+    m "Sit. I'll get out my things."
+
+    hide mira test
+    scene black
+    with fade
+    "Laying your supplies out, you begin to work."
+    scene healcg
+    with Dissolve (2.0)
+
     
+    
+    m "What happened to you? What on earth were you fighting?"
+    k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake. It did all this to me in seconds! I ran away before it got any worse..."
+    m "Some kind of large animal? Surely you've faced beasts before."
+    k "Of course I have, but nothing like that! It wasn't a beast at all. It was something else entirely! And by God, it was huge!"
+    m "How awful!"
+    k "I'm not supposed to tell you but they're not killing it to keep citizens safe! Those alchemists, they want its heart!"
+    m "...It's heart?"
+    k "Ah! I've already told you too much. {i}I'll say no more!{/i}"
+
+    scene placeholderforest with fade
+    show mira test
+    k "Shall we be off? I lost my horse, so we'll have to walk back."
+    "I really should go, but can I? I may never have a chance to get the Heart again!"
+    m neutral "I'm sorry, but I can't leave just yet."
+    k "{i}Thank you miss!{/i}"
     hide mira test with moveoutright
     "He ran off!"
-    
-    m neutral "What did I just walk into? Maybe this was a bad idea..."
-    m neutral "There must be more men that way. What if they need help?"
-
-    v "lol. voice test words longwords short wprd ababava lelaluuu "
-    m "omg do they sound next to eachothre"
-    v "blebelne blah"
-    m "this is most of the game honesly"
-    v "bleha last aisblah"
-   
-    
+    show side mira neutral
+    "I should've known I wasn't the only one to be looking for the Heart! It'd be bad if I ran into any sanctioned alchemists - they'd throw me in jai if they found I knew anything their craft!"
+    "It seems I'm woefully underprepared too. I wasn't coming here for a fight!"
 
 
     # This ends the game.
