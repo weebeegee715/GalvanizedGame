@@ -16,7 +16,7 @@ init python:
 ## Mira's Voice
     def mira_beep(event, **kwargs):
         if event == "show":
-            renpy.music.play("mira.wav", channel="sound", loop=True)
+            renpy.music.play("mira2.wav", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
 
@@ -47,7 +47,7 @@ init python:
             
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
-define k = Character("Knight", callback=guy_beep, color="#417ce4")
+define k = Character("Knight", callback=girllow_beep, color="#417ce4")
 
 
 ### Mira's Images. Lots of them.
@@ -66,6 +66,16 @@ image side mira neutral:
     pause 0.4
     repeat
 
+image side mira sad: 
+    "side mira sad.png"
+    pause 2
+    "side mira sad blink.png"
+    pause 0.4
+    "side mira sad.png"
+    pause 0.5
+    "side mira sad blink.png"
+    pause 0.4
+    repeat
 
 
 ### Typography Pausemaker
@@ -131,38 +141,44 @@ label start:
 
     m neutral "God, how am I supposed to get through a place like this?"
     m "{sc}This is absurd!{/sc} I thought the locals were exaggerating about these woods..."
-    m "These trees must go past the clouds!"
     m "..."
-    m "I have to keep going. For everyone's sake."
+    m "It doesn't matter. I've already come all this way, and I'm not stopping now!"
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
-    "{i}And so, against your better judgement, you enter the forest.{/i}"
+    "{i}You make your way into the wood.{/i}"
 
     scene placeholderforest
     with fade
 
-    m neutral "Well, I'm lost. My map is wrong."
-    m neutral "What am I even looking for? Must these scrolls be so mysterious about everything? {i}Why can't they just say what they mean?{/i}"
+    m neutral "I'm getting tired..."
+    "You've been walking for hours, but haven't made any progress."
+    "You'd figured the Heart would've been some kind of odd flower, but there is nothing here but gnarled, dark roots."
 
     
     show small mira test with dissolve
-    "You see someone coming! Maybe you could ask for help?"
+    "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
     show mira test
     k "You! get away from here!"
 
-    m neutral "Why? What's going on? Are you hurt, sir?"
-    "A rhetorical question. You don't need your doctorate to know this man is injured. Maybe you could help him?"
-    k "We were fighting that {i}thing!{/i} I don't have time to explain this to you, just go!"
-    m neutral "Wait, at least let me bandage your-{w=0.3}{nw}"
+    m neutral "Why? What's going on? Are you ok, sir?"
+    "Clearly, he's not. You don't need your training to know this man is injured."
+    k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
+    m neutral "I'm a doctor! At least let me help you before you go!"
+    k "...Alright."
+    
     hide mira test with moveoutright
     "He ran off!"
-
-    m neutral "Yo who tf was that!?"
+    
+    m neutral "What did I just walk into? Maybe this was a bad idea..."
+    m neutral "There must be more men that way. What if they need help?"
 
     v "lol. voice test words longwords short wprd ababava lelaluuu "
-    
+    m "omg do they sound next to eachothre"
+    v "blebelne blah"
+    m "this is most of the game honesly"
+    v "bleha last aisblah"
    
     
 
