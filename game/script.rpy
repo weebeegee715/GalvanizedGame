@@ -1,9 +1,85 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+
+# Thug Shake
+init:
+
+    python:
+    
+        import math
+
+        class Shaker(object):
+        
+            anchors = {
+                'top' : 0.0,
+                'center' : 0.5,
+                'bottom' : 1.0,
+                'left' : 0.0,
+                'right' : 1.0,
+                }
+        
+            def __init__(self, start, child, dist):
+                if start is None:
+                    start = child.get_placement()
+                #
+                self.start = [ self.anchors.get(i, i) for i in start ]  # central position
+                self.dist = dist    # maximum distance, in pixels, from the starting point
+                self.child = child
+                
+            def __call__(self, t, sizes):
+                # Float to integer... turns floating point numbers to
+                # integers.                
+                def fti(x, r):
+                    if x is None:
+                        x = 0
+                    if isinstance(x, float):
+                        return int(x * r)
+                    else:
+                        return x
+
+                xpos, ypos, xanchor, yanchor = [ fti(a, b) for a, b in zip(self.start, sizes) ]
+
+                xpos = xpos - xanchor
+                ypos = ypos - yanchor
+                
+                nx = xpos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+                ny = ypos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+
+                return (int(nx), int(ny), 0, 0)
+        
+        def _Shake(start, time, child=None, dist=100.0, **properties):
+
+            move = Shaker(start, child, dist=dist)
+        
+            return renpy.display.layout.Motion(move, time, child, add_sizes=True, **properties)
+
+        Shake = renpy.curry(_Shake)
+    #
+
+#
+
+init:
+    $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
 
 
+### Typography Pausemaker
+init python:
+    def typography(what):
+
+        replacements = [
+            ("?", "? {w=.15}"),
+            ("! ", "! {w=.15}"),
+            (",", ", {w=.1}"),
+            ( ". . .", ". . . {w=.15}"),
+            (". ", ". {w=.15}"),
+        ]
+
+        for item in replacements:
+            what = what.replace(item[0],item[1])
+        
+        return what
+    
+    config.say_menu_text_filter = typography
 
 ## Val's Voice
 init python:
@@ -46,7 +122,7 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
     
-            
+## Define Characters (Giving Them Color and Voices)           
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -113,26 +189,6 @@ image side mira confused:
     repeat
 
 
-
-### Typography Pausemaker
-init python:
-    def typography(what):
-
-        replacements = [
-            ("?", "? {w=.15}"),
-            ("! ", "! {w=.15}"),
-            (",", ", {w=.1}"),
-            ( ". . .", ". . . {w=.15}"),
-            (". ", ". {w=.15}"),
-        ]
-
-        for item in replacements:
-            what = what.replace(item[0],item[1])
-        
-        return what
-    
-    config.say_menu_text_filter = typography
-
 # The game starts here.
 
 label start:
@@ -175,10 +231,12 @@ label start:
     scene scarytree 
     with Dissolve (3.0)
 
+    show mira test
     m neutral "God, how am I supposed to get through a place like this?"
     m "{sc}This is absurd!{/sc} I thought the locals were exaggerating about these woods..."
     m "..."
     m "It doesn't matter. I've already come all this way, and I'm not stopping now!"
+    hide mira test with dissolve
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
@@ -186,8 +244,9 @@ label start:
 
     scene placeholderforest
     with fade
-
+    show mira test with dissolve
     m neutral "I'm getting tired..."
+    hide mira test with dissolve
     "I've been walking for hours, but haven't made any progress!"
     "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
 
@@ -209,6 +268,7 @@ label start:
     hide mira test
     scene black
     with fade
+    play sound 'audio/bag.mp3'
     "Laying your supplies out, you begin to work."
     scene healcg
     with Dissolve (2.0)
@@ -224,17 +284,23 @@ label start:
     m "...It's heart?"
     k "Ah! I've already told you too much. {i}I'll say no more!{/i}"
 
-    scene placeholderforest with fade
-    show mira test
-    k "Shall we be off? I lost my horse, so we'll have to walk back."
-    "I really should go, but can I? I may never have a chance to get the Heart again!"
+    scene placeholderforest at truecenter
+    with fade 
+    show mira test with dissolve
+    k "Well, I'm going, are you coming?"
+    "I really should go, but can I? I may never have a chance like this to get the Heart again!"
     m neutral "I'm sorry, but I can't leave just yet."
-    k "{i}Thank you miss!{/i}"
+    k "{i}Oh, well... Thank you miss!{/i}"
     hide mira test with moveoutright
     "He ran off!"
-    show side mira neutral
-    "I should've known I wasn't the only one to be looking for the Heart! It'd be bad if I ran into any sanctioned alchemists - they'd throw me in jai if they found I knew anything their craft!"
-    "It seems I'm woefully underprepared too. I wasn't coming here for a fight!"
+
+    show mira test with dissolve
+    "Obviously I'm not the only one looking for the Heart! Of course I'd run into other Chymists! I'm lucky they didn't come themselves"
+    "I'm woefully underprepared too. I didn't come expecting a fight!"
+    
+    m "wha?" with vpunch
+
+    m "AAAA WTF" with sshake
 
 
     # This ends the game.
