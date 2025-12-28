@@ -296,16 +296,31 @@ label start:
     "He ran off!"
 
     show mira test with dissolve
-    "Obviously I'm not the only one looking for the Heart! I'm racing against other Chymists! Lucky they didn't come themselves, or we'd be duelling."
+    "Obviously I'm not the only one looking for the Heart! I'm racing against o! Lucky they didn't come themselves, or we'd be duelling."
     "I'm woefully underprepared too. I didn't come expecting a fight!"
     "But I'm not backing down! If might does not best this beast, my artificing will!"
     "Onward!"
-
+    
+    hide mira test with dissolve
+    scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
-    "{i}You go the direction the man you helped fled from. The Heart grows closer!{/i}"
+    "{i}You go the direction the man you helped fled from.{/i}"
 
-    
+    scene placeholderforest
+    m "Huh?"
+    "What is that thing? It's blocking the way."
+
+    mv "Just leave me be, alchemist. I've had quite the bad day."
+
+    m "Ah!"
+    "You let out a little yell, betraying yourself. {i}Nothing{/i} should be that big..."
+
+    mv "Hm? I didn't know they taught alchemy to women. I've never met one before."
+
+    m "They don't. I taught myseld."
+
+
 
 
     # This ends the game.
