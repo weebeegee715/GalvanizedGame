@@ -296,14 +296,16 @@ label start:
     "He ran off!"
 
     show mira test with dissolve
-    "Obviously I'm not the only one looking for the Heart! Of course I'd run into other Chymists! I'm lucky they didn't come themselves"
+    "Obviously I'm not the only one looking for the Heart! I'm racing against other Chymists! Lucky they didn't come themselves, or we'd be duelling."
     "I'm woefully underprepared too. I didn't come expecting a fight!"
+    "But I'm not backing down! If might does not best this beast, my artificing will!"
+    "Onward!"
+
+    with dissolve
+    play sound 'audio/DirtSteps.mp3'
+    "{i}You go the direction the man you helped fled from. The Heart grows closer!{/i}"
+
     
-    m "I farted" with vpunch
-    m "big boom" with sshake
-
-
-
 
 
     # This ends the game.
