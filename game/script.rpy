@@ -122,7 +122,8 @@ init python:
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
     
-## Define Characters (Giving Them Color and Voices)           
+## Define Characters (Giving Them Color and Voices) 
+define mv = Character("???", callback=val_beep, color="#de9c01")          
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -278,8 +279,8 @@ label start:
     m "What happened to you? What on earth were you fighting?"
     k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake. It did all this to me in seconds! I ran away before it got any worse..."
     m "Some kind of large animal? Surely you've faced beasts before."
-    k "Of course I have, but nothing like that! It wasn't a beast at all. It was something else entirely! And by God, it was huge!"
-    m "How awful!"
+    k "Of course I have, but nothing like that! This wasn't some typical beast. It was something else entirely! It spoke! And by God, it was huge!"
+    m "How horrible!"
     k "I'm not supposed to tell you but they're not killing it to keep citizens safe! Those alchemists, they want its heart!"
     m "...It's heart?"
     k "Ah! I've already told you too much. {i}I'll say no more!{/i}"
@@ -298,9 +299,11 @@ label start:
     "Obviously I'm not the only one looking for the Heart! Of course I'd run into other Chymists! I'm lucky they didn't come themselves"
     "I'm woefully underprepared too. I didn't come expecting a fight!"
     
-    m "wha?" with vpunch
+    m "I farted" with vpunch
+    m "big boom" with sshake
 
-    m "AAAA WTF" with sshake
+
+
 
 
     # This ends the game.
