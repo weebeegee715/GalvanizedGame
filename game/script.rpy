@@ -126,12 +126,11 @@ init python:
 define mv = Character("???", callback=val_beep, color="#de9c01")          
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
-define mt = Character("Mira", image = "mira", color="#329b15", what_italic=True)
+define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
 
 
 ### Mira's Images. Lots of them.
-
 image sprite test = "sprite test.png"
 image small mira test = "dark small mira neutral.png"
 
@@ -190,11 +189,22 @@ image side mira confused:
     pause 0.4
     repeat
 
+image side mira scared: 
+    "side mira scared.png"
+    pause 2
+    "side mira scared blink.png"
+    pause 0.4
+    "side mira scared.png"
+    pause 0.5
+    "side mira scared blink.png"
+    pause 0.4
+    repeat
+
 
 # The game starts here.
 
 label start:
-    play music [ "fallingleaves.mp3", "Pirate4.mp3", "Jonquill.mp3" , "Pirate5.mp3" ] fadeout 1.0 fadein 1.0 volume 0.5
+    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 1.0 volume 0.5
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -212,7 +222,6 @@ label start:
         
 
     # These display lines of dialogue.
-    mt "shh im thinking..."
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
     "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
@@ -234,8 +243,8 @@ label start:
     with Dissolve (3.0)
 
     show sprite test
-    mt "God, how am I supposed to get through a place like this?"
-    mt "{sc}This is absurd!{/sc} I thought the locals were exaggerating about these woods..."
+    m "God, how am I supposed to get through a place like this?"
+    mt "This is absurd! I thought the locals were exaggerating about these woods..."
     m "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
     hide sprite test with dissolve
@@ -247,8 +256,8 @@ label start:
     scene placeholderforest
     with fade
     m angry "I'm getting tired..."
-    "I've been walking for hours, but haven't made any progress!"
-    "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
+    mt "I've been walking for hours, but haven't made any progress!"
+    mt "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
 
     
     show small mira test with dissolve
@@ -257,7 +266,7 @@ label start:
     show sprite test
     k "You! get away from here!"
 
-    m sad "Why? What's going on? Are you ok, sir?"
+    m confused "Why? What's going on? Are you ok, sir?"
     "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
     k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
     m neutral "I'm a doctor! At least let me help you before you go."
@@ -276,27 +285,33 @@ label start:
     
     
     m "What happened to you? What on earth were you fighting?"
-    k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake. It did all this to me in seconds! I ran away before it got any worse..."
-    m "Some kind of large animal? Surely you've faced beasts before."
-    k "Of course I have, but nothing like that! This wasn't some typical beast. It was something else entirely! And by God, it was huge!"
+    k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
+    k "That thing bested us in seconds! I ran away before it got any worse..."
+    m "Surely you've faced this kind beast before?"
+    k "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge!"
     m "Really? That's terrifying!"
     k "Yes, but, {i} we must be going now! I {/i}"
 
     scene placeholderforest at truecenter
     with fade 
     show sprite test with dissolve
-    k "{i}Thank you miss! Let's make haste!{/i}"
-    "Should I go with him... I'm scared, but, I may never have a chance like this to get the Heart again!"
+    k "{i}Thank you for all your help! Let's make haste!{/i}"
+    "Should I go with him? I'm scared to continue, but, I may never have a chance like this to get the Heart again!"
     m sad "I'm sorry, but I can't leave just yet."
     k "{i}What?! Well, I'm not waiting around!{/i}"
     hide sprite test with moveoutright
     "He ran off!"
 
     show sprite test with dissolve
-    mt "How horrible... these woods truly are cursed! But... I need the heart! I won't give up!"
-    mt "I'm woefully underprepared too. How could I ever face a monster?!"
-    mt "I don't have a plan... But I'm going on!"
-    mt "Onward!"
+    mt "{i}How horrible... these woods truly are cursed! But... I need the heart! I won't give up!{/i}"
+    # pls draw progressively more upset sprites plzzz
+    show sprite test
+    mt "{i}I'm woefully underprepared too. What could I do if I crossed paths with that monster?{/i}"
+    show sprite test
+    mt "{i}...{/i}"
+    # >:[ 
+    show sprite test
+    mt "I can't give up."
     
     hide sprite test with dissolve
     scene black
@@ -305,16 +320,15 @@ label start:
     "{i}You go the direction the man you helped fled from.{/i}"
 
     show placeholderrevealblocked with fade
-    m neutral "...Huh?"
+    m confused "...Huh?"
     show placeholderreveal
-    m neutral "Aah!"
+    m scared "Aah!"
     show placeholderrevealscare
     mt "It heard me!"
     show placeholderhide
     mt "I didn't think this through..."
-    mv "..."
-    
-
+    "..."
+    mv "...Is someone there?"
 
 
     # This ends the game.
