@@ -124,8 +124,8 @@ init python:
     
 ## Define Characters (Giving Them Color and Voices) 
 define c = Character("Coachman", callback=guy_beep, color="#917dc8")
-define mv = Character("???", callback=val_beep, color="#de9c01")          
-define v = Character("Val", callback=val_beep, color="#de9c01")
+define mv = Character("???", callback=val_beep, color="#de9c01", what_size=40)          
+define v = Character("Val", callback=val_beep, color="#de9c01", what_size=40)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -333,15 +333,21 @@ label start:
     m confused "...Huh?"
     show placeholderreveal
     m scared "Aah!"
-    show placeholderrevealscare
-    mt "It heard me!"
-    show placeholderhide
-    mt "I didn't think this through..."
-    "You stand like this for quite some time, until..."
-    mv "...Who goes there? Show yourself."
-    mt "It's talking to me? Why is it talking to me? I do {i}not{/i} want to come out I do not{w=0.15}{nw}"
-    mv "Don't make me come over there."
-    m scared "{size=*0.5}{sc=3}I'm "
+    mt "It must be that monster! It... It looks like a person..."
+    "You get closer..."
+    show facereveal with fade
+    mt "It is a person!"
+    mt "I... I need to help!"
+    scene black
+    with fade
+    play sound 'audio/bag.mp3'
+    "You hardly have enough gauze to do anything of note. But you try."
+    show facerevealhelped with fade
+    mt "I didn't do much..."
+    
+
+    
+    mv "{i}Wait!{/i} Please..."
 
     
 
