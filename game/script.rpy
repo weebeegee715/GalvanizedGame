@@ -123,6 +123,7 @@ init python:
             renpy.music.stop(channel="sound")
     
 ## Define Characters (Giving Them Color and Voices) 
+define c = Character("Coachman", callback=guy_beep, color="#917dc8")
 define mv = Character("???", callback=val_beep, color="#de9c01")          
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
@@ -235,19 +236,28 @@ label start:
     scene paper3
     with dissolve
 
-    "The Sylvanian Heart, said to be the key to creating the mythical stone."
-    "But, you don't quite know what this Sylvanian Heart is..."
-    "But you know it is somewhere here. Somewhere."
+    "The Darkheart, said to be the key to creating the mythical stone."
+    "But, you don't quite know what this Darkheart is..."
+    "But you know it is somewhere here.... Somewhere."
 
-    scene scarytree 
+    scene forestentrance 
     with Dissolve (3.0)
 
     show sprite test
-    m "God, how am I supposed to get through a place like this?"
-    mt "This is absurd! I thought the locals were exaggerating about these woods..."
+    c "I won't be taking you any further, miss."
+    m angry "What!? But I need to go {/i}through{/i} the forest! Why are we stopping at its entrance?"
+    c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
+    m angry "You couldn't have told me this earlier?! We're already here!"
+    c "...I'm turning back now. Are you coming or not?"
+    m angry "Most certainly not!"
+    c "Suit yourself."
+    hide sprite test with moveoutright
+    
+    show sprite test with dissolve
+    m "This is absurd! how am I supposed to get through a place like this without a horse!?"
+    mt "I thought the locals were exaggerating about these woods. This place is huge..."
     m "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
-    hide sprite test with dissolve
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
@@ -327,9 +337,13 @@ label start:
     mt "It heard me!"
     show placeholderhide
     mt "I didn't think this through..."
-    "..."
-    mv "...Is someone there?"
+    "You stand like this for quite some time, until..."
+    mv "...Who goes there? Show yourself."
+    mt "It's talking to me? Why is it talking to me? I do {i}not{/i} want to come out I do not{w=0.15}{nw}"
+    mv "Don't make me come over there."
+    m scared "{size=*0.5}{sc=3}I'm "
 
+    
 
     # This ends the game.
 
