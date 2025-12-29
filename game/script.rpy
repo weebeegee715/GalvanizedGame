@@ -126,12 +126,13 @@ init python:
 define mv = Character("???", callback=val_beep, color="#de9c01")          
 define v = Character("Val", callback=val_beep, color="#de9c01")
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
+define mt = Character("Mira", image = "mira", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
 
 
 ### Mira's Images. Lots of them.
 
-image mira test = "mira neutral.png"
+image sprite test = "sprite test.png"
 image small mira test = "dark small mira neutral.png"
 
 image side mira neutral: 
@@ -211,7 +212,7 @@ label start:
         
 
     # These display lines of dialogue.
-
+    mt "shh im thinking..."
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
     "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
@@ -227,17 +228,17 @@ label start:
 
     "The Sylvanian Heart, said to be the key to creating the mythical stone."
     "But, you don't quite know what this Sylvanian Heart is..."
-    "But you know it is somewhere here. Somewhere.{w=0.67}{nw}"
+    "But you know it is somewhere here. Somewhere."
 
     scene scarytree 
     with Dissolve (3.0)
 
-    show mira test
-    m neutral "God, how am I supposed to get through a place like this?"
-    m "{sc}This is absurd!{/sc} I thought the locals were exaggerating about these woods..."
+    show sprite test
+    mt "God, how am I supposed to get through a place like this?"
+    mt "{sc}This is absurd!{/sc} I thought the locals were exaggerating about these woods..."
     m "..."
-    m "It doesn't matter. I've already come all this way, and I'm not stopping now!"
-    hide mira test with dissolve
+    mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
+    hide sprite test with dissolve
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
@@ -245,9 +246,7 @@ label start:
 
     scene placeholderforest
     with fade
-    show mira test with dissolve
-    m neutral "I'm getting tired..."
-    hide mira test with dissolve
+    m angry "I'm getting tired..."
     "I've been walking for hours, but haven't made any progress!"
     "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
 
@@ -255,18 +254,18 @@ label start:
     show small mira test with dissolve
     "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
-    show mira test
+    show sprite test
     k "You! get away from here!"
 
-    m neutral "Why? What's going on? Are you ok, sir?"
+    m sad "Why? What's going on? Are you ok, sir?"
     "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
     k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
     m neutral "I'm a doctor! At least let me help you before you go."
     "He calms down a bit."
-    k ". . . Alright. Think I've ran far enough to be safe."
-    m "Sit. I'll get out my things."
+    k ". . . Alright. Think I've ran far enough for something quick."
+    m happy "Good. I'll get out my things."
 
-    hide mira test
+    hide sprite test
     scene black
     with fade
     play sound 'audio/bag.mp3'
@@ -279,47 +278,42 @@ label start:
     m "What happened to you? What on earth were you fighting?"
     k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake. It did all this to me in seconds! I ran away before it got any worse..."
     m "Some kind of large animal? Surely you've faced beasts before."
-    k "Of course I have, but nothing like that! This wasn't some typical beast. It was something else entirely! It spoke! And by God, it was huge!"
-    m "How horrible!"
-    k "I'm not supposed to tell you but they're not killing it to keep citizens safe! Those alchemists, they want its heart!"
-    m "...It's heart?"
-    k "Ah! I've already told you too much. {i}I'll say no more!{/i}"
+    k "Of course I have, but nothing like that! This wasn't some typical beast. It was something else entirely! And by God, it was huge!"
+    m "Really? That's terrifying!"
+    k "Yes, but, {i} we must be going now! I {/i}"
 
     scene placeholderforest at truecenter
     with fade 
-    show mira test with dissolve
-    k "Well, I'm going, are you coming?"
-    "I really should go, but can I? I may never have a chance like this to get the Heart again!"
-    m neutral "I'm sorry, but I can't leave just yet."
-    k "{i}Oh, well... Thank you miss!{/i}"
-    hide mira test with moveoutright
+    show sprite test with dissolve
+    k "{i}Thank you miss! Let's make haste!{/i}"
+    "Should I go with him... I'm scared, but, I may never have a chance like this to get the Heart again!"
+    m sad "I'm sorry, but I can't leave just yet."
+    k "{i}What?! Well, I'm not waiting around!{/i}"
+    hide sprite test with moveoutright
     "He ran off!"
 
-    show mira test with dissolve
-    "Obviously I'm not the only one looking for the Heart! I'm racing against o! Lucky they didn't come themselves, or we'd be duelling."
-    "I'm woefully underprepared too. I didn't come expecting a fight!"
-    "But I'm not backing down! If might does not best this beast, my artificing will!"
-    "Onward!"
+    show sprite test with dissolve
+    mt "How horrible... these woods truly are cursed! But... I need the heart! I won't give up!"
+    mt "I'm woefully underprepared too. How could I ever face a monster?!"
+    mt "I don't have a plan... But I'm going on!"
+    mt "Onward!"
     
-    hide mira test with dissolve
+    hide sprite test with dissolve
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
     "{i}You go the direction the man you helped fled from.{/i}"
 
-    scene placeholderforest
-    m "Huh?"
-    "What is that thing? It's blocking the way."
-
-    mv "Just leave me be, alchemist. I've had quite the bad day."
-
-    m "Ah!"
-    "You let out a little yell, betraying yourself. {i}Nothing{/i} should be that big..."
-
-    mv "Hm? I didn't know they taught alchemy to women. I've never met one before."
-
-    m "They don't. I taught myseld."
-
+    show placeholderrevealblocked with fade
+    m neutral "...Huh?"
+    show placeholderreveal
+    m neutral "Aah!"
+    show placeholderrevealscare
+    mt "It heard me!"
+    show placeholderhide
+    mt "I didn't think this through..."
+    mv "..."
+    
 
 
 
