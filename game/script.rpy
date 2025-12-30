@@ -245,7 +245,7 @@ label start:
 
     show sprite test
     c "I won't be taking you any further, miss."
-    m angry "What!? But I need to go {/i}through{/i} the forest! Why are we stopping at its entrance?"
+    m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
     m angry "You couldn't have told me this earlier?! We're already here!"
     c "...I'm turning back now. Are you coming or not?"
@@ -298,9 +298,9 @@ label start:
     k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
     k "That thing bested us in seconds! I ran away before it got any worse..."
     m "Surely you've faced this kind beast before?"
-    k "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge!"
+    k "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge! it blocked out the moon!"
     m "Really? That's terrifying!"
-    k "Yes, but, {i} we must be going now! I {/i}"
+    k "Yes, but, {i} we must be going now!{/i}"
 
     scene placeholderforest at truecenter
     with fade 
@@ -316,7 +316,7 @@ label start:
     mt "{i}How horrible... these woods truly are cursed! But... I need the heart! I won't give up!{/i}"
     # pls draw progressively more upset sprites plzzz
     show sprite test
-    mt "{i}I'm woefully underprepared too. What could I do if I crossed paths with that monster?{/i}"
+    mt "{i}I'm woefully underprepared too... What am I to do in the face of a beast?{/i}"
     show sprite test
     mt "{i}...{/i}"
     # >:[ 
@@ -333,21 +333,27 @@ label start:
     m confused "...Huh?"
     show placeholderreveal
     m scared "!!!"
-    mt "It must be that monster! It... It looks like a person..."
-    "You get closer..."
+    ""
+    mt "I don't know what to make of this... I've never seen anything like it before! "
+    mt "What kind of monster wears clothes? {i}Real{/i} clothes? And {i}shoes{/i}, too!"
+    mt "I... it isn't moving at all. That man and his friends must have hurt it quite badly."
+    mt "I"
+    mt "I'm going to get closer..."
     show facereveal with fade
-    mt "It is a person!"
+    mt "This... this is no monster! This is a person! Who would do this to s"
     mt "I... I need to help!"
     scene black
     with fade
     play sound 'audio/bag.mp3'
     "You hardly have enough gauze to do anything of note. But you try."
     show facerevealhelped with fade
+
     mt "I didn't do much... but it's better than nothing."
     show facerevealhuh 
-    mv "...huh?"
-    m scared "Aah!"
-    
+    mv "...hmph?"
+    m scared "{sc}Aah!{sc}"
+    show facerevealawake
+    mv "Aah!"
 
     
     
