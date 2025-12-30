@@ -332,7 +332,7 @@ label start:
     show placeholderrevealblocked with fade
     m confused "...Huh?"
     show placeholderreveal
-    m scared "Aah!"
+    m scared "!!!"
     mt "It must be that monster! It... It looks like a person..."
     "You get closer..."
     show facereveal with fade
@@ -343,11 +343,29 @@ label start:
     play sound 'audio/bag.mp3'
     "You hardly have enough gauze to do anything of note. But you try."
     show facerevealhelped with fade
-    mt "I didn't do much..."
-    
+    mt "I didn't do much... but it's better than nothing."
+    show facerevealhuh 
+    mv "...huh?"
+    m scared "!!!"
+    show handrevealgrab
+    m scared "-waitwaitwait!"
+    scene black
+    with fade
+    "weeeee"
 
-    
-    mv "{i}Wait!{/i} Please..."
+    show placeholderforest with fade
+    show val placeholder at zoom 1.5
+    mv "Who are you?"
+    m scared "Let me go!"
+    mt "My head's spinning..."   
+    mv "What'd you do to me?"
+    m scared "Nothing! I was only trying to help you..."
+    mt "Why would someone like you help me? What do you want?"
+    m "I don't {i}want{/i} anything! Just let me go!"
+    mv "...You really aren't lying, are you?"
+    m angry "No!"
+    mv "I'm... not used to being treated well. I'm sorry"
+
 
     
 
