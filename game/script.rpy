@@ -247,15 +247,15 @@ label start:
     c "I won't be taking you any further, miss."
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
-    m angry "You couldn't have told me this earlier?! We're already here!"
+    m angry "You couldn't have told me this earlier?! This is a matter of urgency!"
     c "...I'm turning back now. Are you coming or not?"
     m angry "Most certainly not!"
     c "Suit yourself."
     hide sprite test with moveoutright
     
     show sprite test with dissolve
-    m "This is absurd! how am I supposed to get through a place like this without a horse!?"
-    mt "I thought the locals were exaggerating about these woods. This place is huge..."
+    m "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
+    mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place..."
     m "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
     scene black
@@ -316,7 +316,7 @@ label start:
     mt "{i}How horrible... these woods truly are cursed! But... I need the heart! I won't give up!{/i}"
     # pls draw progressively more upset sprites plzzz
     show sprite test
-    mt "{i}I'm woefully underprepared too... What am I to do in the face of a beast?{/i}"
+    mt "{i}I'm woefully underprepared too... That man was armed to the teeth, and still made a run for it.{/i}"
     show sprite test
     mt "{i}...{/i}"
     # >:[ 
@@ -332,29 +332,43 @@ label start:
     show placeholderrevealblocked with fade
     m confused "...Huh?"
     show placeholderreveal
-    m scared "!!!"
-    ""
-    mt "I don't know what to make of this... I've never seen anything like it before! "
-    mt "What kind of monster wears clothes? {i}Real{/i} clothes? And {i}shoes{/i}, too!"
-    mt "I... it isn't moving at all. That man and his friends must have hurt it quite badly."
-    mt "I"
-    mt "I'm going to get closer..."
+
     show facereveal with fade
     mt "This... this is no monster! This is a person! Who would do this to s"
     mt "I... I need to help!"
     scene black
-    with fade
+    with fade 
     play sound 'audio/bag.mp3'
     "You hardly have enough gauze to do anything of note. But you try."
     show facerevealhelped with fade
 
     mt "I didn't do much... but it's better than nothing."
     show facerevealhuh 
-    mv "...hmph?"
+    mv "...hmmph?"
     m scared "{sc}Aah!{sc}"
     show facerevealawake
     mv "Aah!"
+    
+    show placeholderforest
+    
+    mv "Who are you?! What did you do to me?!"
+    m scared "I-I'm sorry! You were bleeding!"
+    mv "Huh?"
+    "She turns her attention to your work."
+    mv "Oh..."
+    mv "Why would you do something like this for me?"
+    m scared "I don't know! I won't bother you anymore, just don't hurt me!"
+    mv "I won't! I'm terribly sorry for scaring you like that... Why're you in a place like this? At this hour?"
+    m scared "I..."
+    mv "I forget myself. I must be terrifying to you."
 
+### SKIPPING LOL
+
+I'm looking for something! I read that it only showed itself at night, but that's the only clue I have right now."
+
+    
+    
+    
     
     
 
