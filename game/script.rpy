@@ -124,8 +124,8 @@ init python:
     
 ## Define Characters (Giving Them Color and Voices) 
 define c = Character("Coachman", callback=guy_beep, color="#917dc8")
-define mv = Character("???", callback=val_beep, color="#de9c01", what_size=40)          
-define v = Character("Val", callback=val_beep, color="#de9c01", what_size=40)
+define mv = Character("???", callback=val_beep, color="#de9c01", what_size = 45)          
+define v = Character("Val", callback=val_beep, color="#de9c01", what_size = 45)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -214,14 +214,6 @@ label start:
     scene paper1
     with fade
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-
-
-        
-
     # These display lines of dialogue.
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
@@ -237,8 +229,9 @@ label start:
     with dissolve
 
     "The Darkheart, said to be the key to creating the mythical stone."
-    "But, you don't quite know what this Darkheart is..."
-    "But you know it is somewhere here.... Somewhere."
+    "Guarded by a terrible beast in a tall, dark wood, only showing itself in the dead of night."
+    "But, you scarcely believe in monsters..."
+  
 
     scene forestentrance 
     with Dissolve (3.0)
@@ -248,14 +241,14 @@ label start:
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
     m angry "You couldn't have told me this earlier?! This is a matter of urgency!"
-    c "...I'm turning back now. Are you coming or not?"
+    c "I'm turning back now. Are you coming or not?"
     m angry "Most certainly not!"
     c "Suit yourself."
     hide sprite test with moveoutright
     
     show sprite test with dissolve
     m "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
-    mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place..."
+    mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
     m "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
     scene black
@@ -266,8 +259,8 @@ label start:
     scene placeholderforest
     with fade
     m angry "I'm getting tired..."
-    mt "I've been walking for hours, but haven't made any progress!"
-    mt "I'd figured the Heart would've been some kind of odd flower, but there is nothing here but these {i}trees!{/i}"
+    mt "I've been walking for hours, but haven't made any progress!" 
+    mt "I'd figured the Heart would've been some kind of odd flower, but there is {i}nothing{/i} here!"
 
     
     show small mira test with dissolve
@@ -296,9 +289,9 @@ label start:
     
     m "What happened to you? What on earth were you fighting?"
     k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
-    k "That thing bested us in seconds! I ran away before it got any worse..."
+    k "That thing bested us in seconds! I ran away before it got any worse."
     m "Surely you've faced this kind beast before?"
-    k "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge! it blocked out the moon!"
+    k "No! This wasn't some typical monster, it was something else entirely! It had magic, like a person, And by God, it was huge! it blocked out the moon!"
     m "Really? That's terrifying!"
     k "Yes, but, {i} we must be going now!{/i}"
 
@@ -313,10 +306,10 @@ label start:
     "He ran off!"
 
     show sprite test with dissolve
-    mt "{i}How horrible... these woods truly are cursed! But... I need the heart! I won't give up!{/i}"
+    mt "{i}How horrible... these woods truly are cursed! But I need the heart! I won't give up!{/i}"
     # pls draw progressively more upset sprites plzzz
     show sprite test
-    mt "{i}I'm woefully underprepared too... That man was armed to the teeth, and still made a run for it.{/i}"
+    mt "{i}I'm woefully underprepared too. That man was armed to the teeth, and still made a run for it.{/i}"
     show sprite test
     mt "{i}...{/i}"
     # >:[ 
@@ -330,19 +323,19 @@ label start:
     "{i}You go the direction the man you helped fled from.{/i}"
 
     show placeholderrevealblocked with fade
-    m confused "...Huh?"
+    m confused "Huh?"
     show placeholderreveal
 
     show facereveal with fade
-    mt "This... this is no monster! This is a person! Who would do this to s"
-    mt "I... I need to help!"
+    mt "This is no monster! This is a person! Who would do this to s"
+    mt "I- I need to help!"
     scene black
     with fade 
     play sound 'audio/bag.mp3'
     "You hardly have enough gauze to do anything of note. But you try."
     show facerevealhelped with fade
 
-    mt "I didn't do much... but it's better than nothing."
+    mt "I didn't do much, but it's better than nothing."
     show facerevealhuh 
     mv "...hmmph?"
     m scared "{sc}Aah!{sc}"
@@ -350,25 +343,36 @@ label start:
     mv "Aah!"
     
     show placeholderforest
-    
+
     mv "Who are you?! What did you do to me?!"
-    m scared "I-I'm sorry! You were bleeding!"
-    mv "Huh?"
-    "She turns her attention to your work."
-    mv "Oh..."
-    mv "Why would you do something like this for me?"
-    m scared "I don't know! I won't bother you anymore, just don't hurt me!"
-    mv "I won't! I'm terribly sorry for scaring you like that... Why're you in a place like this? At this hour?"
-    m scared "I..."
-    mv "I forget myself. I must be terrifying to you."
+    m scared "AAAAAAH WTF!"
 
-### SKIPPING LOL
 
-I'm looking for something! I read that it only showed itself at night, but that's the only clue I have right now."
+
+    ####
+
+    show darklair with fade
+
+    m confused "Where am I?"
+    mt "This isn't my bed. I haven't slept this well in a while."
+
+    "You try and throw the sheet off of you. It's much heavier than you expected it to be... "
+    m confused "...huh?"
 
     
+    "Early morning light shines through the room from an excessively large window behind you, but you cannot make out the walls. It's like this room goes on forever."
+    m confused "Where's the door?!"
+
+    show notsodarklair with dissolve
     
-    
+    "More light spills into the room, and it begins to yawn before you."
+    m scared "What is this place?!"
+    mt "It's huge! My head is starting to spin."
+
+    "You hear something through the wall.
+    "
+    mv "{bt=3}{size=45}Is it morning?{/size}{/bt}"
+    mv "{bt=3}{size=45}I'm still tired...{/size}{/bt}"
     
     
 
