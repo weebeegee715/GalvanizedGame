@@ -59,7 +59,7 @@ init:
 #
 
 init:
-    $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
+    $ sshake = Shake((0, 0, 0, 0), 1.0, dist=4)
 
 
 ### Typography Pausemaker
@@ -67,7 +67,7 @@ init python:
     def typography(what):
 
         replacements = [
-            ("?", "? {w=.15}"),
+            ("? ", "? {w=.15}"),
             ("! ", "! {w=.15}"),
             (",", ", {w=.1}"),
             ( ". . .", ". . . {w=.15}"),
@@ -124,8 +124,8 @@ init python:
     
 ## Define Characters (Giving Them Color and Voices) 
 define c = Character("Coachman", callback=guy_beep, color="#917dc8")
-define mv = Character("???", image="val", callback=val_beep, color="#de9c01", what_size = 45)          
-define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 45)
+define mv = Character("???", image="val", callback=val_beep, color="#de9c01", what_size = 37)          
+define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 37)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -322,36 +322,34 @@ label start:
     play sound 'audio/DirtSteps.mp3'
     "{i}You go the direction the man you helped fled from.{/i}"
 
-    show placeholderrevealblocked with fade
+    scene placeholderrevealblocked with fade
     m confused "Huh?"
-    show placeholderreveal
+    scene placeholderreveal
+    ""
 
-    show facereveal with fade
+    scene facereveal with fade
     mt "This is no monster! This is a person! Who would do this to s"
     mt "I- I need to help!"
     scene black
     with fade 
     play sound 'audio/bag.mp3'
     "You hardly have enough gauze to do anything of note. But you try."
-    show facerevealhelped with fade
+    scene facerevealhelped with fade
 
     mt "I didn't do much, but it's better than nothing."
-    show facerevealhuh 
+    scene facerevealhuh 
     mv "...hmmph?"
     m scared "{sc}Aah!{sc}"
-    show facerevealawake
+    scene facerevealawake
     mv "Aah!"
-    
-    show placeholderforest
-
-    mv "Who are you?! What did you do to me?!"
-    m scared "AAAAAAH WTF!"
 
 
+    "LOL WHAT DO I EVEN PUT BETWEEN THIS?"
 
     ####
 
-    show darklair with fade
+    scene librarydark1 at truecenter 
+    with fade
 
     m confused "Where am I?"
     mt "This isn't my bed. I haven't slept this well in a while."
@@ -363,83 +361,93 @@ label start:
     "Early morning light shines through the room from an excessively large window behind you, but you cannot make out the walls. It's like this room goes on forever."
     m confused "Where's the door?!"
 
-    show notsodarklair with dissolve
+    scene librarydark2 at truecenter
+    with dissolve
+
     
     "More light spills into the room, and it begins to yawn before you."
     m scared "What is this place?!"
     mt "It's huge! My head is starting to spin."
 
-    "You hear something through the wall"
+    "You hear something through the wall."
 
-    mv "{bt=3}{size=45}Huh?{/size}{/bt}"
-    mv "{bt=3}{size=45}Oh!{/size}{/bt}"
+    # "I didn't want to wake you then." < :[
+    mv "{bt=3}{size=45}This is taking foreverrr...{/size}{/bt}"
+    mv "{bt=3}{size=45}Is she {i}seriously{/i} still asleep?{/size}{/bt}"
     
     mt "That voice! From last night! Don't tell me..."
-    "You feel the ground, no doubt some shelf or table, shake beneath you as the witch appr." with vpunch
+    "You feel the ground, no doubt some shelf or table, shake beneath you as the witch comes closer." with sshake
     m sad "What do I do?"
-    mv "..." with vpunch
+    mv "..." with sshake
     ## wallking sfx
     mt "Hide!"
-    show darklairthrow
+    scene darklairthrow
     "You pull the heavy quilt back over your head. "
-    show black with dissolve
+    scene black with dissolve
     mt "This was a horrible idea! A horrible, no good, awful idea!"
     #### door creak
     mt "She must be staring dead at me..."
-    mv "Hello? Are you awake? I heard you just now."
-    show notsodarklair with fade
-    show val blue desk sleepy
+    mv "I know you're up. I heard you."
+    scene librarydark2
+    with dissolve
+    show val blue desk sleepy with dissolve
     m scared "..."
     "She doesn't seem to be fazed by your expression of abject terror. She looks like she hasn't slept all night."
     mv "{i}Finally.{/i} I felt like I was waiting forever. Let's do this quickly."
     mv "You want to leave this place, don't you?"
-    m "{sc=5}{size=20}yes. please don't keep me here.{/size}{/sc}"
-    mv "Good. Here's how this is going to go. I'm going to zap us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
-    m "{sc=5}{size=20}{i}zap{/i} us? like, with magic?{/size}{/sc}"
-    mv "What, you think I'm going to hike there? Yes, magic. Come now"
-    show handwalk with fade
+    m "{sc=3}{size=27}yes. please.{/size}{/sc}"
+    mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
+    m "{sc=3}{size=27}{i}apport{/i} us? like, with magic?{/size}{/sc}"
+    mv "What, you think I'm going to hike you there? Yes, magic. Come now."
+    scene handwalk with fade
     "She reaches her hand out to you. It's odd walking from the flat table to her shifting hand."
     mv "Okay..."
     "She pulls something heavy from under the table with her off-hand."
-    show teleport1 with fade
+    scene teleport1 with fade
     m scared "{sc=5}Why do you have an axe?!{/sc}"
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
     m neutral "{sc=3}Well...{/sc} okay."
-    show teleport2
+    scene teleport2
     mv "This is going to take a bit. I'm real tired."
-    m "You're okay from yesterday? Did you sleep?"
-    mv "Huh? Yeah I'm fine. I usually sleep in the day anyway. Less people at night."
+    m "So, you're okay from yesterday? Did you sleep?"
+    mv "Huh? Yeah, I'm fine. I usually sleep during the day anyway. Less people at night."
     m "You can't heal with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job?"
     m "...I suppose."
     mv "..."
+    m "You live alone?"
+    mv "Of course I do. There's no one else here."
     m happy "I'm Mira. Do you have a name?"
-    mv "..hmph."
-    show teleport 3 with fade 
+    mv "..You talk too much, Mira."
+    mt "I do not!"
+    scene teleport3 with fade 
     m scared "Aah!"
     mt "That felt really, really weird! How is she used to that?!"
-    show teleport 4
+    scene teleport4
     mv "Well, we're here. What were you even doing here to begin with?"
     m sad "I was looking for an ingredient for a drug. A cure-all, essentially. But now, I'm right back where I started."
     mv "Really?"
     m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
     mt "I don't think she cares very much, but it's nice to talk to someone."
     mv "I see..."
-    show black with dissolve
-    "She sets you down, and you exit ungracefully."
-    show forestentrance with fade
+    scene black with dissolve
+    "She sets you down, and you ungracefully climb out of her hand."
+    scene forestentrance with fade
+    mt "I wonder what I'll do now..."
     mv "Mira?"
+    "You must be quite far away from her now, but can hear her clear as day."
     m sad "Yes?"
     v "...Im Val. Valencia. But just call me Val."
     m happy "You have a pretty name, Val."
     "..."
-    mt "She's gone!"
+    mt "I guess she left."
     m scared "God, what time is it? I need to get back!"
 
-    show black with fade
-    ""
-    
+    scene end1 with fade
+    "{b}Part 1 '' End.{/b}" 
 
+    scene black with fade
+    "Part "
 
     # This ends the game.
 
