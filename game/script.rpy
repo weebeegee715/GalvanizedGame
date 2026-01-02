@@ -389,8 +389,56 @@ label start:
     mv "Hello? Are you awake? I heard you just now."
     show notsodarklair with fade
     show val blue desk sleepy
-    mv "{i}Finally.{/i} "
+    m scared "..."
+    "She doesn't seem to be fazed by your expression of abject terror. She looks like she hasn't slept all night."
+    mv "{i}Finally.{/i} I felt like I was waiting forever. Let's do this quickly."
+    mv "You want to leave this place, don't you?"
+    m "{sc=5}{size=20}yes. please don't keep me here.{/size}{/sc}"
+    mv "Good. Here's how this is going to go. I'm going to zap us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
+    m "{sc=5}{size=20}{i}zap{/i} us? like, with magic?{/size}{/sc}"
+    mv "What, you think I'm going to hike there? Yes, magic. Come now"
+    show handwalk with fade
+    "She reaches her hand out to you. It's odd walking from the flat table to her shifting hand."
+    mv "Okay..."
+    "She pulls something heavy from under the table with her off-hand."
+    show teleport1 with fade
+    m scared "{sc=5}Why do you have an axe?!{/sc}"
+    mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
+    m neutral "{sc=3}Well...{/sc} okay."
+    show teleport2
+    mv "This is going to take a bit. I'm real tired."
+    m "You're okay from yesterday? Did you sleep?"
+    mv "Huh? Yeah I'm fine. I usually sleep in the day anyway. Less people at night."
+    m "You can't heal with magic?"
+    mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job?"
+    m "...I suppose."
+    mv "..."
+    m happy "I'm Mira. Do you have a name?"
+    mv "..hmph."
+    show teleport 3 with fade 
+    m scared "Aah!"
+    mt "That felt really, really weird! How is she used to that?!"
+    show teleport 4
+    mv "Well, we're here. What were you even doing here to begin with?"
+    m sad "I was looking for an ingredient for a drug. A cure-all, essentially. But now, I'm right back where I started."
+    mv "Really?"
+    m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
+    mt "I don't think she cares very much, but it's nice to talk to someone."
+    mv "I see..."
+    show black with dissolve
+    "She sets you down, and you exit ungracefully."
+    show forestentrance with fade
+    mv "Mira?"
+    m sad "Yes?"
+    v "...Im Val. Valencia. But just call me Val."
+    m happy "You have a pretty name, Val."
+    "..."
+    mt "She's gone!"
+    m scared "God, what time is it? I need to get back!"
 
+    show black with fade
+    ""
+    
 
 
     # This ends the game.
