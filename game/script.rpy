@@ -124,8 +124,8 @@ init python:
     
 ## Define Characters (Giving Them Color and Voices) 
 define c = Character("Coachman", callback=guy_beep, color="#917dc8")
-define mv = Character("???", callback=val_beep, color="#de9c01", what_size = 45)          
-define v = Character("Val", callback=val_beep, color="#de9c01", what_size = 45)
+define mv = Character("???", image="val", callback=val_beep, color="#de9c01", what_size = 45)          
+define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 45)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
@@ -291,7 +291,7 @@ label start:
     k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
     k "That thing bested us in seconds! I ran away before it got any worse."
     m "Surely you've faced this kind beast before?"
-    k "No! This wasn't some typical monster, it was something else entirely! It had magic, like a person, And by God, it was huge! it blocked out the moon!"
+    k "No! This wasn't some typical monster, it was something else entirely! It had magic, like a witch! And by God, it was huge! it blocked out the moon!"
     m "Really? That's terrifying!"
     k "Yes, but, {i} we must be going now!{/i}"
 
@@ -369,12 +369,29 @@ label start:
     m scared "What is this place?!"
     mt "It's huge! My head is starting to spin."
 
-    "You hear something through the wall.
-    "
-    mv "{bt=3}{size=45}Is it morning?{/size}{/bt}"
-    mv "{bt=3}{size=45}I'm still tired...{/size}{/bt}"
+    "You hear something through the wall"
+
+    mv "{bt=3}{size=45}Huh?{/size}{/bt}"
+    mv "{bt=3}{size=45}Oh!{/size}{/bt}"
     
-    
+    mt "That voice! From last night! Don't tell me..."
+    "You feel the ground, no doubt some shelf or table, shake beneath you as the witch appr." with vpunch
+    m sad "What do I do?"
+    mv "..." with vpunch
+    ## wallking sfx
+    mt "Hide!"
+    show darklairthrow
+    "You pull the heavy quilt back over your head. "
+    show black with dissolve
+    mt "This was a horrible idea! A horrible, no good, awful idea!"
+    #### door creak
+    mt "She must be staring dead at me..."
+    mv "Hello? Are you awake? I heard you just now."
+    show notsodarklair with fade
+    show val blue desk sleepy
+    mv "{i}Finally.{/i} "
+
+
 
     # This ends the game.
 
