@@ -447,7 +447,9 @@ label start:
     "{b}Part 1 '' End.{/b}" 
 
     scene black with fade
-    "Part "
+    "Part 2 '"
+
+    m happy "Good morning"
 
     # This ends the game.
 
