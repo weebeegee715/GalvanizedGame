@@ -129,6 +129,8 @@ define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", wh
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
+define o = Character("O'Keefe", callback=guylow_beep, color="#ca4c4c")
+define l = Character("Lavinia", callback=girl_beep, color="#128f9aff")
 
 
 ### Mira's Images. Lots of them.
@@ -427,9 +429,10 @@ label start:
     mv "Well, we're here. What were you even doing here to begin with?"
     m sad "I was looking for an ingredient for a drug. A cure-all, essentially. But now, I'm right back where I started."
     mv "Really?"
+    # chased from last town?
     m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
     mt "I don't think she cares very much, but it's nice to talk to someone."
-    mv "I see..."
+    mv "I see."
     scene black with dissolve
     "She sets you down, and you ungracefully climb out of her hand."
     scene forestentrance with fade
@@ -449,7 +452,41 @@ label start:
     scene black with fade
     "Part 2 '"
 
-    m happy "Good morning"
+    m confused "An actual witch... I never thougt I'd meet one."
+    mt "I'm still trying to make sense of it all... She wasn't very cruel, at least not to me. Aren't they supposed to be wicked? Even more so, giants?"
+    mt "I didn't even know they were real! Sure, you have monsters, and they get quite large, but they aren't people! They don't talk and joke and live in houses! I have so many questions..."
+    mt "Maybe she just pitied me? I wish I could just ask her. But what would I even say, 'Hello Val, why aren't you evil? Also, is there a whole race of big people or is that just a you thing? "
+    #house!
+    m happy "My house!"
+    mt "I'm still shocked I got the last owner to sell it to me. He was so eager to part with the land, he didn't care it wasn't totally legal to let me buy it."
+    m sad "I'm so tired from that walk. I should really invest in a horse, shouldn't I?"
+
+    scene black with fade
+    "You go inside."
+    m "I really am pleased with how I laid everything out. I was able to take most of things from my last practice, but it was hard getting everything in the new space."
+    mt "Whenever I set up in a new area, I always try to work on the first floor and live upstairs. It's easier that way."
+    m "I just hope these townsfolk are nicer than the last!"
+    mt "The last town... Crayport? Crawport? All I remember was that my reputation preceded me there. Always felt like they were one misstep away from stoning me dead. Only reason they didn't was the fact they'd be out of a town doctor."
+    mt "And there was that awful old man! God, what was his name?"
+
+    ...
+
+    m angry "O'Keefe, do you have anything actually wrong with you, or are you just going to complain about me?"
+    o "I can do what I please, you witch! You may have some of these poor soul fooled, but not me!"
+    m confused "What is this even about, sir? What'd I ever do to you? I was your daughter's midwife!"
+    o "Oh, and she has heard from me on that! I can speak all day on all this magic around this place, but it's not that. It's the way you look down on us."
+    m "Look {i}down{/i} on you?"
+    o "Yes! You come from that college so relieved to be rid of the scandal of having a woman in their midst. And The King's College, damn them, actually gave you that piece of paper! And all you do is wave it at us!"
+    m "You feel as if I'm waving it at you? All I ask is I be called Doctor!"
+    o "You are no doctor, witch! You never will be!"
+
+    ...
+
+    mt "That guy hated me. I figured he was the town 'healer' before me and hated me for it, but I never asked. Last I heard, he was either dead or very close to it! I hope he didn't pass on so angry."
+    m happy "Anyway, I think it's about time for breakfast."
+    ###
+    mt "You can't be serious! I wonder who's even here..."
+
 
     # This ends the game.
 
