@@ -274,7 +274,7 @@ label start:
     m confused "Why? What's going on? Are you ok, sir?"
     "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
     k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
-    m neutral "I'm a doctor! At least let me help you before you go."
+    m neutral "I'm a doctor! My name's Mira. At least let me help you before you go."
     "He calms down a bit."
     k ". . . Alright. Think I've ran far enough for something quick."
     m happy "Good. I'll get out my things."
@@ -431,6 +431,7 @@ label start:
     mv "Really?"
     # chased from last town?
     m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
+    m "I bet the Darkheart isn't even real... You don't"
     mt "I don't think she cares very much, but it's nice to talk to someone."
     mv "I see."
     scene black with dissolve
@@ -485,8 +486,22 @@ label start:
     mt "That guy hated me. I figured he was the town 'healer' before me and hated me for it, but I never asked. Last I heard, he was either dead or very close to it! I hope he didn't pass on so angry."
     m happy "Anyway, I think it's about time for breakfast."
     ###
-    mt "You can't be serious! I wonder who's even here..."
-
+    mt "You can't be serious! I wonder who's even here?"
+    "A woman, a head taller than you with dark, curly hair stands at the door. She seems... excited?"
+    l "Excuse me... are you Mira?"
+    m "Yes, I am. May I know why your asking?"
+    l "Oh, thank you! Thank you!"
+    ## awkard hug cg?
+    m confused "What have I done for you? Haven't we only just met?"
+    l "You saved my brother's skin yesterday in those woods! I told him without you he'd have gotten some horrible infectiom, who knows where that wretched beast had been?!"
+    m happy "Oh, that knight? I'm happy to hear he's doing okay!"
+    l "Ah, how rude of me! I am Lavinia, he is Asher. We hunt monsters!"
+    mt "Monster hunter neighbors? I don't know whether to feel safe or threatened?"
+    l "I- I know it isn't a typical occupation, but Boderholt is somewhat of a hunter town. Regular people just don't like how close we are to that thing. They think it'll come out and get them."
+    mt "I guess that's why the land here wasn't very expensive."
+    l "Jokes on them though, that thing's never stepped foot outside those woods and we live here for hardly anything!"
+    m neutrual "I don't blame them. Saftey comes before everything."
+    
 
     # This ends the game.
 
