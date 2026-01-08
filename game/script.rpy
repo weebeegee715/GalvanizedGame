@@ -128,10 +128,11 @@ define mv = Character("???", image="val", callback=val_beep, color="#de9c01", wh
 define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 37)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
-define k = Character("Knight", callback=guylow_beep, color="#417ce4")
+define kn = Character("Knight", callback=guylow_beep, color="#417ce4")
 define o = Character("O'Keefe", callback=guylow_beep, color="#778a06")
 define l = Character("Lavinia", callback=girl_beep, color="#128f9aff")
 define mag = Character("Magnus",callback=guy_beep, color="#c73c1cff" ) 
+define k = Character("Kieran" callback=guylow_beep color="#5e2d7eff")
 
 
 ### Mira's Images. Lots of them.
@@ -291,20 +292,20 @@ label start:
     
     
     m "What happened to you? What on earth were you fighting?"
-    k "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
-    k "That thing bested us in seconds! I ran away before it got any worse."
+    kn "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
+    kn "That thing bested us in seconds! I ran away before it got any worse."
     m "Surely you've faced this kind beast before?"
-    k "No! This wasn't some typical monster, it was something else entirely! It had magic, like a witch! And by God, it was huge! it blocked out the moon!"
+    kn "No! This wasn't some typical monster, it was something else entirely! It had magic, like a witch! And by God, it was huge! it blocked out the moon!"
     m "Really? That's terrifying!"
-    k "Yes, but, {i} we must be going now!{/i}"
+    kn "Yes, but, {i} we must be going now!{/i}"
 
     scene placeholderforest at truecenter
     with fade 
     show sprite test with dissolve
-    k "{i}Thank you for all your help! Let's make haste!{/i}"
+    kn "{i}Thank you for all your help! Let's make haste!{/i}"
     "Should I go with him? I'm scared to continue, but, I may never have a chance like this to get the Heart again!"
     m sad "I'm sorry, but I can't leave just yet."
-    k "{i}What?! Well, I'm not waiting around!{/i}"
+    kn "{i}What?! Well, I'm not waiting around!{/i}"
     hide sprite test with moveoutright
     "He ran off!"
 
@@ -526,7 +527,46 @@ label start:
     m sad "Huh, I guess it is closed."
     ##3 scene change door open
     "A man stands in the doorframe. He is just barely taller than you are, and looks quite strong."
-    mag "Ah, good morning! Have we met before"
+    mag "Ah, good morning! Have we met before?"
+    m happy "No, we haven't. I've just moved here from quite far away."
+    mag "I see! Welcome to Boderholt! I'm Magnus. This is my bakery."
+    m happy "I'm Mira! I'm a doctor!"
+    ### shock
+    mag "Really? Why would someone like yourself move to a place like this? Why not a big city?"
+    m confused "Don't I have the right to go where I please?"
+    mag "Ah, I didn't mean to offend you, I'm just genuinely curious!"
+    m happy "No, it's alright. Are you open?"
+    mag "Well, I guess I am now! Come in!"
+    ### insideee
+    "The bakery is very rustic, with a small interior with the loaves on display, and small tables to sit at."
+    mt "It smells really good in here! I'm so hungry..."
+    mag "Well... what would you like?"
+    m confused "Uhh..."
+    menu optional_name:
+        "Say Statement"
+        "A bagel!":
+            m happy "Can I get a bagel?"
+            mag "Of course you can!"
+        "A muffin!":
+            m happy "Can I get a muffin, please?"
+            mag "Sure!"
+    
+    "Someone else comes into the store."
+    
+    k "Good morning, Magnus."
+    mag "God, Keiran, you look awful. Did you sleep at all?"
+    k "{sc=1}No. I didn't.{sc=1} Wait, who is this?"
+    mag "Why don't you just{i}ask her,{/i}  dude?"
+    k "Oh, man, sorry. Hello. My name's Kieran. I kill monsters. What's your name?"
+    m happy "I'm Mira! Nice to meet you."
+    mt "He really does look awful. Like he just left a warzone..."
+    mag "You want anything?"
+    k "Give me anything!"
+    
+
+
+        
+
 
 
     # This ends the game.
