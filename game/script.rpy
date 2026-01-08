@@ -129,8 +129,9 @@ define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", wh
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define k = Character("Knight", callback=guylow_beep, color="#417ce4")
-define o = Character("O'Keefe", callback=guylow_beep, color="#ca4c4c")
+define o = Character("O'Keefe", callback=guylow_beep, color="#778a06")
 define l = Character("Lavinia", callback=girl_beep, color="#128f9aff")
+define mag = Character("Magnus",callback=guy_beep, color="#c73c1cff" ) 
 
 
 ### Mira's Images. Lots of them.
@@ -491,17 +492,42 @@ label start:
     l "Excuse me... are you Mira?"
     m "Yes, I am. May I know why your asking?"
     l "Oh, thank you! Thank you!"
-    ## awkard hug cg?
+    ## hug cg
     m confused "What have I done for you? Haven't we only just met?"
     l "You saved my brother's skin yesterday in those woods! I told him without you he'd have gotten some horrible infectiom, who knows where that wretched beast had been?!"
+    
     m happy "Oh, that knight? I'm happy to hear he's doing okay!"
     l "Ah, how rude of me! I am Lavinia, he is Asher. We hunt monsters!"
     mt "Monster hunter neighbors? I don't know whether to feel safe or threatened?"
     l "I- I know it isn't a typical occupation, but Boderholt is somewhat of a hunter town. Regular people just don't like how close we are to that thing. They think it'll come out and get them."
     mt "I guess that's why the land here wasn't very expensive."
     l "Jokes on them though, that thing's never stepped foot outside those woods and we live here for hardly anything!"
-    m neutrual "I don't blame them. Saftey comes before everything."
-    
+    m neutrual "I don't blame them..."
+    l "You should expect to be seeing a lot of us! We get hurt a lot, and our usual healer is horribly far away."
+    m "I'm more of a doctor."
+    l "They're different from eachother?"
+    m confused "They are."
+    l "Huh. Well, I'll stop bothering you so early in the morning. Goodbye now!"
+    "She probably lives really close."
+    ## mira sprite
+    mt "I guess I have my work cut out for me..."
+    mt "I think I'm going to go out to buy something to eat. I want to see the town!"
+    scene black with fade
+    ## path
+    mt "I really, {i}really{/i} wish I had a horse."
+    ### town
+    m happy "This town is actually really cute! I love the buildings here."
+    "The small buildings are placed around off the path, as neatly as they can be among the trees."
+    mt "I'd say the trees here are huge, but they seem quite small compared to the ones I saw last night. I guess this is just a regular patch of woods growing around that place... "
+    mt "I know that Boderholt doesn't export any lumber. No one would buy any from here because they think it's cursed, but these trees seem normal. "
+    m happy "There's a bakery here! Is it even open?"
+    "It's an odd structure, built half into a large tree, acting as the foundation."
+
+    m sad "Huh, I guess it is closed."
+    ##3 scene change door open
+    "A man stands in the doorframe. He is just barely taller than you are, and looks quite strong."
+    mag "Ah, good morning! Have we met before"
+
 
     # This ends the game.
 
