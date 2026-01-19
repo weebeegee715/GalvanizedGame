@@ -129,10 +129,12 @@ define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", wh
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define kn = Character("Knight", callback=guylow_beep, color="#417ce4")
-define o = Character("O'Keefe", callback=guylow_beep, color="#778a06")
+define o = Character("O'Keefe", callback=guylow_beep, color="#664011")
 define l = Character("Lavinia", callback=girl_beep, color="#128f9aff")
 define mag = Character("Magnus",callback=guy_beep, color="#c73c1cff" ) 
-define k = Character("Kieran" callback=guylow_beep color="#5e2d7eff")
+define k = Character("Kieran", callback=guylow_beep, color="#5e2d7eff")
+define g = Character("Gale", callback=guy_beep,color ="#717815ff")
+define a = Character("Asher", callback=guylow_beep, color="#417ce4")
 
 
 ### Mira's Images. Lots of them.
@@ -219,6 +221,7 @@ label start:
     with fade
 
     # These display lines of dialogue.
+    m happy "woww im so cool I have art done"
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
     "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
@@ -250,10 +253,10 @@ label start:
     c "Suit yourself."
     hide sprite test with moveoutright
     
-    show sprite test with dissolve
     m "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
+    show sprite test with dissolve
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
-    m "..."
+    mt "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
     scene black
     with dissolve
@@ -262,7 +265,7 @@ label start:
 
     scene placeholderforest
     with fade
-    m angry "I'm getting tired..."
+    m sad "I'm getting tired..."
     mt "I've been walking for hours, but haven't made any progress!" 
     mt "I'd figured the Heart would've been some kind of odd flower, but there is {i}nothing{/i} here!"
 
@@ -271,14 +274,14 @@ label start:
     "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
     show sprite test
-    k "You! get away from here!"
+    kn "You! get away from here!"
 
     m confused "Why? What's going on? Are you ok, sir?"
-    "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
-    k "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
+    mt "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
+    kn "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
     m neutral "I'm a doctor! My name's Mira. At least let me help you before you go."
     "He calms down a bit."
-    k ". . . Alright. Think I've ran far enough for something quick."
+    kn ". . . Alright. Think I've ran far enough for something quick."
     m happy "Good. I'll get out my things."
 
     hide sprite test
@@ -326,29 +329,9 @@ label start:
     play sound 'audio/DirtSteps.mp3'
     "{i}You go the direction the man you helped fled from.{/i}"
 
-    scene placeholderrevealblocked with fade
-    m confused "Huh?"
-    scene placeholderreveal
-    ""
+    show placeholderforest at truecenter
+    "You hear a raging in the distance. What on earth are they fighting?!"
 
-    scene facereveal with fade
-    mt "This is no monster! This is a person! Who would do this to s"
-    mt "I- I need to help!"
-    scene black
-    with fade 
-    play sound 'audio/bag.mp3'
-    "You hardly have enough gauze to do anything of note. But you try."
-    scene facerevealhelped with fade
-
-    mt "I didn't do much, but it's better than nothing."
-    scene facerevealhuh 
-    mv "...hmmph?"
-    m scared "{sc}Aah!{sc}"
-    scene facerevealawake
-    mv "Aah!"
-
-
-    "LOL WHAT DO I EVEN PUT BETWEEN THIS?"
 
     ####
 
@@ -455,114 +438,9 @@ label start:
     scene black with fade
     "Part 2 '"
 
-    m confused "An actual witch... I never thougt I'd meet one."
-    mt "I'm still trying to make sense of it all... She wasn't very cruel, at least not to me. Aren't they supposed to be wicked? Even more so, giants?"
-    mt "I didn't even know they were real! Sure, you have monsters, and they get quite large, but they aren't people! They don't talk and joke and live in houses! I have so many questions..."
-    mt "Maybe she just pitied me? I wish I could just ask her. But what would I even say, 'Hello Val, why aren't you evil? Also, is there a whole race of big people or is that just a you thing? "
-    #house!
-    m happy "My house!"
-    mt "I'm still shocked I got the last owner to sell it to me. He was so eager to part with the land, he didn't care it wasn't totally legal to let me buy it."
-    m sad "I'm so tired from that walk. I should really invest in a horse, shouldn't I?"
-
-    scene black with fade
-    "You go inside."
-    m "I really am pleased with how I laid everything out. I was able to take most of things from my last practice, but it was hard getting everything in the new space."
-    mt "Whenever I set up in a new area, I always try to work on the first floor and live upstairs. It's easier that way."
-    m "I just hope these townsfolk are nicer than the last!"
-    mt "The last town... Crayport? Crawport? All I remember was that my reputation preceded me there. Always felt like they were one misstep away from stoning me dead. Only reason they didn't was the fact they'd be out of a town doctor."
-    mt "And there was that awful old man! God, what was his name?"
-
-    ...
-
-    m angry "O'Keefe, do you have anything actually wrong with you, or are you just going to complain about me?"
-    o "I can do what I please, you witch! You may have some of these poor soul fooled, but not me!"
-    m confused "What is this even about, sir? What'd I ever do to you? I was your daughter's midwife!"
-    o "Oh, and she has heard from me on that! I can speak all day on all this magic around this place, but it's not that. It's the way you look down on us."
-    m "Look {i}down{/i} on you?"
-    o "Yes! You come from that college so relieved to be rid of the scandal of having a woman in their midst. And The King's College, damn them, actually gave you that piece of paper! And all you do is wave it at us!"
-    m "You feel as if I'm waving it at you? All I ask is I be called Doctor!"
-    o "You are no doctor, witch! You never will be!"
-
-    ...
-
-    mt "That guy hated me. I figured he was the town 'healer' before me and hated me for it, but I never asked. Last I heard, he was either dead or very close to it! I hope he didn't pass on so angry."
-    m happy "Anyway, I think it's about time for breakfast."
-    ###
-    mt "You can't be serious! I wonder who's even here?"
-    "A woman, a head taller than you with dark, curly hair stands at the door. She seems... excited?"
-    l "Excuse me... are you Mira?"
-    m "Yes, I am. May I know why your asking?"
-    l "Oh, thank you! Thank you!"
-    ## hug cg
-    m confused "What have I done for you? Haven't we only just met?"
-    l "You saved my brother's skin yesterday in those woods! I told him without you he'd have gotten some horrible infectiom, who knows where that wretched beast had been?!"
+   
     
-    m happy "Oh, that knight? I'm happy to hear he's doing okay!"
-    l "Ah, how rude of me! I am Lavinia, he is Asher. We hunt monsters!"
-    mt "Monster hunter neighbors? I don't know whether to feel safe or threatened?"
-    l "I- I know it isn't a typical occupation, but Boderholt is somewhat of a hunter town. Regular people just don't like how close we are to that thing. They think it'll come out and get them."
-    mt "I guess that's why the land here wasn't very expensive."
-    l "Jokes on them though, that thing's never stepped foot outside those woods and we live here for hardly anything!"
-    m neutrual "I don't blame them..."
-    l "You should expect to be seeing a lot of us! We get hurt a lot, and our usual healer is horribly far away."
-    m "I'm more of a doctor."
-    l "They're different from eachother?"
-    m confused "They are."
-    l "Huh. Well, I'll stop bothering you so early in the morning. Goodbye now!"
-    "She probably lives really close."
-    ## mira sprite
-    mt "I guess I have my work cut out for me..."
-    mt "I think I'm going to go out to buy something to eat. I want to see the town!"
-    scene black with fade
-    ## path
-    mt "I really, {i}really{/i} wish I had a horse."
-    ### town
-    m happy "This town is actually really cute! I love the buildings here."
-    "The small buildings are placed around off the path, as neatly as they can be among the trees."
-    mt "I'd say the trees here are huge, but they seem quite small compared to the ones I saw last night. I guess this is just a regular patch of woods growing around that place... "
-    mt "I know that Boderholt doesn't export any lumber. No one would buy any from here because they think it's cursed, but these trees seem normal. "
-    m happy "There's a bakery here! Is it even open?"
-    "It's an odd structure, built half into a large tree, acting as the foundation."
 
-    m sad "Huh, I guess it is closed."
-    ##3 scene change door open
-    "A man stands in the doorframe. He is just barely taller than you are, and looks quite strong."
-    mag "Ah, good morning! Have we met before?"
-    m happy "No, we haven't. I've just moved here from quite far away."
-    mag "I see! Welcome to Boderholt! I'm Magnus. This is my bakery."
-    m happy "I'm Mira! I'm a doctor!"
-    ### shock
-    mag "Really? Why would someone like yourself move to a place like this? Why not a big city?"
-    m confused "Don't I have the right to go where I please?"
-    mag "Ah, I didn't mean to offend you, I'm just genuinely curious!"
-    m happy "No, it's alright. Are you open?"
-    mag "Well, I guess I am now! Come in!"
-    ### insideee
-    "The bakery is very rustic, with a small interior with the loaves on display, and small tables to sit at."
-    mt "It smells really good in here! I'm so hungry..."
-    mag "Well... what would you like?"
-    m confused "Uhh..."
-    menu optional_name:
-        "Say Statement"
-        "A bagel!":
-            m happy "Can I get a bagel?"
-            mag "Of course you can!"
-        "A muffin!":
-            m happy "Can I get a muffin, please?"
-            mag "Sure!"
-    
-    "Someone else comes into the store."
-    
-    k "Good morning, Magnus."
-    mag "God, Keiran, you look awful. Did you sleep at all?"
-    k "{sc=1}No. I didn't.{sc=1} Wait, who is this?"
-    mag "Why don't you just{i}ask her,{/i}  dude?"
-    k "Oh, man, sorry. Hello. My name's Kieran. I kill monsters. What's your name?"
-    m happy "I'm Mira! Nice to meet you."
-    mt "He really does look awful. Like he just left a warzone..."
-    mag "You want anything?"
-    k "Give me anything!"
-    
 
 
         
