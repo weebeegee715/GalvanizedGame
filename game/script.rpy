@@ -127,6 +127,7 @@ define c = Character("Coachman", callback=guy_beep, color="#917dc8")
 define mv = Character("???", image="val", callback=val_beep, color="#de9c01", what_size = 37)          
 define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 37)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
+define mcg = Character("Mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
 define kn = Character("Knight", callback=guylow_beep, color="#417ce4")
 define o = Character("O'Keefe", callback=guylow_beep, color="#664011")
@@ -329,8 +330,47 @@ label start:
     play sound 'audio/DirtSteps.mp3'
     "{i}You go the direction the man you helped fled from.{/i}"
 
-    show placeholderforest at truecenter
-    "You hear a raging in the distance. What on earth are they fighting?!"
+    scene placeholderforest at truecenter
+    m confused "I don't hear any fighting... maybe it went away?"
+    m scared "Eek!" with sshake
+    mt "Did a tree fall?! That was really loud... "
+    mv "{bt=3}{size=45}Ugh...{/size}{/bt}"
+    m confused "Huh? Is someone there?"
+    mt "Maybe some of that man's friends are here? I need to help them!"
+
+    scene black
+    with dissolve
+    m scared "Ah!"
+    scene valreveal with fade
+    m scared "..."
+    "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. It isn't concious, at least not yet. "
+    mt "What do I do?! I think she took a fall! Did she hit her head?"
+    mt "How am I even supposed to help? Uh..."
+    m scared "Hello? Can you hear me?! Are you alright?!"
+    mv "..."
+    mt "Am I even supposed to be helping...? This isn't just some human-looking monster, right?!"
+    mt "Maybe I should just leave, I might not-{w=.15}}{nw}"
+    mv "Hmm?"
+    scene miralookup with fade
+    "The world begins shift around you as it awa"
+    mcg "{sc=3}{size=27}i-i'm... Uhm... {/size}{/sc}"
+    mt "Why can't I move? Why am I not moving?!"
+    scene valshadow with dissolve
+    "In an instant, it becomes clear to you that you are going to be grabbed."
+    mcg "{sc=3}{size=27}...!{/size}{/sc}"
+    scene valgrabmad with fade
+    mv "{size=45}{sc=1}{b}{i}Who are you?! What do you want with me?!{/i}{/b}{/sc}{/size}"
+    "It's like you've been caught in a vise. "
+    m scared "I'm sorry! I'm sorry! You fell, and I, I didn't know if- I'll leave! I'll never come back!"
+    scene valgrabsad
+    mv "{size=45}You're not- you aren't a hunter?{/size}"
+    m scared "No!"
+    mv "Ah. I'm very sorry, I'm on edge. I- I've just been attacked, I thought you were trying to catch me off guard..."
+    mv "Please forgive me, miss..."
+
+
+
+
 
 
     ####
