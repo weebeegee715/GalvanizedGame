@@ -351,23 +351,30 @@ label start:
     mt "Am I even supposed to be helping...? This isn't just some human-looking monster, right?!"
     mt "Maybe I should just leave, I might not-{w=.15}}{nw}"
     mv "Hmm?"
-    scene miralookup with fade
-    "The world begins shift around you as it awa"
-    mcg "{sc=3}{size=27}i-i'm... Uhm... {/size}{/sc}"
-    mt "Why can't I move? Why am I not moving?!"
+    scene miralookup with fade 
+    "The world begins shift around you as whatever you shouted at comes to."
+    mcg "{sc=3}{size=27}oh no... {/size}{/sc}"
+    mt "Why can't I move? Why am I not moving?! I need to run!"
     scene valshadow with dissolve
-    "In an instant, it becomes clear to you that you are going to be grabbed."
+    mt "God, It's going to grab me!"
     mcg "{sc=3}{size=27}...!{/size}{/sc}"
     scene valgrabmad with fade
     mv "{size=45}{sc=1}{b}{i}Who are you?! What do you want with me?!{/i}{/b}{/sc}{/size}"
-    "It's like you've been caught in a vise. "
+    "It's like you've been caught in a vise. You want to shield yourself, but your hands are pinned firmly to your sides. It's hard to breathe."
     m scared "I'm sorry! I'm sorry! You fell, and I, I didn't know if- I'll leave! I'll never come back!"
     scene valgrabsad
     mv "{size=45}You're not- you aren't a hunter?{/size}"
+    "Her face, which looked ready to tear you to shreds a moment ago softens, confused. "
     m scared "No!"
-    mv "Ah. I'm very sorry, I'm on edge. I- I've just been attacked, I thought you were trying to catch me off guard..."
-    mv "Please forgive me, miss..."
-
+    mv "Oh..."
+    scene black with fade
+    "You are uncerimoniously released to the ground."
+    show placeholderforest at truecenter
+    m sad "{size=27}hah...{/size}"
+    mt "That really hurt me.."
+    mv "..."
+    mv ""
+    
 
 
 
@@ -399,9 +406,8 @@ label start:
     "You hear something through the wall."
 
     # "I didn't want to wake you then." < :[
-    mv "{bt=3}{size=45}This is taking foreverrr...{/size}{/bt}"
-    mv "{bt=3}{size=45}Is she {i}seriously{/i} still asleep?{/size}{/bt}"
-    
+    mv "{bt=3}{size=45}How tired I am...{/size}{/bt}"
+
     mt "That voice! From last night! Don't tell me..."
     "You feel the ground, no doubt some shelf or table, shake beneath you as the witch comes closer." with sshake
     m sad "What do I do?"
