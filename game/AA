@@ -117,3 +117,7 @@
     mag "You are going to get hurt out there, and you're not even taking it seriously."
     k "You don't get to quit and then preach to everyone to do the same! I'm not {i}like{/i} you."
     
+    "She doesn't seem to be fazed by your expression of abject terror. She looks like she hasn't slept all night."
+    mv "{i}Finally.{/i} I felt like I was waiting forever. Let's do this quickly."
+    mv "You want to leave this place, don't you?"
+    m "{sc=3}{size=27}yes. please.{/size}{/sc}"

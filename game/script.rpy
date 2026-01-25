@@ -266,7 +266,7 @@ label start:
 
     scene placeholderforest
     with fade
-    m sad "I'm getting tired..."
+    m sad "I'm cold..."
     mt "I've been walking for hours, but haven't made any progress!" 
     mt "I'd figured the Heart would've been some kind of odd flower, but there is {i}nothing{/i} here!"
 
@@ -299,9 +299,9 @@ label start:
     kn "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
     kn "That thing bested us in seconds! I ran away before it got any worse."
     m "Surely you've faced this kind beast before?"
-    kn "No! This wasn't some typical monster, it was something else entirely! It had magic, like a witch! And by God, it was huge! it blocked out the moon!"
+    kn "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge! it blocked out the moon!"
     m "Really? That's terrifying!"
-    kn "Yes, but, {i} we must be going now!{/i}"
+    kn "Yes, but, {i} we must be going now!{/i} It's freezing!"
 
     scene placeholderforest at truecenter
     with fade 
@@ -350,35 +350,70 @@ label start:
     mv "..."
     mt "Am I even supposed to be helping...? This isn't just some human-looking monster, right?!"
     mt "Maybe I should just leave, I might not-{w=.15}}{nw}"
-    mv "Hmm?"
+    mv "Huh?"
     scene miralookup with fade 
     "The world begins shift around you as whatever you shouted at comes to."
     mcg "{sc=3}{size=27}oh no... {/size}{/sc}"
     mt "Why can't I move? Why am I not moving?! I need to run!"
-    scene valshadow with dissolve
-    mt "God, It's going to grab me!"
-    mcg "{sc=3}{size=27}...!{/size}{/sc}"
-    scene valgrabmad with fade
-    mv "{size=45}{sc=1}{b}{i}Who are you?! What do you want with me?!{/i}{/b}{/sc}{/size}"
-    "It's like you've been caught in a vise. You want to shield yourself, but your hands are pinned firmly to your sides. It's hard to breathe."
-    m scared "I'm sorry! I'm sorry! You fell, and I, I didn't know if- I'll leave! I'll never come back!"
-    scene valgrabsad
-    mv "{size=45}You're not- you aren't a hunter?{/size}"
-    "Her face, which looked ready to tear you to shreds a moment ago softens, confused. "
-    m scared "No!"
-    mv "Oh..."
-    scene black with fade
-    "You are uncerimoniously released to the ground."
-    show placeholderforest at truecenter
-    m sad "{size=27}hah...{/size}"
-    mt "That really hurt me.."
+    ## i want this to be like an establishing like panning shot like a looking up
+    scene madval with fade
+    mv "{size=45}{sc=1}{b}{i}Who are you?! What did you do to me?!{/i}{/b}{/sc}{/size}"
+    m scared "{sc=3}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
+    mv "What difference does my wellbeing have on your life? Are you lying?"
+    m angry "{sc=3}{size=27}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
+    ## >:o
     mv "..."
-    mv ""
+    mt "That wasn't very wise... Why can't I hold my tongue?"
+    ## >:]
+    mv "That was quite bold of you."
+
+   
+
+
+
+
     
 
+    "She pauses for quite a while."
+    mv "You're very ill-dressed for the weather, miss. Do you intend to die in this cold?"
+    m sad "{size=27}...{/size}"
+    mv "Oh, don't clam up now!"
+    "She seems to have taken offense to the lack of an answer."
+    m scared "{size=27}No! No I dont!{/size}"
+    mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to visitors?"
+    mt "How do I say this? I don't want to tell her I was planning to steal from her, but..."
+    m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
+    mv "That's a funny question. Wouldn't I be dead without it?"
+    m scared "It's your actual heart!?"
+    ## >XD hahaha
+    mv "I'm still suprised how many of you come with so little knowledge of me. Of {i}it.{/i}"
+    mv "Of course it's mine. And I don't think you're prepared to cut it out."
+    m sad "How awful... They talked about it like some artifact. I would've never come here if I knew. Such disrepect..."
+    m sad "I'm very sorry. I'll- I'll go now. Goodbye."
+    ## <:O
+    mv "No!"
+    m scared "Huh?!"
+    ### <:c
+    mv "It's going to snow. Lots. You'll be caught in it. "
+    m sad "Really?! Even if I head back the way I came?"
+    mv "This place shifts by the second. You'll be lost in this weather."
+    m sad "..."
+    mv "I'd feel quite badly if I let {i}you{/i} die, but..."
+    mv "I'll help you. But I can't guarantee you'll like it, miss."
+    mt "What is that supposed to mean? At least I'm being given a choice."
+    m angry "I'll accept, on the condition no harm comes to me."
+    mv "None will. I can swear to that."
+    m angry "Then you have a deal."
+    mv "Deal."
+    ## spooky spellll O_O woo
+    m scared "Ahh!"
+    "Some intracate golden pattern fills your vision."
+    "You are the tiredest you've ever been..."
+    ##fall sfx
 
 
-
+    scene black with fade
+    mcg "Huh?"
 
     ####
 
@@ -406,9 +441,9 @@ label start:
     "You hear something through the wall."
 
     # "I didn't want to wake you then." < :[
-    mv "{bt=3}{size=45}How tired I am...{/size}{/bt}"
+    mv "{size=45}Hm? Is that her?{/size}"
 
-    mt "That voice! From last night! Don't tell me..."
+    mt "Damn it! I didn't know she had magic! I'm just making horrible choices, one after the next!"
     "You feel the ground, no doubt some shelf or table, shake beneath you as the witch comes closer." with sshake
     m sad "What do I do?"
     mv "..." with sshake
@@ -424,45 +459,49 @@ label start:
     scene librarydark2
     with dissolve
     show val blue desk sleepy with dissolve
+    m scared "You're a witch..."
+    mv "I told you that you wouldn't like it. I even asked first! I never ask for anything."
+    mv "..."
+    mv "I supopse you find me detestable now? Moreso than before?"
     m scared "..."
-    "She doesn't seem to be fazed by your expression of abject terror. She looks like she hasn't slept all night."
-    mv "{i}Finally.{/i} I felt like I was waiting forever. Let's do this quickly."
-    mv "You want to leave this place, don't you?"
-    m "{sc=3}{size=27}yes. please.{/size}{/sc}"
+    mv "Didn't I say I wouldn't hurt you?"
+    m scared "How am I supposed to trust you?"
+    mv "Oh, {i}fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
+    m scared "Yes. It does."
+
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
     m "{sc=3}{size=27}{i}apport{/i} us? like, with magic?{/size}{/sc}"
-    mv "What, you think I'm going to hike you there? Yes, magic. Come now."
+    mv "What, you think I'm going to hike there? Yes, magic. Come now."
     scene handwalk with fade
-    "She reaches her hand out to you. It's odd walking from the flat table to her shifting hand."
+    "She reaches her hand out to you. It's odd, standing on it."
     mv "Okay..."
     "She pulls something heavy from under the table with her off-hand."
     scene teleport1 with fade
     m scared "{sc=5}Why do you have an axe?!{/sc}"
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
-    m neutral "{sc=3}Well...{/sc} okay."
+    m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
     mv "This is going to take a bit. I'm real tired."
     m "So, you're okay from yesterday? Did you sleep?"
-    mv "Huh? Yeah, I'm fine. I usually sleep during the day anyway. Less people at night."
-    m "You can't heal with magic?"
+    mv "Huh? No, I'm fine. I usually sleep during the day. Less people at night."
+    m "You're still all scraped. You can't heal with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job?"
     m "...I suppose."
     mv "..."
     m "You live alone?"
     mv "Of course I do. There's no one else here."
-    m happy "I'm Mira. Do you have a name?"
+    m neutral "I'm Mira. Do you have a name?"
     mv "..You talk too much, Mira."
     mt "I do not!"
     scene teleport3 with fade 
     m scared "Aah!"
     mt "That felt really, really weird! How is she used to that?!"
     scene teleport4
-    mv "Well, we're here. What were you even doing here to begin with?"
-    m sad "I was looking for an ingredient for a drug. A cure-all, essentially. But now, I'm right back where I started."
-    mv "Really?"
+    mv "Well, we're here. What were you even going to do with my heart, if you got it?"
+    m sad "I needed it for a drug. A cure-all, essentially. But now, I'm right back where I started. I don't know what I'll do."
+    mv "Oh..."
     # chased from last town?
     m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
-    m "I bet the Darkheart isn't even real... You don't"
     mt "I don't think she cares very much, but it's nice to talk to someone."
     mv "I see."
     scene black with dissolve
@@ -473,13 +512,14 @@ label start:
     "You must be quite far away from her now, but can hear her clear as day."
     m sad "Yes?"
     v "...Im Val. Valencia. But just call me Val."
-    m happy "You have a pretty name, Val."
+    m happy "What a nice name."
+    v "...Please come again."
     "..."
-    mt "I guess she left."
-    m scared "God, what time is it? I need to get back!"
+    mt "She left?"
+    m scared "God, what time is it? I need to get back home!"
 
     scene end1 with fade
-    "{b}Part 1 '' End.{/b}" 
+    "{b}Part 1 'Catalyst' End.{/b}" 
 
     scene black with fade
     "Part 2 '"
