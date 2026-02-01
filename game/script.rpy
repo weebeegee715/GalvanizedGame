@@ -222,7 +222,6 @@ label start:
     with fade
 
     # These display lines of dialogue.
-    m happy "woww im so cool I have art done"
     "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
     
     "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
@@ -275,15 +274,15 @@ label start:
     "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
     show sprite test
-    kn "You! get away from here!"
+    kn "Get away from here! Go!"
 
-    m confused "Why? What's going on? Are you ok, sir?"
-    mt "Clearly, he's not. This guy needs help before his wounds get infected. Good thing I brought my bag."
-    kn "We were fighting that {i}thing! {/i} I don't have time to explain this to you, I need to get out of here!"
-    m neutral "I'm a doctor! My name's Mira. At least let me help you before you go."
+    m confused "Why? What's going on? Are you ok?"
+    mt "He doesn't seem to be threatening me. He looks scared of something."
+    kn "We were fighting that {i}thing! {/i} I don't have time to explain, I need to get out of here!"
+    m neutral "I'm a doctor! My name's Mira. At least let me help you!"
     "He calms down a bit."
-    kn ". . . Alright. Think I've ran far enough for something quick."
-    m happy "Good. I'll get out my things."
+    kn ". . . Alright. Think I've ran far enough. Please, be quick."
+    m happy "Good. Sit down here."
 
     hide sprite test
     scene black
@@ -361,10 +360,10 @@ label start:
     m scared "{sc=3}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
     mv "What difference does my wellbeing have on your life? Are you lying?"
     m angry "{sc=3}{size=27}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
-    ## >:o
+    scene gaspval
     mv "..."
-    mt "That wasn't very wise... Why can't I hold my tongue?"
-    ## >:]
+    mt "That was stupid. Why can't I hold my tongue?"
+    scene smirkval
     mv "That was quite bold of you."
 
    
@@ -373,43 +372,55 @@ label start:
 
 
     
-
+    scene mehval
     "She pauses for quite a while."
     mv "You're very ill-dressed for the weather, miss. Do you intend to die in this cold?"
     m sad "{size=27}...{/size}"
+    scene lessmadval
     mv "Oh, don't clam up now!"
     "She seems to have taken offense to the lack of an answer."
     m scared "{size=27}No! No I dont!{/size}"
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to visitors?"
     mt "How do I say this? I don't want to tell her I was planning to steal from her, but..."
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
+    scene smirkval
     mv "That's a funny question. Wouldn't I be dead without it?"
-    m scared "It's your actual heart!?"
-    ## >XD hahaha
-    mv "I'm still suprised how many of you come with so little knowledge of me. Of {i}it.{/i}"
+    m scared "Don't tell me it's your {i}actual{/i} heart!?"
+    scene laughval
+    mv "What on earth did you think it was?"
+    scene smirkval
     mv "Of course it's mine. And I don't think you're prepared to cut it out."
     m sad "How awful... They talked about it like some artifact. I would've never come here if I knew. Such disrepect..."
+    scene gaspval
+    mv "..."
+    "She seems to be shocked at your concern for her."
     m sad "I'm very sorry. I'll- I'll go now. Goodbye."
-    ## <:O
-    mv "No!"
+    scene frownval
+    mv "Wait!"
     m scared "Huh?!"
     ### <:c
-    mv "It's going to snow. Lots. You'll be caught in it. "
+    mv "I can't guarantee you'll be able to find a way out of here."
     m sad "Really?! Even if I head back the way I came?"
-    mv "This place shifts by the second. You'll be lost in this weather."
+    mv "This place shifts by the second. You'll be lost. And in such awful weather, too."
     m sad "..."
-    mv "I'd feel quite badly if I let {i}you{/i} die, but..."
-    mv "I'll help you. But I can't guarantee you'll like it, miss."
+    scene sideval
+    mv "{i}{size=17}I guess this is my problem now...{/size}{/i}"
+    mv "I'll help you. But I can't guarantee you'll like it."
     mt "What is that supposed to mean? At least I'm being given a choice."
     m angry "I'll accept, on the condition no harm comes to me."
     mv "None will. I can swear to that."
     m angry "Then you have a deal."
+    scene smirkval
     mv "Deal."
+    scene handval
     ## spooky spellll O_O woo
     m scared "Ahh!"
     "Some intracate golden pattern fills your vision."
     "You are the tiredest you've ever been..."
+    scene black with fade
     ##fall sfx
+    play sound "audio/oof.ogg"
+
 
 
     scene black with fade
@@ -481,17 +492,22 @@ label start:
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
     m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
-    mv "This is going to take a bit. I'm real tired."
+    mv "This is going to take a bit. I'm quite tired."
     m "So, you're okay from yesterday? Did you sleep?"
     mv "Huh? No, I'm fine. I usually sleep during the day. Less people at night."
-    m "You're still all scraped. You can't heal with magic?"
-    mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job?"
-    m "...I suppose."
+    m "You're still all scraped. You can't heal yourself with magic?"
+    mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}?"
+    m "How'd you know that?"
+    mv "It's obvious. And I heard you yesterday."
+    m "When I was talking to. that man? From that far away?"
     mv "..."
+    m "..."
     m "You live alone?"
-    mv "Of course I do. There's no one else here."
+    mv "Of course I do. Do you see anyone else here?"
+    m "No, It's just..."
     m neutral "I'm Mira. Do you have a name?"
-    mv "..You talk too much, Mira."
+    mt "I guess she knew that already."
+    mv "...You talk too much."
     mt "I do not!"
     scene teleport3 with fade 
     m scared "Aah!"
@@ -512,11 +528,12 @@ label start:
     "You must be quite far away from her now, but can hear her clear as day."
     m sad "Yes?"
     v "...Im Val. Valencia. But just call me Val."
-    m happy "What a nice name."
-    v "...Please come again."
+    mt "She told me her name..."
+    m happy "It's nice to meet you."
     "..."
     mt "She left?"
-    m scared "God, what time is it? I need to get back home!"
+    "You see the sunrise. It's beautiful."
+    mt "What a night..."
 
     scene end1 with fade
     "{b}Part 1 'Catalyst' End.{/b}" 
