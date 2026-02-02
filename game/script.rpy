@@ -353,12 +353,12 @@ label start:
     mt "Maybe I should just leave? But how could I?"
     mv "{bt=2}Agh....{/bt}"
     scene miralookup with fade 
-    "The world begins shift around you as whatever you shouted at comes to."
+    "The world begins shift around you as whatever you shouted at comes to." with vpunch
     mcg "{sc=3}{size=27}.{w=0.1} .{w=0.1} . {/size}{/sc}"
     mt "Why can't I move? Why am I not moving?! I need to run!"
     ## i want this to be like an establishing like panning shot like a looking up
     scene madval with fade
-    mv "{size=45}{sc=1}{b}{i}Who are you?! What did you do to me?!{/i}{/b}{/sc}{/size}"
+    mv "{sc=2}{i}{size=45}Who are you?! What did you do to me?!{/size}{/i}{/sc}"
     m scared "{sc=3}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
     mv "What difference does my wellbeing have on your life? Are you lying?"
     m angry "{sc=3}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
@@ -379,9 +379,9 @@ label start:
     mv "You're very ill-dressed for the weather, miss. Do you intend to die in this cold?"
     m sad "{size=27}...{/size}"
     scene lessmadval
-    mv "Oh, don't clam up now!"
-    "She seems to have taken offense to the lack of an answer."
+    mv "Oh, don't get all quiet now!"
     m scared "{size=27}No! No I dont!{/size}"
+    scene mehval
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to visitors?"
     mt "How do I say this? I don't want to tell her I was planning to steal from her, but..."
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
@@ -390,23 +390,30 @@ label start:
     m scared "Don't tell me it's your {i}actual{/i} heart!?"
     scene laughval
     mv "What on earth did you think it was?"
+    mt "That's a good question."
     scene smirkval
-    mv "Of course it's mine. And I don't think you're prepared to cut it out."
-    m sad "How awful... They talked about it like some artifact. I would've never come here if I knew. Such disrepect..."
+    mv "Of course it's mine. And I don't think you're quite prepared to carve it out of me."
+    m sad "How awful! My books talked about it like some kind of artifact. I would've never come here if I knew, believe me."
+    mv "Well you didn't, and you did. Congrats on your wasted time."
+    mv "I won't hurt you for it, if that's what you're so worked up about. No harm done."
+    m sad "I'm truly sorry. You don't deserve to be treated that way. I'll search for a substitute immediately, And I hope it will get people to leave you be."
     scene gaspval
-    mv "..."
-    "She seems to be shocked at your concern for her."
-    m sad "I'm very sorry. I'll- I'll go now. Goodbye."
+    mv "...!"
+    m sad "I'll leave this very instant. My apologies, and goodbye."
     scene frownval
+    ## more subtle less yuri. slowly slowly catching monkey
     mv "Wait!"
     m scared "Huh?!"
-    ### <:c
+    scene mehval
     mv "I can't guarantee you'll be able to find a way out of here."
     m sad "Really?! Even if I head back the way I came?"
-    mv "This place shifts by the second. You'll be lost. And in such awful weather, too."
-    m sad "..."
+    mv "These woods shift by the second, especially at this hour. You'll be lost. And in such awful weather, too."
+    m sad "...Oh no. I really am a fool..."
+    m sad "{size=30}{bt=2}What do I do...{/bt}{/size}"
+    mv"..."
+    scene madval
+    mv "Will you stop that? You win. I feel bad. You've managed to make me feel bad."
     scene mehval
-    mv "{i}{size=17}I guess this is my problem now...{/size}{/i}"
     mv "I'll help you. But I can't guarantee you'll like it."
     mt "What is that supposed to mean? At least I'm being given a choice."
     m angry "I'll accept, on the condition no harm comes to me."
@@ -423,11 +430,15 @@ label start:
     scene black with fade
     ##fall sfx
     play sound "audio/oof.ogg"
-    mv "Yup..."
+    mcg "{w=0.7}.{w=0.2}.{w=0.2}."
+    mv "Yeah, she's out cold."
+    "..."
 
-
+    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
 
     scene black with fade
+    "..."
+    mcg "{w=0.7}.{w=0.2}.{w=0.2}."
     mcg "Huh?"
 
     ####
@@ -443,7 +454,7 @@ label start:
 
     
     "Early morning light shines through the room from an excessively large window behind you, but you cannot make out the walls. It's like this room goes on forever."
-    m confused "Where's the door?!"
+    m scared "Where's the door?!"
 
     scene librarydark2 at truecenter
     with dissolve
@@ -456,31 +467,34 @@ label start:
     "You hear something through the wall."
 
     # "I didn't want to wake you then." < :[
-    mv "{size=45}Hm? Is that her?{/size}"
-
-    mt "Damn it! I didn't know she had magic! I'm just making horrible choices, one after the next!"
-    "You feel the ground, no doubt some shelf or table, shake beneath you as the witch comes closer." with sshake
+    mv "Hm? Is that her?"
+    
+    mt "It's her! From yesterday! That felt like it was just some dream, truly..."
+    mt "I wouldn't have accepted if I'd known she was a witch! I'm just making awful choices, one after the next!"
+    "You feel the ground, no doubt some shelf or table, shake beneath you as she looms closer." with sshake
     m sad "What do I do?"
     mv "..." with sshake
     ## wallking sfx
     mt "Hide!"
     scene darklairthrow
+    # this needs a sound
     "You pull the heavy quilt back over your head. "
     scene black with dissolve
     mt "This was a horrible idea."
     #### door creak
+    ## step stp step
     mt "She must be staring dead at me..."
     mv "I know you're up. I heard you."
     scene librarydark2
     with dissolve
     show val blue desk sleepy with dissolve
-    m scared "You're a witch..."
+    m scared "You're a..."
     mv "I told you that you wouldn't like it. I even asked first! I never ask for anything."
     mv "..."
     mv "I supopse you find me detestable now? Moreso than before?"
     m scared "..."
     mv "Didn't I say I wouldn't hurt you?"
-    m scared "How am I supposed to trust you?"
+    m scared "...How am I supposed to trust you?"
     mv "Oh, {i}fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
     m scared "Yes. It does."
 
