@@ -249,11 +249,12 @@ label start:
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
     m angry "You couldn't have told me this earlier?! This is a matter of urgency!"
     c "I'm turning back now. Are you coming or not?"
-    m angry "Most certainly not!"
+    m angry "Most certainly not! You deny the coin of a customer because of a children's fairy tale? I will walk precisely through these woods on my own two feet and be better for it!"
     c "Suit yourself."
+    m angry "I have!"
     hide sprite test with moveoutright
     
-    m "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
+    m angry "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
     show sprite test with dissolve
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
     mt "..."
@@ -267,18 +268,18 @@ label start:
     with fade
     m sad "I'm cold..."
     mt "I've been walking for hours, but haven't made any progress!" 
-    mt "I'd figured the Heart would've been some kind of odd flower, but there is {i}nothing{/i} here!"
+    mt "Not that I know what I'm even looking for... Maybe I should just go home."
 
     
     show small mira test with dissolve
     "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
     show sprite test
-    kn "Get away from here! Go!"
+    kn "Run! You must go!"
 
-    m confused "Why? What's going on? Are you ok?"
+    m confused "Why? Are you alright?"
     mt "He doesn't seem to be threatening me. He looks scared of something."
-    kn "We were fighting that {i}thing! {/i} I don't have time to explain, I need to get out of here!"
+    kn "We were fighting that {i}thing!{/i} I don't have time to explain, I need to get out of here!"
     m neutral "I'm a doctor! My name's Mira. At least let me help you!"
     "He calms down a bit."
     kn ". . . Alright. Think I've ran far enough. Please, be quick."
@@ -294,34 +295,32 @@ label start:
 
     
     
-    m "What happened to you? What on earth were you fighting?"
-    kn "There's a m-monster in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
+    m "What happened to you?"
+    kn "There's something in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
     kn "That thing bested us in seconds! I ran away before it got any worse."
-    m "Surely you've faced this kind beast before?"
-    kn "No! This wasn't some typical monster, it was something else entirely! And by God, it was huge! it blocked out the moon!"
-    m "Really? That's terrifying!"
-    kn "Yes, but, {i} we must be going now!{/i} It's freezing!"
+    m "Surely you've faced this kind of animal before?"
+    kn "No! Not an {i}animal{/i}, a {i}monster!{/i} a horrible, lumbering thing!"
+    m "...what?"
+    kn "{i}We must be going now!{/i} It's freezing!"
 
     scene placeholderforest at truecenter
     with fade 
     show sprite test with dissolve
     kn "{i}Thank you for all your help! Let's make haste!{/i}"
-    "Should I go with him? I'm scared to continue, but, I may never have a chance like this to get the Heart again!"
+    mt "I can't go with him. Not only do I not know this man, I am not entirely sure he has his wits about him."
     m sad "I'm sorry, but I can't leave just yet."
     kn "{i}What?! Well, I'm not waiting around!{/i}"
     hide sprite test with moveoutright
-    "He ran off!"
+    # run sfx
+    mt "He ran off! Some knight he is!"
 
-    show sprite test with dissolve
-    mt "{i}How horrible... these woods truly are cursed! But I need the heart! I won't give up!{/i}"
-    # pls draw progressively more upset sprites plzzz
-    show sprite test
-    mt "{i}I'm woefully underprepared too. That man was armed to the teeth, and still made a run for it.{/i}"
-    show sprite test
+    mt "A madman, I'm sure. But his outfit looked official enough..."
+    m angry "Come what may, I'm not leaving without the heart. I'm not."
+    # pls draw progressively more upset sprites plzzz NO!!
+    m sad "But I'm woefully underprepared. That man was armed to the teeth, and still made a run for it."
     mt "{i}...{/i}"
     # >:[ 
-    show sprite test
-    mt "I can't give up."
+    m angry "I can't give up."
     
     hide sprite test with dissolve
     scene black
@@ -329,37 +328,40 @@ label start:
     play sound 'audio/DirtSteps.mp3'
     "{i}You go the direction the man you helped fled from.{/i}"
 
-    scene placeholderforest at truecenter
-    m confused "I don't hear any fighting... maybe it went away?"
-    m scared "Eek!" with sshake
+    scene placeholderforest at truecenter 
+    with fade
+    m confused "I don't hear anything. Maybe he really did make it up."
+    m angry "That crazy fool really got me all scared for nothing?!"
+    mt "I pray the town I've just moved into isn't full of people like him. Gone crazy with fairy tales."
+    m scared "{w=0.3}Eek!" with sshake
     mt "Did a tree fall?! That was really loud... "
-    mv "{bt=3}{size=45}Ugh...{/size}{/bt}"
-    m confused "Huh? Is someone there?"
-    mt "Maybe some of that man's friends are here? I need to help them!"
+    mv "{sc=2}{size=25}U{w=0.2}g{w=0.2}h{w=0.2}h{w=0.2}.{w=0.2}.{w=0.2}.{/size}{/sc}"
+    m confused "Huh? Is someone there?!"
+    mt "Maybe someone who was with that man? Was he telling me the truth, after all?"
 
     scene black
     with dissolve
-    m scared "Ah!"
+    m scared "...huh?"
     scene valreveal with fade
     m scared "..."
-    "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. It isn't concious, at least not yet. "
-    mt "What do I do?! I think she took a fall! Did she hit her head?"
-    mt "How am I even supposed to help? Uh..."
+    "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. Not fully concious, at least not yet. "
+    mt "What do I do?! Do I help? Should I? {b}can{/b} I?"
+    m scared "How am I even supposed to... Uh..."
     m scared "Hello? Can you hear me?! Are you alright?!"
     mv "..."
-    mt "Am I even supposed to be helping...? This isn't just some human-looking monster, right?!"
-    mt "Maybe I should just leave, I might not-{w=.15}}{nw}"
-    mv "Huh?"
+    mt "I don't think this is very smart..."
+    mt "Maybe I should just leave? But how could I?"
+    mv "{bt=2}Agh....{/bt}"
     scene miralookup with fade 
     "The world begins shift around you as whatever you shouted at comes to."
-    mcg "{sc=3}{size=27}oh no... {/size}{/sc}"
+    mcg "{sc=3}{size=27}.{w=0.1} .{w=0.1} . {/size}{/sc}"
     mt "Why can't I move? Why am I not moving?! I need to run!"
     ## i want this to be like an establishing like panning shot like a looking up
     scene madval with fade
     mv "{size=45}{sc=1}{b}{i}Who are you?! What did you do to me?!{/i}{/b}{/sc}{/size}"
     m scared "{sc=3}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
     mv "What difference does my wellbeing have on your life? Are you lying?"
-    m angry "{sc=3}{size=27}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
+    m angry "{sc=3}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
     scene gaspval
     mv "..."
     mt "That was stupid. Why can't I hold my tongue?"
@@ -465,7 +467,7 @@ label start:
     scene darklairthrow
     "You pull the heavy quilt back over your head. "
     scene black with dissolve
-    mt "This was a horrible idea! A horrible, no good, awful idea!"
+    mt "This was a horrible idea."
     #### door creak
     mt "She must be staring dead at me..."
     mv "I know you're up. I heard you."
