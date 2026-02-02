@@ -364,7 +364,7 @@ label start:
     mv "..."
     mt "That was stupid. Why can't I hold my tongue?"
     scene smirkval
-    mv "That was quite bold of you."
+    mv "It's quite refreshing for someone to speak so boldy with me. Most I interact with are the most craven of cowards."
 
    
 
@@ -403,7 +403,7 @@ label start:
     m sad "Really?! Even if I head back the way I came?"
     mv "This place shifts by the second. You'll be lost. And in such awful weather, too."
     m sad "..."
-    scene sideval
+    scene mehval
     mv "{i}{size=17}I guess this is my problem now...{/size}{/i}"
     mv "I'll help you. But I can't guarantee you'll like it."
     mt "What is that supposed to mean? At least I'm being given a choice."
@@ -414,12 +414,14 @@ label start:
     mv "Deal."
     scene handval
     ## spooky spellll O_O woo
-    m scared "Ahh!"
-    "Some intracate golden pattern fills your vision."
+    m scared "Huh?"
+    "Some intracate golden pattern wraps around her finger."
+    mv "I bet this'll do nicely."
     "You are the tiredest you've ever been..."
     scene black with fade
     ##fall sfx
     play sound "audio/oof.ogg"
+    mv "Yup..."
 
 
 
@@ -493,7 +495,7 @@ label start:
     m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
     mv "This is going to take a bit. I'm quite tired."
-    m "So, you're okay from yesterday? Did you sleep?"
+    m "So, you're okay from earlier? Did you sleep?"
     mv "Huh? No, I'm fine. I usually sleep during the day. Less people at night."
     m "You're still all scraped. You can't heal yourself with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}?"
@@ -502,13 +504,15 @@ label start:
     m "When I was talking to. that man? From that far away?"
     mv "..."
     m "..."
-    m "You live alone?"
+    m "Why'd you put me to sleep? What was that for?"
+    mv "I don't want you knowing the first thing about how I unlock my seals, not even with your eyes closed. Cant risk that."
+    m "Why didn't you just do that with those men yesterday?"
+    mv "I asked you first, didn't I?"
+    m "I guess that is true... Do you live alone?"
     mv "Of course I do. Do you see anyone else here?"
     m "No, It's just..."
     m neutral "I'm Mira. Do you have a name?"
-    mt "I guess she knew that already."
-    mv "...You talk too much."
-    mt "I do not!"
+    mv "Not that you need to know."
     scene teleport3 with fade 
     m scared "Aah!"
     mt "That felt really, really weird! How is she used to that?!"
@@ -523,17 +527,16 @@ label start:
     scene black with dissolve
     "She sets you down, and you ungracefully climb out of her hand."
     scene forestentrance with fade
-    mt "I wonder what I'll do now..."
+    mt "I wonder what I'll do now."
     mv "Mira?"
-    "You must be quite far away from her now, but can hear her clear as day."
+    "You cant see her now, but can hear her clear as day."
     m sad "Yes?"
-    v "...Im Val. Valencia. But just call me Val."
-    mt "She told me her name..."
-    m happy "It's nice to meet you."
+    mv "Don't come back. Please."
+    m confused "{i}What?{/i} Why?"
     "..."
-    mt "She left?"
-    "You see the sunrise. It's beautiful."
-    mt "What a night..."
+    mt ""
+    "You see the sunrise."
+    mt "I don't know what to make of this..."
 
     scene end1 with fade
     "{b}Part 1 'Catalyst' End.{/b}" 
