@@ -299,7 +299,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("Start") action Start() activate_sound "audio/ding.mp3"
 
         else:
 

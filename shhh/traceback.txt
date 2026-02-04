@@ -1,0 +1,48 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 354, in script
+    mv "{bt=0.5}Agh....{/bt}"
+  File "game/kinetic_text_tags.rpy", line 494, in bounce_tag
+    amp = int(argument[0])
+          ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 354, in script
+    mv "{bt=0.5}Agh....{/bt}"
+  File "renpy/ast.py", line 2915, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1543, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1198, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 868, in display_say
+    what_text.update()
+    ~~~~~~~~~~~~~~~~^^
+  File "renpy/text/text.py", line 2435, in update
+    tokens = self.apply_custom_tags(tokens)
+             ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/text/text.py", line 3016, in apply_custom_tags
+    new_contents = func(tag, value, contents)
+                   ~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "game/kinetic_text_tags.rpy", line 494, in bounce_tag
+    amp = int(argument[0])
+          ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '0.5'
+
+macOS-15.6-arm64-arm-64bit arm64
+Ren'Py 8.4.1.25072401
+Galvanized 1.0
+Sun Feb  1 20:29:30 2026

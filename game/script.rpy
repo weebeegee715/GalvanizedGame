@@ -212,32 +212,33 @@ image side mira scared:
 # The game starts here.
 
 label start:
-    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 1.0 volume 0.5
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-
+    scene black 
+    with Dissolve (3.0)
+    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.4
     scene paper1
-    with fade
+    with Fade (out_time=1.0, hold_time=1.0, in_time=3.0)
 
     # These display lines of dialogue.
-    "The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder."
+    "{i}The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder.{i}"
     
-    "Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater."
+    "{i}Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater.{i}"
 
     scene paper2
     with dissolve
 
-    "The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form. The very pinnacle of medicine."
-    "You have tried mixing sulfur and mercury in every fashion to no avail. But there is one thing you haven't tried..."
+    "{i}The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form. The very pinnacle of medicine.{/i}"
+    "{i}You have tried mixing sulfur and mercury in every fashion to no avail. But there is one thing you haven't tried...{/i}"
 
     scene paper3
     with dissolve
 
-    "The Darkheart, said to be the key to creating the mythical stone."
-    "Guarded by a terrible beast in a tall, dark wood, only showing itself in the dead of night."
-    "But, you scarcely believe in monsters..."
+    "{i}The Darkheart, said to be the key to creating the mythical stone.{/i}"
+    "{i}Said to be guarded by a terrible beast in a tall, dark wood, only showing itself in the dead of night.{/i}"
+    "{i}But, you scarcely believe in monsters...{/i}"
   
 
     scene forestentrance 
@@ -252,8 +253,9 @@ label start:
     m angry "Most certainly not! You deny the coin of a customer because of a children's fairy tale? I will walk precisely through these woods on my own two feet and be better for it!"
     c "Suit yourself."
     m angry "I have!"
-    hide sprite test with moveoutright
+    hide sprite test with moveoutleft
     
+    mt "He actually left me here!"
     m angry "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
     show sprite test with dissolve
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
@@ -382,7 +384,7 @@ label start:
     mv "Oh, don't get all quiet now!"
     m scared "{size=27}No! No I dont!{/size}"
     scene mehval
-    mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to visitors?"
+    mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
     mt "How do I say this? I don't want to tell her I was planning to steal from her, but..."
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
     scene smirkval
@@ -488,21 +490,23 @@ label start:
     scene librarydark2
     with dissolve
     show val blue desk sleepy with dissolve
-    m scared "You're a..."
-    mv "I told you that you wouldn't like it. I even asked first! I never ask for anything."
+    m scared "...What do you want with me?"
+    mv "Nothing. I assure you I've held to our deal."
     mv "..."
-    mv "I supopse you find me detestable now? Moreso than before?"
-    m scared "..."
-    mv "Didn't I say I wouldn't hurt you?"
-    m scared "...How am I supposed to trust you?"
-    mv "Oh, {i}fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
+    mv "I supopse you find me detestable now? Doubly so?"
+    m scared "You didn't tell me you were a {i}witch!{/i}"
+    mv "I haven't even told you my name. I don't understand how you think? Some lumbering {i}thing{/i} is worthy of your help, but you draw the line when I have magic?"
+    m confused "Of course you're worthy of help. Everyone is."
+    m sad "I'm just weary of nagic. I haven't a clue how it works! Ca you blame me?"
+
+    mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
     m "{sc=3}{size=27}{i}apport{/i} us? like, with magic?{/size}{/sc}"
     mv "What, you think I'm going to hike there? Yes, magic. Come now."
     scene handwalk with fade
-    "She reaches her hand out to you. It's odd, standing on it."
+    "She reaches her hand out to you. It's odd standing on the uneven surface."
     mv "Okay..."
     "She pulls something heavy from under the table with her off-hand."
     scene teleport1 with fade
@@ -550,9 +554,9 @@ label start:
     mv "Don't come back. Please."
     m confused "{i}What?{/i} Why?"
     "..."
-    mt ""
+    mt "She left... Why'd she bid me to never return? Does that mean I'll never see her again?"
     "You see the sunrise."
-    mt "I don't know what to make of this..."
+    mt "I don't know what to make of this... "
 
     scene end1 with fade
     "{b}Part 1 'Catalyst' End.{/b}" 
