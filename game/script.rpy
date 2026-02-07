@@ -497,7 +497,8 @@ label start:
     m scared "You didn't tell me you were a {i}witch!{/i}"
     mv "I haven't even told you my name. I don't understand how you think? Some lumbering {i}thing{/i} is worthy of your help, but you draw the line when I have magic?"
     m confused "Of course you're worthy of help. Everyone is."
-    m sad "I'm just weary of nagic. I haven't a clue how it works! Ca you blame me?"
+    m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
+    mt "It is true I don't know the first thing about magic, and it is true I fear it. No doubt. But, I'm more afraid she'll find out I'm an alchemist! Witches hate us!"
 
     mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
     m scared "Yes. It does."
@@ -514,36 +515,105 @@ label start:
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
     m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
-    mv "This is going to take a bit. I'm quite tired."
+    mv "This is going to take a while, I'm quite tired. Stay still."
+    m confused "...{w=0.5}Why isn't anythimg happening?"
+    mv "Apporting is {i}lazy{/i}, not quick. These kinds of things are best taken slowly."
+    m "Why is that?"
+    mv "We'd get nausea if we went any faster. Or we could just get stuck in-between forever."
+    m sad "I thought you said this was safe!"
+    mv "Lucky for you, I actually {i}know{/i} what I'm doing."
+    m "I guess you do."
     m "So, you're okay from earlier? Did you sleep?"
-    mv "Huh? No, I'm fine. I usually sleep during the day. Less people at night."
-    m "You're still all scraped. You can't heal yourself with magic?"
+    mv "Huh? No, I'm fine. I usually sleep during the day anyway. There's less people around at night."
+    m "Oh no! I'm not keeping you awake, am I?"
+    mv "{i}Oh, you are.{/i}"
+    m "Sorry..."
+    m "You're still all scraped. Can't you heal yourself with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}?"
     m "How'd you know that?"
-    mv "It's obvious. And I heard you yesterday."
-    m "When I was talking to. that man? From that far away?"
-    mv "..."
-    m "..."
-    m "Why'd you put me to sleep? What was that for?"
-    mv "I don't want you knowing the first thing about how I unlock my seals, not even with your eyes closed. Cant risk that."
-    m "Why didn't you just do that with those men yesterday?"
-    mv "I asked you first, didn't I?"
-    m "I guess that is true... Do you live alone?"
-    mv "Of course I do. Do you see anyone else here?"
+    mv "It's obvious. And I heard you yesterday, too."
+    m confused "When I was talking to that man? From that far away?"
+    mv "Yeah."
+    m "Really?"
+    mv "Is that odd?"
+    m happy "Honestly, this whole day has been odd. But I'm starting not to mind."
+    mv "...hmm."
+    m confused "Why'd you put me to sleep? What was that even for?"
+    mv "I don't want you knowing the first thing about how I unlock my seals, not even with your eyes closed and not a clue how they work!. I can't risk that."
+    m "But then why didn't you just do that with those men yesterday?"
+    mv "That's not something to be taken lightly. If you fight with magic, you'll kill with magic, sooner or later. Nothing's worth that."
+    m sad "I see."
+    m confused "Are you alone here? You live all by yourself?"
+    mv "Of course I do. Is that odd to you, too?"
     m "No, It's just..."
     m neutral "I'm Mira. Do you have a name?"
-    mv "Not that you need to know."
+    mv "...I'm tired of answering questions."
     scene teleport3 with fade 
     m scared "Aah!"
     mt "That felt really, really weird! How is she used to that?!"
     scene teleport4
-    mv "Well, we're here. What were you even going to do with my heart, if you got it?"
-    m sad "I needed it for a drug. A cure-all, essentially. But now, I'm right back where I started. I don't know what I'll do."
+    mv "Well, we're here."
+    mv "I think I have a question for you, though."
+    m confused "What is it?"
+    mv "Why on earth would {i}you{/i} want the Philosopher's Stone?"
+    m scared "Ah!"
+    mv "Most of the fools try their luck with me because they want power. They want to take things that aren't theirs. Is that what you want? You don't seem the type but..."
+    mv "Looks can be decieving."
+    m scared "It isn't! I swear!"
+    mv "Why were you being so nice to me, hm? I won't be fooled. What do you {i}really{/i} want?"
+    m angry "I need the Panacea! I've spent years of my life watching medecine lag farther and farther behind our problems, and that stupid {i}rock{/i} is the only way to fix it!"
+    m angry "Do you {i}know{/i} how it feels when there is {i}nothing{/i} you can do for someone?"
+    m sad "Someone you care about?"
+    mv "..."
+    m angry "That's what I really want. What I {i}wanted.{/i}"
+    mv "..."
+    m sad "Can you let me go?"
     mv "Oh..."
+    scene black with dissolve
+    "She sets you down, and you ungracefully climb out of her hand."
+    scene forestentrance with fade
+    mv "Mira?"
+    "You cant see her now, but can hear her clear as day."
+    m sad "Yes?"
+    mv "I'm truly sorry, and..."
+    v "My name is Val."
+    "..."
+    mt "I think she's gone."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # chased from last town?
-    m sad "I bought a property right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
+    m sad "I bought a house right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
     mt "I don't think she cares very much, but it's nice to talk to someone."
-    mv "I see."
+    mv "I see. There isn't much I can do for you. I'm sorry."
+    mv ""
     scene black with dissolve
     "She sets you down, and you ungracefully climb out of her hand."
     scene forestentrance with fade
@@ -551,8 +621,8 @@ label start:
     mv "Mira?"
     "You cant see her now, but can hear her clear as day."
     m sad "Yes?"
-    mv "Don't come back. Please."
-    m confused "{i}What?{/i} Why?"
+    mv "...{w=0.1}Don't come back here. {w=0.5}{i}Please.{/i}"
+    m confused "{i}...What?{/i}"
     "..."
     mt "She left... Why'd she bid me to never return? Does that mean I'll never see her again?"
     "You see the sunrise."
