@@ -534,7 +534,7 @@ label start:
     mv "It's obvious. And I heard you yesterday, too."
     m confused "When I was talking to that man? From that far away?"
     mv "Yeah."
-    m "Really?"
+    m gasp s"Really?"
     mv "Is that odd?"
     m happy "Honestly, this whole day has been odd. But I'm starting not to mind."
     mv "...hmm."
@@ -577,71 +577,12 @@ label start:
     m sad "Yes?"
     mv "I'm truly sorry, and..."
     v "My name is Val."
+    m gasp "Oh!"
     "..."
     mt "I think she's gone."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # chased from last town?
-    m sad "I bought a house right by here, too! I planned to work and live here until it was completed, but it seems it was all a waste."
-    mt "I don't think she cares very much, but it's nice to talk to someone."
-    mv "I see. There isn't much I can do for you. I'm sorry."
-    mv ""
-    scene black with dissolve
-    "She sets you down, and you ungracefully climb out of her hand."
-    scene forestentrance with fade
-    mt "I wonder what I'll do now."
-    mv "Mira?"
-    "You cant see her now, but can hear her clear as day."
-    m sad "Yes?"
-    mv "...{w=0.1}Don't come back here. {w=0.5}{i}Please.{/i}"
-    m confused "{i}...What?{/i}"
-    "..."
-    mt "She left... Why'd she bid me to never return? Does that mean I'll never see her again?"
-    "You see the sunrise."
-    mt "I don't know what to make of this... "
-
+    "Sunrise begins to give way into morning. It's time you go home."
     scene end1 with fade
-    "{b}Part 1 'Catalyst' End.{/b}" 
-
-    scene black with fade
-    "Part 2 '"
-
-   
-    
-
-
-
-        
-
-
+    "{b}Part 1 'Catalyst' End.{/b}"
 
     # This ends the game.
 
