@@ -247,7 +247,7 @@ label start:
     show sprite test
     c "I won't be taking you any further, miss."
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
-    c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't taake you much farther in the day, either."
+    c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't take you much farther in the day, either."
     m angry "You couldn't have told me this earlier?! This is a matter of urgency!"
     c "I'm turning back now. Are you coming or not?"
     m angry "Most certainly not! You deny the coin of a customer because of a children's fairy tale? I will walk precisely through these woods on my own two feet and be better for it!"
@@ -277,12 +277,12 @@ label start:
     "You see someone coming! Maybe you could ask them for help?"
     hide small mira test
     show sprite test
-    kn "Run! You must go!"
+    kn "Run! You have to get out of here!"
 
-    m confused "Why? Are you alright?"
+    m confused "Huh? Are you alright, sir?"
     mt "He doesn't seem to be threatening me. He looks scared of something."
     kn "We were fighting that {i}thing!{/i} I don't have time to explain, I need to get out of here!"
-    m neutral "I'm a doctor! My name's Mira. At least let me help you!"
+    m confused "I'm a doctor! My name's Mira. At least let me help you!"
     "He calms down a bit."
     kn ". . . Alright. Think I've ran far enough. Please, be quick."
     m happy "Good. Sit down here."
@@ -302,25 +302,24 @@ label start:
     kn "That thing bested us in seconds! I ran away before it got any worse."
     m "Surely you've faced this kind of animal before?"
     kn "No! Not an {i}animal{/i}, a {i}monster!{/i} a horrible, lumbering thing!"
-    m "...what?"
-    kn "{i}We must be going now!{/i} It's freezing!"
+    m "...huh? You aren't serious. There's no such thing."
+    kn "{i}Oh, yes there are!{/i} And we have to leave now, unless you want to face it!"
 
     scene placeholderforest at truecenter
     with fade 
     show sprite test with dissolve
-    kn "{i}Thank you for all your help! Let's make haste!{/i}"
+    kn "{i}Thank you for your help, but we have to leave! Now! {/i}"
     mt "I can't go with him. Not only do I not know this man, I am not entirely sure he has his wits about him."
     m sad "I'm sorry, but I can't leave just yet."
-    kn "{i}What?! Well, I'm not waiting around!{/i}"
+    kn "{i}What?! I- I must be going!{/i}"
     hide sprite test with moveoutright
     # run sfx
-    mt "He ran off! Some knight he is!"
+    mt "He ran off! Who knew a knight could be so craven?"
 
-    mt "A madman, I'm sure. But his outfit looked official enough..."
+    mt "He's a madman, I'm sure. But his outfit looked official enough to me..."
     m angry "Come what may, I'm not leaving without the heart. I'm not."
-    # pls draw progressively more upset sprites plzzz NO!!
-    m sad "But I'm woefully underprepared. That man was armed to the teeth, and still made a run for it."
-    mt "{i}...{/i}"
+    m sad "But there must have been at least {i}some{/i} truth to his words..."
+    mt "..."
     # >:[ 
     m angry "I can't give up."
     
@@ -333,13 +332,14 @@ label start:
     scene placeholderforest at truecenter 
     with fade
     m confused "I don't hear anything. Maybe he really did make it up."
-    m angry "That crazy fool really got me all scared for nothing?!"
-    mt "I pray the town I've just moved into isn't full of people like him. Gone crazy with fairy tales."
-    m scared "{w=0.3}Eek!" with sshake
+    m angry "That crazy guy really got me all scared for nothing?!"
+    mt "First the coach I hired, and now that knight, both gone crazy with some made-up story? I pray the whole town isn't like that..."
+    m neutral "Well, off I go."
+    m scared "{w=0.4}Eek! What was that?" with sshake
     mt "Did a tree fall?! That was really loud... "
     mv "{sc=2}{size=25}U{w=0.2}g{w=0.2}h{w=0.2}h{w=0.2}.{w=0.2}.{w=0.2}.{/size}{/sc}"
     m confused "Huh? Is someone there?!"
-    mt "Maybe someone who was with that man? Was he telling me the truth, after all?"
+    mt "Maybe someone who was with that man? Hopefully they aren't hurt worse than he was!"
 
     scene black
     with dissolve
@@ -347,12 +347,13 @@ label start:
     scene valreveal with fade
     m scared "..."
     "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. Not fully concious, at least not yet. "
-    mt "What do I do?! Do I help? Should I? {b}can{/b} I?"
+    mt "What do I do?! Do I help? How {i}can{/i} I even help?"
+    mt "This... This isn't a monster at all! This is a person! I think?"
     m scared "How am I even supposed to... Uh..."
     m scared "Hello? Can you hear me?! Are you alright?!"
     mv "..."
     mt "I don't think this is very smart..."
-    mt "Maybe I should just leave? But how could I?"
+    mt "Maybe I should just leave? But how could I? But what if those stories are true, and-"
     mv "{bt=2}Agh....{/bt}"
     scene miralookup with fade 
     "The world begins shift around you as whatever you shouted at comes to." with vpunch
@@ -361,14 +362,14 @@ label start:
     ## i want this to be like an establishing like panning shot like a looking up
     scene madval with fade
     mv "{sc=2}{i}{size=45}Who are you?! What did you do to me?!{/size}{/i}{/sc}"
-    m scared "{sc=3}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
-    mv "What difference does my wellbeing have on your life? Are you lying?"
-    m angry "{sc=3}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
+    m scared "{sc=2}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
+    mv "{i}Hurt?{/i} Why on earth would you care? Are you lying to me?"
+    m angry "{sc=2}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
     scene gaspval
     mv "..."
     mt "That was stupid. Why can't I hold my tongue?"
     scene smirkval
-    mv "It's quite refreshing for someone to speak so boldy with me. Most I interact with are the most craven of cowards."
+    mv "It's quite refreshing for someone to speak so boldy with me... I guess you aren't lying."
 
    
 
@@ -385,20 +386,20 @@ label start:
     m scared "{size=27}No! No I don't!{/size}"
     scene mehval
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
-    mt "How do I say this? I don't want to tell her I was planning to steal from her, but..."
+    mt "How do I say this? I don't want to say I was planning to steal from... her? I think?"
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
     scene smirkval
     mv "That's a funny question. Wouldn't I be dead without it?"
     m scared "Don't tell me it's your {i}actual{/i} heart!?"
     scene laughval
     mv "What on earth did you think it was?"
-    mt "That's a good question."
+    mt "Come to think of it, I wasn't actually sure."
     scene smirkval
     mv "Of course it's mine. And I don't think you're quite prepared to carve it out of me."
     m sad "How awful! My books talked about it like some kind of artifact. I would've never come here if I knew, believe me."
     mv "Well you didn't, and you did. Congrats on your wasted time."
-    mv "I won't hurt you for it, if that's what you're so worked up about. No harm done."
-    m sad "I'm truly sorry. You don't deserve to be treated this way. That's awful."
+    mv "I won't hurt you, if that's what you're so worked up about. No harm done."
+    m sad "I'm truly sorry. No one deserves to be treated that way..."
     scene gaspval
     mv "...!"
     m sad "I'll leave this very instant. My apologies, and goodbye."
@@ -409,15 +410,16 @@ label start:
     scene mehval
     mv "I can't guarantee you'll be able to find a way out of here."
     m sad "Really?! Even if I head back the way I came?"
-    mv "These woods shift by the second, especially at this hour. You'll be lost. And in such awful weather, too."
+    mv "The paths in these woods shift, especially at this hour. Keeps people from coming in. You'll get lost. And in such awful weather, too."
     m sad "...Oh no. I really am a fool..."
     m sad "{size=30}{bt=2}What do I do...{/bt}{/size}"
     mv"..."
+    m sad "..."
     scene madval
     mv "Will you stop that? You win. I feel bad. You've managed to make me feel bad."
     scene mehval
     mv "I'll help you. But I can't guarantee you'll like it."
-    mt "What is that supposed to mean? At least I'm being given a choice."
+    mt "What is that supposed to mean?... At least I'm being given a choice."
     m angry "I'll accept, on the condition no harm comes to me."
     mv "None will. I can swear to that."
     m angry "Then you have a deal."
@@ -426,7 +428,7 @@ label start:
     scene handval
     ## spooky spellll O_O woo
     m scared "Huh?"
-    "Some intracate golden pattern wraps around her finger."
+    "Some intracate golden pattern wraps around their finger."
     mv "I bet this'll do nicely."
     "You are the tiredest you've ever been..."
     scene black with fade
@@ -472,7 +474,7 @@ label start:
     mv "Hm? Is that her?"
     
     mt "It's her! From yesterday! That felt like it was just some dream, truly..."
-    mt "I wouldn't have accepted if I'd known she was a witch! I'm just making awful choices, one after the next!"
+    mt "I wouldn't have accepted her help if I'd known she was a witch! I'm just making awful choices, one after the next!"
     "You feel the ground, no doubt some shelf or table, shake beneath you as she looms closer." with sshake
     m sad "What do I do?"
     mv "..." with sshake
@@ -495,12 +497,11 @@ label start:
     mv "..."
     mv "I supopse you find me detestable now? Doubly so?"
     m scared "You didn't tell me you were a {i}witch!{/i}"
-    mv "I haven't even told you my name. I don't understand how you think? Some lumbering {i}thing{/i} is worthy of your help, but you draw the line when I have magic?"
-    m confused "Of course you're worthy of help. Everyone is."
+    mv "I haven't even told you my name. And yet, you tried to help me. The giant thing didn't bother you, but, I guess magic is where you draw the line?"
     m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
-    mt "It is true I don't know the first thing about magic, and it is true I fear it. No doubt. But, I'm more afraid she'll find out I'm an alchemist! Witches hate us!"
-
-    mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just bring you home. Does that sound good?"
+    mt "It is true I don't know the first thing about magic, and it is true I fear it. But do witches not hate alchemists?"
+    m scared "..."
+    mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just take you home. Does that sound good?"
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
@@ -521,12 +522,12 @@ label start:
     m "Why is that?"
     mv "We'd get nausea if we went any faster. Or we could just get stuck in-between forever."
     m sad "I thought you said this was safe!"
-    mv "Lucky for you, I actually {i}know{/i} what I'm doing."
-    m "I guess you do."
+    mv "Lucky for you, I know what I'm doing."
+    m "I guess you do..."
     m "So, you're okay from earlier? Did you sleep?"
-    mv "Huh? No, I'm fine. I usually sleep during the day anyway. There's less people around at night."
+    mv "Huh? No. I'm fine. I usually sleep during the day. There's less people around at night."
     m "Oh no! I'm not keeping you awake, am I?"
-    mv "{i}Oh, you are.{/i}"
+    mv "{i}Oh, believe me, you are.{/i}"
     m "Sorry..."
     m "You're still all scraped. Can't you heal yourself with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}?"
@@ -546,7 +547,7 @@ label start:
     m confused "Are you alone here? You live all by yourself?"
     mv "Of course I do. Is that odd to you, too?"
     m "No, It's just..."
-    m neutral "I'm Mira. Do you have a name?"
+    m happy "I'm Mira. Do you have a name?"
     mv "...I'm tired of answering questions."
     scene teleport3 with fade 
     m scared "Aah!"
@@ -559,9 +560,9 @@ label start:
     m confused "Huh?"
     mv "Most alchemists try their luck with me because they want power. They want to take things that aren't theirs. Is that what you want?"
     m scared "Ah!"
-    mt "She know? How do I talk my way out of this?"
-    mv "I understand it's only natural to crave power when you are powerless, but..."
-    mv "I hate how {i}nice{/i} you're being about it."
+    mt "She knows? How do I talk my way out of this?"
+    mv "I understand. It's only natural to crave power when you are powerless, but..."
+    mv "Why are you being so {i}nice{/i} about it?"
     m scared "I don't understand..."
     mv "Why are you pretending to care about {i}me{/i}? You care about my {i}Heart.{/i}"
     mv "As soon as you leave, you'll probably hire men to try and kill me. So why can't you just drop it?"
@@ -569,20 +570,24 @@ label start:
     m angry "You're wrong."
     mv "What?"
     m angry "I learned alchemy for the same reason I learned medicine. I wanted to help people."
-    m sad "And if I get stone, I can help everyone. {i}Cure{/i} everyone."
+    m sad "And if I get that stone, I can help everyone. {i}Cure{/i} everyone."
     m angry "I don't care if your Heart is the easiest way in the world to get the Stone. I {i}know{i} there is another way. I'll find one."
-    mv "I see..."
+    mv "..."
+    mv "I see."
     scene black with dissolve
     "She sets you down, and you ungracefully climb out of her hand."
     scene forestentrance with fade
     mv "Mira?"
-    "You cant see her now, but can hear her clear as day."
+    "You can't see her now, but can hear her clear as day."
     m sad "Yes?"
-    mv "I'm truly sorry, and..."
+    mv "You really mean that? You'll find another way?"
+    m angry "I do. I mean it."
+    mv "In that case, I'm sorry. And..."
     v "My name is Val."
-    m gasp "!"
+    mt "!!!"
     "..."
-    mt "I think she's gone."
+    # boom sfx?
+    mt "I think she's gone now. She was really scary, but... I hope I get to see her again."
     "Sunrise begins to give way into morning. It's time you go home."
     scene end1 with fade
     "{b}Part 1 'Catalyst' End.{/b}"
