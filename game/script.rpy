@@ -60,6 +60,7 @@ init:
 
 init:
     $ sshake = Shake((0, 0, 0, 0), 1.0, dist=4)
+    $ medshake = Shake((0, 0, 0, 0), 2.0, dist=8)
     $ bigshake = Shake((0, 0, 0, 0), 7.0, dist=8)
 
 
@@ -245,7 +246,7 @@ label start:
     scene forestentrance 
     with Dissolve (3.0)
 
-    show sprite test
+    show coach
     c "I won't be taking you any further, miss."
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't take you much farther in the day, either."
@@ -254,7 +255,7 @@ label start:
     m angry "Most certainly not! You deny the coin of a customer because of a children's fairy tale? I will walk precisely through these woods on my own two feet and be better for it!"
     c "Suit yourself."
     m angry "I have!"
-    hide sprite test with moveoutleft
+    hide coach with moveoutleft
     
     mt "He actually left me here? You can't be serious!"
     m angry "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
@@ -273,10 +274,10 @@ label start:
     mt "Not that I know what I'm even looking for... Maybe I should just go home."
 
     
-    show small mira test with dissolve
+    show asher far with dissolve
     "You see someone coming! Maybe you could ask them for help?"
-    hide small mira test
-    show sprite test
+    hide asher far
+    show asher
     kn "Run! You have to get out of here!"
 
     m confused "Huh? Are you alright, sir?"
@@ -287,7 +288,7 @@ label start:
     kn ". . . Alright. Think I've ran far enough. Please, be quick."
     m happy "Good. Sit down here."
 
-    hide sprite test
+    hide asher
     scene black
     with fade
     play sound 'audio/bag.mp3'
@@ -307,12 +308,12 @@ label start:
 
     scene placeholderforest at truecenter
     with fade 
-    show sprite test with dissolve
+    show asher with dissolve
     kn "{i}Thank you for your help, but we have to leave! Now! {/i}"
     mt "I can't go with him. Not only do I not know this man, I am not entirely sure he has his wits about him."
     m sad "I'm sorry, but I can't leave just yet."
     kn "{i}What?! I- I must be going!{/i}"
-    hide sprite test with moveoutright
+    hide asher with moveoutright
     # run sfx
     mt "He ran off! Who knew a knight could be so craven?"
 
@@ -490,7 +491,7 @@ label start:
     mt "I wouldn't have accepted her help if I'd known she was a witch! I'm just making awful choices, one after the next!"
     "You feel the ground, no doubt some shelf or table, shake beneath you as she looms closer." with sshake
     m scared "{i}What do I do?{/i}"
-    mv "..." with bigshake
+    mv "..." with medshake
     ## wallking sfx
     mt "Hide!"
     scene librarydarkthrow
@@ -498,20 +499,20 @@ label start:
     "You pull the heavy quilt back over your head. "
     scene black with dissolve
     mt "{w=0.7}This was a horrible idea."
-    #### door creak
-    ## step stp step
-    mv ""
+    mv "..."
     mt "She must be staring dead at me..."
+    mv "...Are you {i}hiding under the covers? {/i}Seriously?"
+    mt "..."
     mv "I know you're awake. I heard you."
     scene librarydark2
     with dissolve
-    show val blue desk sleepy with dissolve
+    show val blue desk sleepy
     m scared "...What do you want with me?"
     mv "Nothing. I assure you I've held to our deal."
     mv "..."
     mv "I supopse you find me detestable now? Doubly so?"
     m scared "You didn't tell me you were a {i}witch!{/i}"
-    mv "I haven't even told you my name. And yet, you tried to help me. The giant thing didn't bother you, but, I guess magic is where you draw the line?"
+    mv "I didn't even tell you my name. That didn't stop you."
     m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
     mt "It is true I don't know the first thing about magic, and it is true I fear it. But do witches not hate alchemists?"
     m scared "..."
@@ -524,7 +525,7 @@ label start:
     scene handwalk with fade
     m scared "Uh..."
     mt "I'm freezing up again... I shouldn't let something like this scare me!"
-    mv "Hm? What is it now?"
+    mv "Hm? {i}What is it now?{/i}"
     m scared "Nothing! It's just..."
     mv "I wouldn't have gone through all this trouble just to go and hurt you now, you know."
     m angry "I'm going! I'm going!"
@@ -550,28 +551,28 @@ label start:
     mv "{i}Oh, believe me, you are.{/i}"
     m "Sorry..."
     m "You're still all scraped. Can't you heal yourself with magic?"
-    mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}?"
-    m "How'd you know that?"
+    mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}"
+    m confused "How'd you know that?"
     mv "It's obvious. And I heard you yesterday, too."
     m confused "When I was talking to that man? From that far away?"
     mv "Yeah."
     m gasp "Really?"
     mv "Is that odd?"
-    m happy "Honestly, this whole day has been odd. But I'm starting not to mind."
+    m "Honestly, this whole day has been odd. But I'm starting not to mind."
     mv "...hmm."
     m confused "Why'd you put me to sleep? What was that even for?"
     mv "I like keeping away from the world, and part of that includes hiding the path to my actual home. I would've just done {i}this{/i} yesterday, but I didn't bring my wand with me."
-    m "But then why didn't you just put those men from yesterday asleep? It didn't seem too hard for you."
+    m confused "But then why didn't you just put those men from yesterday asleep? It didn't seem too hard for you."
     mv "That's not something to be taken lightly. If you fight with magic, you'll kill with magic, sooner or later. Nothing's worth that. It's why I asked you first."
     m sad "I see."
     m confused "Are you alone here? You live all by yourself?"
     mv "Of course I do. Is that odd to you, too?"
-    m "No, It's just..."
-    m happy "I'm Mira. Do you have a name?"
+    m sad "No, It's just..."
+    m confused "Do you have a name? Mine is Mira."
     mv "...I'm bored of answering your questions."
     scene teleport3 with fade 
-    m scared "Aah!"
-    mv "Quit yelling!"
+    m scared "Aah! How on earth did we do that?!"
+    mv "Magic. Quit yelling."
     mt "That felt really, really weird! How is she used to that?!"
     scene teleport4
     mv "Well, we're here."
@@ -579,9 +580,10 @@ label start:
     m confused "What is it?"
     mv "Why are you being this way?"
     m confused "Huh?"
-    mv "Most alchemists try their luck with me because they want power. They want to take things that aren't theirs. Is that what you want?"
+    mv "Most alchemists try their luck with me because they want power. They want to take things that aren't theirs. Isn't that what you want?"
     m scared "Ah!"
     mt "She knows? How do I talk my way out of this?"
+    m scared "I..."
     mv "No, no, I understand. It's only natural to crave power when you are powerless, but..."
     mv "Why are you being so {i}nice{/i} about it?"
     m scared "I don't understand..."
@@ -599,7 +601,7 @@ label start:
     "She sets you down, and you ungracefully climb out of her hand."
     scene forestentrance with fade
     mv "Mira?"
-    "You can't see her now, but can hear her clear as day."
+    mt "Huh? Why'd she be calling me now?"
     m sad "Yes?"
     mv "You really mean that? You'll find another way?"
     m angry "I do. I mean it."
@@ -610,8 +612,8 @@ label start:
     # boom sfx?
     mt "I think she's gone now. She was really scary, but... I hope I get to see her again."
     "Sunrise begins to give way into morning. It's time you go home."
-    scene end1 with fade
-    "{b}Part 1 'Catalyst' End.{/b}"
+    scene black with fade
+    "Part 1 'Catalyst' End. "
 
     # This ends the game.
 
