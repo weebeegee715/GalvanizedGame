@@ -60,6 +60,7 @@ init:
 
 init:
     $ sshake = Shake((0, 0, 0, 0), 1.0, dist=4)
+    $ bigshake = Shake((0, 0, 0, 0), 7.0, dist=8)
 
 
 ### Typography Pausemaker
@@ -255,9 +256,8 @@ label start:
     m angry "I have!"
     hide sprite test with moveoutleft
     
-    mt "He actually left me here!"
+    mt "He actually left me here? You can't be serious!"
     m angry "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
-    show sprite test with dissolve
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
     mt "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
@@ -334,8 +334,11 @@ label start:
     m confused "I don't hear anything. Maybe he really did make it up."
     m angry "That crazy guy really got me all scared for nothing?!"
     mt "First the coach I hired, and now that knight, both gone crazy with some made-up story? I pray the whole town isn't like that..."
-    m neutral "Well, off I go."
-    m scared "{w=0.4}Eek! What was that?" with sshake
+    m neutral "...hmm."
+    mt "It's weird. The further I walk in, the harder it is to get around! I feel like everything's starting to loom over me."
+    m angry "Okay, maybe this place {i}is{/i} a bit creepy. But, I'm not afraid!"
+    mt "{w=0.4}!!!" with bigshake
+    m scared "What was {i}that?!{/i} I almost fell!"
     mt "Did a tree fall?! That was really loud... "
     mv "{sc=2}{size=25}U{w=0.2}g{w=0.2}h{w=0.2}h{w=0.2}.{w=0.2}.{w=0.2}.{/size}{/sc}"
     m confused "Huh? Is someone there?!"
@@ -343,7 +346,9 @@ label start:
 
     scene black
     with dissolve
-    m scared "...huh?"
+    play sound 'audio/DirtSteps.mp3'
+    "..."
+    m scared "{w=0.2}...huh?"
     scene valreveal with fade
     m scared "..."
     "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. Not fully concious, at least not yet. "
@@ -363,11 +368,17 @@ label start:
     scene madval with fade
     mv "{sc=2}{i}{size=45}Who are you?! What did you do to me?!{/size}{/i}{/sc}"
     m scared "{sc=2}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
-    mv "{i}Hurt?{/i} Why on earth would you care? Are you lying to me?"
+    mt "Oh god! This has got to be the worst day of my life! I think I'm going to die here... "
+    mv "{i}Hurt?{/i} Why on earth would you care? You're lying."
+    mt "I am not a liar! I won't be called a liar! Not by anyone!"
     m angry "{sc=2}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
     scene gaspval
-    mv "..."
-    mt "That was stupid. Why can't I hold my tongue?"
+    mv "...?"
+    mt "That was stupid! Why can't I just hold my tongue? Am I trying to get myself killed?"
+    scene laughval
+    mt "She's laughing? Why is she laughing?"
+    mv "That was rather brave"
+    mt "She's really loud... My ears hurt."
     scene smirkval
     mv "It's quite refreshing for someone to speak so boldy with me... I guess you aren't lying."
 
@@ -382,23 +393,24 @@ label start:
     mv "You're very ill-dressed for the weather, miss. Do you intend to die in this cold?"
     m sad "{size=27}...{/size}"
     scene lessmadval
-    mv "Oh, don't get all quiet now!"
+    mv "Don't tell me you're going to go quiet {i}now.{/i}"
     m scared "{size=27}No! No I don't!{/size}"
     scene mehval
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
-    mt "How do I say this? I don't want to say I was planning to steal from... her? I think?"
+    mt "How do I say this? I don't want to say I was planning to steal from.?"
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
     scene smirkval
     mv "That's a funny question. Wouldn't I be dead without it?"
     m scared "Don't tell me it's your {i}actual{/i} heart!?"
     scene laughval
-    mv "What on earth did you think it was?"
-    mt "Come to think of it, I wasn't actually sure."
+    mv "What on earth did you think it was? What a silly question!"
+    mt "Come to think of it, I wasn't actually sure..."
     scene smirkval
     mv "Of course it's mine. And I don't think you're quite prepared to carve it out of me."
     m sad "How awful! My books talked about it like some kind of artifact. I would've never come here if I knew, believe me."
-    mv "Well you didn't, and you did. Congrats on your wasted time."
-    mv "I won't hurt you, if that's what you're so worked up about. No harm done."
+    mv "Well you didn't, and you did. Congrats on all your wasted time."
+    m sad "Oh no..."
+    mv "I won't hurt you, if that's what you're all worked up about. No harm done. "
     m sad "I'm truly sorry. No one deserves to be treated that way..."
     scene gaspval
     mv "...!"
@@ -508,7 +520,9 @@ label start:
     m "{sc=3}{size=27}{i}apport{/i} us? like, with magic?{/size}{/sc}"
     mv "What, you think I'm going to hike there? Yes, magic. Come now."
     scene handwalk with fade
-    "She reaches her hand out to you. It's odd standing on the uneven surface."
+    m scared "Uh..."
+    mt "Scary... I really don't want to..."
+    mv "Hm? What is it now?"
     mv "Okay..."
     "She pulls something heavy from under the table with her off-hand."
     scene teleport1 with fade
