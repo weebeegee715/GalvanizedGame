@@ -144,6 +144,17 @@ define a = Character("Asher", callback=guylow_beep, color="#417ce4")
 image sprite test = "sprite test.png"
 image small mira test = "dark small mira neutral.png"
 
+image coach:
+    "coach.png"
+    pause 2
+    "coach blink.png"
+    pause 0.4
+    "coach.png"
+    pause 0.5
+    "coach blink.png"
+    pause 0.4
+    repeat
+
 image side mira neutral: 
     "side mira neutral.png"
     pause 2
@@ -210,7 +221,6 @@ image side mira scared:
     pause 0.4
     repeat
 
-
 # The game starts here.
 
 label start:
@@ -226,8 +236,7 @@ label start:
 
     # These display lines of dialogue.
     "{i}The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder.{i}"
-    
-    "{i}Most chase it for eternal youth, or Midas' golden touch. But those don't matter to you. What you seek is greater.{i}"
+    ""
 
     scene paper2
     with dissolve
@@ -368,11 +377,11 @@ label start:
     ## i want this to be like an establishing like panning shot like a looking up
     scene cliffvalmad with fade
     mv "{sc=2}{i}{size=45}Who are you?! What did you do to me?!{/size}{/i}{/sc}"
-    m scared "{sc=2}{size=27}I didn't do anything! I just wanted to make sure you weren't hurt... {/size}{/sc}"
+    m scared "{sc=2}I didn't do anything! I just wanted to make sure you weren't hurt...{/sc}"
     mt "Oh god! This has got to be the worst day of my life! I think I'm going to die here... "
     mv "{i}Hurt?{/i} Why on earth would you care? You must be lying."
     mt "I am not a liar! I won't be called a liar! Not by anyone!"
-    m angry "{sc=2}{size=35}What kind of person leaves someone on the ground like that?! Who do you take me for?{/size}{/sc}"
+    m angry "{sc=2}What kind of person leaves someone on the ground like that?! Who do you take me for?{/sc}"
     scene cliffvalgasp
     mv "...?"
     mt "That was stupid! Why can't I just hold my tongue? Am I trying to get myself killed?"
@@ -395,7 +404,7 @@ label start:
     m sad "{size=27}...{/size}"
     scene cliffvalmad
     mv "Don't tell me you're going to go quiet {i}now.{/i}"
-    m scared "{size=27}No! No I don't!{/size}"
+    m scared "No! No I don't!"
     scene cliffvalmeh
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
     mt "How do I say this? I don't want to say I was planning to steal..."
@@ -423,9 +432,9 @@ label start:
     scene cliffvalmeh
     mv "I can't guarantee you'll be able to find a way out of here."
     m confused "Really?! Even if I head back the way I came?"
-    mv "The paths in these woods... shift, especially at this hour. Keeps people from coming in. You'll get lost. And in such awful weather, too."
+    mv "The paths in these woods... shift, especially at this hour. I'm sure you'll get lost."
     m sad "Really?"
-    m sad "{size=30}{bt=2}What am I supposed to do?...{/bt}{/size}"
+    m sad "{bt=2}What am I supposed to do?...{/bt}"
     mv"..."
     m sad "..."
     scene cliffvalmad
@@ -435,22 +444,13 @@ label start:
     mv "...Oh, {i}fine.{/i}"
     mv "I'll help you. But I can't guarantee you'll like it. I'm serious."
     mt "What is that supposed to mean?... At least I'm being given a choice?"
-    m angry "I'll accept, on the condition no harm comes to me."
-    mv "None will. I can swear to that."
-    m angry "Then you have a deal."
-    scene cliffvalsmirk
-    mv "Deal."
-    scene cliffvalcast
-    ## spooky spellll O_O woo
+    m angry "Fine."
+    scene cliffvalreach
     m scared "Huh?"
-    mv "This is the part I don't think you'll like so much."
-    "You are the tiredest you've ever been..."
-    scene black with fade
-    ##fall sfx
-    play sound "audio/oof.ogg"
-    mcg "{w=0.7}.{w=0.2}.{w=0.2}."
-    mv "That was quicker than I thought it'd be! Couldn't even explain to her..."
-    "..."
+    "S"
+    mv "Come on, then. There's a storm coming and I intend to be indoors for it."
+    m scared "Do I reall"
+
 
     play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
 
@@ -520,7 +520,7 @@ label start:
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
-    m "{sc=3}{size=27}{i}apport{/i} us? like, with magic?{/size}{/sc}"
+    m "{sc=3}{i}apport{/i} us? like, with magic?{/sc}"
     mv "What, you think I'm going to hike there? Yes, magic. Come now."
     scene handwalk with fade
     m scared "Uh..."
