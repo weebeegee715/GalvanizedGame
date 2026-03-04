@@ -386,7 +386,7 @@ label start:
     mv "...?"
     mt "That was stupid! Why can't I just hold my tongue? Am I trying to get myself killed?"
     scene cliffvallaugh
-    mt "She's laughing? Why is she laughing? Is that good or bad?"
+    mt "She's laughing? Why is she laughing at me?"
     mv "That was rather brave of you, no?"
     mt "That was really loud... My are ears are starting to ring."
     scene cliffvalsmirk
@@ -449,8 +449,13 @@ label start:
     m scared "Huh?"
     "S"
     mv "Come on, then. There's a storm coming and I intend to be indoors for it."
-    m scared "Do I reall"
+    m "Do I really have to...?"
+    mv "I told you that you wouldn't like it. This was supposed to be the easy part."
+    m "{sc=2}Okay...{/sc}"
 
+    scene black with fade
+
+    mv "Huh? "
 
     play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
 
@@ -520,8 +525,8 @@ label start:
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
-    m "{sc=3}{i}apport{/i} us? like, with magic?{/sc}"
-    mv "What, you think I'm going to hike there? Yes, magic. Come now."
+    m "{sc=3}Again? Like last time?{/sc}"
+    mv "Yes, like last time. I'll take it slower, ok?"
     scene handwalk with fade
     m scared "Uh..."
     mt "I'm freezing up again... I shouldn't let something like this scare me!"
@@ -537,19 +542,19 @@ label start:
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
     m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
-    mv "This is going to take a while, I'm quite tired. Stay very still."
+    mv "This is going to take a while. Stay very still."
     m confused "...{w=0.5}Why isn't anything happening?"
-    mv "Apporting is {i}lazy{/i}, not quick. These kinds of things are best taken slowly."
-    m "Why is that?"
-    mv "We'd get nausea if we went any faster. Or we could just get stuck in-between forever."
-    m sad "I thought you said this was safe!"
-    mv "Lucky for you, I know what I'm doing."
-    m "I guess you do..."
+    mv "Apporting is meant to be{i}lazy{/i}, not quick. I'm just used to zipping around where I please, but, you're not."
+    m "And it knocked me out?"
+    mv "Guess so."
+    m sad "It won't happen again, though?"
+    mv "No, no. I know what I'm doing."
+    m "I guess so..."
     m "So, you're okay from earlier? Did you sleep?"
-    mv "Huh? No. I'm fine. I usually sleep during the day. There's less people around at night."
+    mv "Huh? No. I'm fine. I usually sleep during the day. There's less people to deal with at night."
     m "Oh no! I'm not keeping you awake, am I?"
     mv "{i}Oh, believe me, you are.{/i}"
-    m "Sorry..."
+    m "Sorry."
     m "You're still all scraped. Can't you heal yourself with magic?"
     mv "{i}No.{/i} If people could heal with spells, wouldn't you be out of a job, {i}doctor?{/i}"
     m confused "How'd you know that?"
