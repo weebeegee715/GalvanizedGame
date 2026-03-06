@@ -572,7 +572,7 @@ label start:
     m sad "No, It's just..."
     m confused "{i}Do{/i} you have a name? Mine is Mira."
     mv "...I'm bored of answering questions."
-    scene teleport3 with fade 
+    scene teleport3 with fade
     m scared "Aah! How did we do that?!"
     mv "Magic. Quit yelling."
     mt "That felt really, really weird! How is she used to that?!"
@@ -600,8 +600,10 @@ label start:
     mv "..."
     mv "...I'll let you down."
 
+
     scene black with dissolve
     mv "Careful, now."
+
 
     m "I will."
     scene forestentrance with fade
@@ -620,7 +622,10 @@ label start:
     scene black with fade
     "Part 1 'Catalyst' End."
 
+
     # This ends the game.
 
+
     return
+
 
