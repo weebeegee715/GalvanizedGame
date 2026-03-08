@@ -127,7 +127,7 @@ init python:
 ## Define Characters (Giving Them Color and Voices) 
 define c = Character("Coachman", callback=guy_beep, color="#917dc8")
 define mv = Character("???", image="val", callback=val_beep, color="#de9c01", what_size = 37)          
-define v = Character("Val", image = "val",callback=val_beep, color="#de9c01", what_size = 37)
+define v = Character("Valencia", image = "val",callback=val_beep, color="#de9c01", what_size = 37)
 define m = Character("Mira", image = "mira", callback=mira_beep, color="#329b15")
 define mcg = Character("Mira", callback=mira_beep, color="#329b15")
 define mt = Character("Mira", image="nothing", color="#329b15", what_italic=True)
@@ -241,32 +241,35 @@ label start:
     with dissolve
 
     "{i}The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form. The very pinnacle of medicine.{/i}"
-    "{i}You have tried mixing sulfur and mercury in every fashion to no avail. But there is one thing you haven't tried...{/i}"
+    "{i}You have done everything in your power to make this. There is only a single thing you haven't tried...{/i}"
 
     scene paper3
     with dissolve
 
     "{i}The Darkheart, said to be the key to creating the mythical stone.{/i}"
-    "{i}Said to be guarded by a terrible beast in a tall, dark wood, only showing itself in the dead of night.{/i}"
-    "{i}But, you scarcely believe in monsters...{/i}"
+
+    
+    m angry "Only problem is that it's in the middle of these woods! This'll take all night to find..."
+
   
 
     scene forestentrance 
     with Dissolve (3.0)
 
     show coach
+    m angry "Don't tell me you intend to stop right here, sir!"
     c "I won't be taking you any further, miss."
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
     c "The sun is nearly setting, and I'm not getting caught in this place at night. Wouldn't take you much farther in the day, either."
     m angry "You couldn't have told me this earlier?! This is a matter of urgency!"
     c "I'm turning back now. Are you coming or not?"
-    m angry "Most certainly not! You deny the coin of a customer because of a children's fairy tale? I will walk precisely through these woods on my own two feet and be better for it!"
+    m angry "Most certainly not! I will walk precisely through these woods on my own two feet and be better for it!"
     c "Suit yourself."
     m angry "I have!"
     hide coach with moveoutleft
     
     mt "He actually left me here? You can't be serious!"
-    m angry "This is absurd! how am I supposed to get through a place like this without a horse!? This is going to take ages."
+    m angry "This is absurd! how am I supposed to get through this place without a horse!? And for what?"
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
     mt "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
@@ -312,12 +315,12 @@ label start:
     m "Surely you've faced this kind of animal before?"
     kn "No! Not an {i}animal{/i}, a {i}monster!{/i} a horrible, lumbering thing!"
     m "...huh? You aren't serious. There's no such thing."
-    kn "{i}Oh, yes there are!{/i} And we have to leave now, unless you want to face it!"
+    kn "{i}Oh, yes there is!{/i} And we have to leave now, if we want to leave at all!"
 
     scene placeholderforest at truecenter
     with fade 
     show asher with dissolve
-    kn "{i}Thank you for your help, but we have to leave! Now! {/i}"
+    kn "{i}Thank you for your help, but we have to go! Now! {/i}"
     mt "I can't go with him. Not only do I not know this man, I am not entirely sure he has his wits about him."
     m sad "I'm sorry, but I can't leave just yet."
     kn "{i}What?! I- I must be going!{/i}"
@@ -325,7 +328,7 @@ label start:
     # run sfx
     mt "He ran off! Who knew a knight could be so craven?"
 
-    mt "He's a madman, I'm sure. But his outfit looked official enough to me..."
+    mt "He's a madman, I'm sure. But his armor looked official enough to me..."
     m angry "Come what may, I'm not leaving without the heart. I'm not."
     m sad "But there must have been at least {i}some{/i} truth to his words..."
     mt "..."
@@ -369,7 +372,8 @@ label start:
     mt "I don't think this is very smart of me..."
     mt "Maybe I should just leave? But how could I leave a person like this? But if those stories are true, I'm really not safe-"
     mv "{bt=2}Agh....{/bt}"
-    scene cliffmiracooked with fade 
+    scene cliffmiracooked at truecenter
+    with fade
     "The world begins shift around you as whatever you shouted at comes to." with vpunch
     mcg "{sc=3}{size=27}.{w=0.1} .{w=0.1} . {/size}{/sc}"
     mt "Why can't I move? Why am I not moving?! I need to run!"
@@ -449,18 +453,21 @@ label start:
     m "Do I really have to...?"
     mv "I told you that you wouldn't like it. This was supposed to be the easy part."
     m "{sc=2}Okay...{/sc}"
+    mv ""
+    scene 
+    mt "She's drawing something right in the air?"
+    mv "This'll send us right back inside."
+    "Every sense of where you are is ripped away. You feel..."
 
     scene black with fade
-
-    mv "Huh?"
-    mv ""
+    mv "Aw, no. Are you still awake? Can you hear me? Wake up!"
 
     play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
 
     scene black with fade
     "..."
     mcg "{w=0.7}.{w=0.2}.{w=0.2}."
-    mv "Hello?"
+    mv "Ah! Are you awake now?"
     mcg "..."
     mv "{i}Hello?{/i}"
 
@@ -469,25 +476,26 @@ label start:
     mcg "Huh?"
     mv "Morning."
     m scared "Aah!"
-    mv "Quit yelling."
+    mv "Am I such an awful thing to wake up to?"
     m scared "...What do you want with me?"
-    mv "Nothing. We had a deal. That whole getting knocked out thing was all you. Guess you're just not used to magic."
-    mv "..."
-    mv "Oh. I supopse you find me detestable now? I guess you can stand a monster, but not magic."
+    mv "Nothing. That whole getting knocked out thing was all you. Guess you're just not used to magic."
+    m "..."
+    mv "I almost forgot. Do you find me detestable now? You can condone a monster, but not the use of magic."
     m scared "You didn't tell me you were a witch! How was I supposed to know?"
-    mv "I didn't even tell you my name. Try not to call me a witch, either."
+    mv "I didn't even tell you my {i}name{/i}. Also, try not to call me a witch, either."
     m sad "I didn't mean to offend you. Sorry."
     mv "You didn't. I'm just not a witch. Either way, you fear me, do you not?"
     m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
-    mt "And why on earth would she help an alchemist, though? I don't understand."
+    mt "And why on earth would she help an alchemist? I don't understand, aren't we natural enemies?"
     m scared "..."
     mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just take you home. Does that sound good?"
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
     m "{sc=3}Again? Like last time?{/sc}"
-    mv "Yes, like last time. I'll take it slower, ok?"
-    scene handwalk with fade
+    mv "Yes, like last time. I'll take it slower, okay?"
+    m "Okay. Just once more."
+    scene black with fade
     mcg "Eek!"
     mv "You're fine."
     "She pulls something heavy from under the table with her off-hand."
@@ -555,28 +563,26 @@ label start:
     m angry "I learned alchemy for the same reason I learned medicine. I wanted to help people."
     m sad "And if I get that stone, I can help everyone. {i}Cure{/i} everyone of anything and everything!."
     m angry "I don't care if your Heart is the easiest way in the world to get the Stone. I {i}know{i} there is another way. I'll find one."
-    mv "..."
-    mv "...I'll let you down."
+    mv "...I see."
+    m angry "You do?"
+    mv "...I'll let you down, now."
 
 
     scene black with dissolve
-    mv "Careful, now."
-
-
+    mv "Be careful, now."
     m "I will."
+
     scene forestentrance with fade
     mv "Mira?"
-    mt "Huh? Why'd she be calling me now?"
-    "You turn."
-    m sad "Yes?"
-    mv "Do you really mean that? You'll find another way?"
-    m angry "I do. I mean it."
-    mv "In that case, I'm sorry. And..."
-    v "My name is Valencia. Call me Val."
-    m happy "So you do have a name!"
-    m confused "...wait, where'd she go?"
-    "..."
-    mt "Will I ever see her again? I really hope I get to."
+    m confused "Hm."
+    mv "If you're serious about this, you can come use my library whenever you need."
+    m happy "You mean that?"
+    mv "Yes, I do. You're annoying, but I have a feeling you know what you're talking about."
+    mt "I'm annoying??"
+    v "And my name is Valencia. Goodbye now."
+    "Shes gone yall"
+    mt "Where'd she go?"
+
     scene black with fade
     "Part 1 'Catalyst' End."
 
