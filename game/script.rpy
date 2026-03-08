@@ -236,7 +236,6 @@ label start:
 
     # These display lines of dialogue.
     "{i}The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder.{i}"
-    ""
 
     scene paper2
     with dissolve
@@ -376,11 +375,10 @@ label start:
     mt "Why can't I move? Why am I not moving?! I need to run!"
     ## i want this to be like an establishing like panning shot like a looking up
     scene cliffvalmad with fade
-    mv "{sc=2}{i}{size=45}Who are you?! What did you do to me?!{/size}{/i}{/sc}"
-    m scared "{sc=2}I didn't do anything! I just wanted to make sure you weren't hurt...{/sc}"
+    mv "{sc=2}Who on earth are you?! What do you want?{/sc}"
+    m scared "{sc=2}I don't want anything! I just wanted to make sure you weren't hurt...{/sc}"
     mt "Oh god! This has got to be the worst day of my life! I think I'm going to die here... "
     mv "{i}Hurt?{/i} Why on earth would you care? You must be lying."
-    mt "I am not a liar! I won't be called a liar! Not by anyone!"
     m angry "{sc=2}What kind of person leaves someone on the ground like that?! Who do you take me for?{/sc}"
     scene cliffvalgasp
     mv "...?"
@@ -404,7 +402,7 @@ label start:
     m sad "{size=27}...{/size}"
     scene cliffvalmad
     mv "Don't tell me you're going to go quiet {i}now.{/i}"
-    m scared "No! No I don't!"
+    m scared "I don't intend to, no."
     scene cliffvalmeh
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
     mt "How do I say this? I don't want to say I was planning to steal..."
@@ -427,15 +425,15 @@ label start:
     mv "...!"
     m sad "I'll leave this very instant. My apologies, and goodbye."
     ## more subtle less yuri. slowly slowly catching monkey
-    mv "Wait!"
+    mv "Wait."
     m scared "Huh?!"
     scene cliffvalmeh
-    mv "I can't guarantee you'll be able to find a way out of here."
+    mv "You won't be able to find your way out of here."
     m confused "Really?! Even if I head back the way I came?"
     mv "The paths in these woods... shift, especially at this hour. I'm sure you'll get lost."
     m sad "Really?"
     m sad "{bt=2}What am I supposed to do?...{/bt}"
-    mv"..."
+    mv "..."
     m sad "..."
     scene cliffvalmad
     mv "Are you {i}trying{/i} to get to feel bad for you? Are you just going to sit there frowning at me?"
@@ -447,7 +445,6 @@ label start:
     m angry "Fine."
     scene cliffvalreach
     m scared "Huh?"
-    "S"
     mv "Come on, then. There's a storm coming and I intend to be indoors for it."
     m "Do I really have to...?"
     mv "I told you that you wouldn't like it. This was supposed to be the easy part."
@@ -455,71 +452,34 @@ label start:
 
     scene black with fade
 
-    mv "Huh? "
+    mv "Huh?"
+    mv ""
 
     play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
 
     scene black with fade
     "..."
     mcg "{w=0.7}.{w=0.2}.{w=0.2}."
+    mv "Hello?"
+    mcg "..."
+    mv "{i}Hello?{/i}"
+
+    scene librarydark at truecenter
+    with dissolve
     mcg "Huh?"
-
-    ####
-
-    scene librarydark1 at truecenter 
-    with fade
-
-    m confused "Where am I?"
-    mt "This isn't my bed. I haven't slept this well in a while."
-
-    "You try and throw the sheet off of you. It's much heavier than you expected it to be... "
-    m confused "...huh?"
-
-    
-    "Early morning light shines through the room from an excessively large window behind you, but you cannot make out the walls. It's like this room goes on forever."
-    m scared "{sc=2}Where's the door?!{/sc}"
-
-    scene librarydark2 at truecenter
-    with dissolve
-
-    
-    "More light spills into the room, and it begins to yawn before you."
-    m scared "What is this place?!"
-    mt "It's huge! My head is starting to spin."
-
-    "You hear something through the wall."
-
-    # "I didn't want to wake you then." < :[
-    mv "...Hmm? Is that her?"
-    
-    mt "It's her! From yesterday! That felt like it was just some dream, truly..."
-    mt "I wouldn't have accepted her help if I'd known she was a witch! I'm just making awful choices, one after the next!"
-    "You feel the ground, no doubt some shelf or table, shake beneath you as she looms closer." with sshake
-    m scared "{i}What do I do?{/i}"
-    mv "..." with medshake
-    ## wallking sfx
-    mt "Hide!"
-    scene librarydarkthrow
-    # this needs a sound
-    "You pull the heavy quilt back over your head. "
-    scene black with dissolve
-    mt "{w=0.7}This was a horrible idea."
-    mv "..."
-    mt "She must be staring dead at me..."
-    mv "...Are you {i}hiding under the covers? {/i}Seriously?"
-    mt "..."
-    mv "I know you're awake. I heard you."
-    scene librarydark2
-    with dissolve
-    show val blue desk sleepy
+    mv "Morning."
+    m scared "Aah!"
+    mv "Quit yelling."
     m scared "...What do you want with me?"
-    mv "Nothing. I assure you I've held to our deal."
+    mv "Nothing. We had a deal. That whole getting knocked out thing was all you. Guess you're just not used to magic."
     mv "..."
-    mv "I supopse you find me detestable now? Doubly so?"
-    m scared "You didn't tell me you were a {i}witch!{/i}"
-    mv "I didn't even tell you my name. That didn't stop you."
+    mv "Oh. I supopse you find me detestable now? I guess you can stand a monster, but not magic."
+    m scared "You didn't tell me you were a witch! How was I supposed to know?"
+    mv "I didn't even tell you my name. Try not to call me a witch, either."
+    m sad "I didn't mean to offend you. Sorry."
+    mv "You didn't. I'm just not a witch. Either way, you fear me, do you not?"
     m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
-    mt "It is true I don't know the first thing about magic, and it is true I fear it. But do witches not hate alchemists?"
+    mt "And why on earth would she help an alchemist, though? I don't understand."
     m scared "..."
     mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just take you home. Does that sound good?"
     m scared "Yes. It does."
@@ -528,14 +488,8 @@ label start:
     m "{sc=3}Again? Like last time?{/sc}"
     mv "Yes, like last time. I'll take it slower, ok?"
     scene handwalk with fade
-    m scared "Uh..."
-    mt "I'm freezing up again... I shouldn't let something like this scare me!"
-    mv "Hm? {i}What is it now?{/i}"
-    m scared "Nothing! It's just..."
-    mv "I wouldn't have gone through all this trouble just to go and hurt you now, you know."
-    m angry "I'm going! I'm going!"
-    mt "Huh? It's a lot softer than I thought it'd be. I guess this isn't too bad."
-    mv "Okay..."
+    mcg "Eek!"
+    mv "You're fine."
     "She pulls something heavy from under the table with her off-hand."
     scene teleport1 with fade
     m scared "{sc=5}Why do you have an axe?!{/sc}"
@@ -550,6 +504,10 @@ label start:
     m sad "It won't happen again, though?"
     mv "No, no. I know what I'm doing."
     m "I guess so..."
+    m "Where are we?"
+    mv "A library. A very large one."
+    m "You live here?"
+    mv "You could say that."
     m "So, you're okay from earlier? Did you sleep?"
     mv "Huh? No. I'm fine. I usually sleep during the day. There's less people to deal with at night."
     m "Oh no! I'm not keeping you awake, am I?"
