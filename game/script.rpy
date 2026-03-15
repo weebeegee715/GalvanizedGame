@@ -248,15 +248,13 @@ label start:
 
     "{i}The Darkheart, said to be the key to creating the mythical stone.{/i}"
 
-    
-    m angry "Only problem is that it's in the middle of these woods! This'll take all night to find..."
-
-  
-
     scene forestentrance 
     with Dissolve (3.0)
-
-    show coach
+    m angry "Only problem is that it's in the middle of these woods! This'll take all ages to find..."
+    c "Good luck with that."
+    m confused "Huh?"
+    show coach with dissolve
+    mt "I paid this man enough for the whole way through! Is he gonna leave me here?"
     m angry "Don't tell me you intend to stop right here, sir!"
     c "I won't be taking you any further, miss."
     m angry "What!? But I need to go {i}through{/i} the forest! Why are we stopping at its entrance?"
@@ -269,7 +267,7 @@ label start:
     hide coach with moveoutleft
     
     mt "He actually left me here? You can't be serious!"
-    m angry "This is absurd! how am I supposed to get through this place without a horse!? And for what?"
+    m angry "This is absurd! how am I supposed to get through this place without a horse!?"
     mt "And here I thought the locals were exaggerating about these woods! This explains why the property is so cheap around here, and why they'd even consider {i}my{/i} offer in the first place."
     mt "..."
     mt "It doesn't matter. I've already come all this way, and I'm not stopping now!"
@@ -284,11 +282,9 @@ label start:
     mt "I've been walking for hours, but haven't made any progress!" 
     mt "Not that I know what I'm even looking for... Maybe I should just go home."
 
-    
-    show asher far with dissolve
-    "You see someone coming! Maybe you could ask them for help?"
-    hide asher far
-    show asher
+    "Someones coming!"
+    show asher with dissolve
+    mt "Who is this guy? He doesn't look right."
     kn "Run! You have to get out of here!"
 
     m confused "Huh? Are you alright, sir?"
@@ -297,7 +293,7 @@ label start:
     m confused "I'm a doctor! My name's Mira. At least let me help you!"
     "He calms down a bit."
     kn ". . . Alright. Think I've ran far enough. Please, be quick."
-    m happy "Good. Sit down here."
+    m happy "Good. I will."
 
     hide asher
     scene black
@@ -309,10 +305,11 @@ label start:
 
     
     
-    m "What happened to you?"
-    kn "There's something in these woods. We'd been paid by some men, men of high rank, to kill it! As soon as I saw it, I knew we'd made a mistake."
+    m confused "What happened to you?"
+    kn "There's something in these woods. We'd been paid by some men, men of high rank, to kill it! It has this thing, the Darkheart! All those alchemists want it. As soon as I saw it, I knew we'd made a mistake."
+    mt "The Darkheart?! Something has the Darkheart?"
     kn "That thing bested us in seconds! I ran away before it got any worse."
-    m "Surely you've faced this kind of animal before?"
+    m confused "Surely you've faced this kind of animal before?"
     kn "No! Not an {i}animal{/i}, a {i}monster!{/i} a horrible, lumbering thing!"
     m "...huh? You aren't serious. There's no such thing."
     kn "{i}Oh, yes there is!{/i} And we have to leave now, if we want to leave at all!"
@@ -335,7 +332,6 @@ label start:
     # >:[ 
     m angry "I can't give up."
     
-    hide sprite test with dissolve
     scene black
     with dissolve
     play sound 'audio/DirtSteps.mp3'
@@ -345,9 +341,9 @@ label start:
     with fade
     m confused "I don't hear anything. Maybe he really did make it up."
     m angry "That crazy guy really got me all scared for nothing?!"
-    mt "First the coach I hired, and now that knight, both gone crazy with some made-up story? I pray the whole town isn't like that..."
+    mt "First the coach I hired, and now that knight, both acting so odd..."
     m neutral "...hmm."
-    mt "It's weird. The further I walk in, the harder it is to get around! I feel like everything's starting to loom over me."
+    mt "I've been here too long... I'm starting to get a bad feeling."
     m angry "Okay, maybe this place {i}is{/i} a bit creepy. But, I'm not afraid!"
     mt "{w=0.4}!!!" with bigshake
     m scared "What was {i}that?!{/i} I almost fell!"
@@ -363,9 +359,8 @@ label start:
     m scared "{w=0.2}...What on {i}earth{/i}?"
     scene cliffvalreveal with fade
     m scared "..."
-    "You're not sure what exactly lie in the ditch in front of you. A sea of dark black hair. Gold rings. Not fully concious, at least not yet. "
+    mt "A monster? No, a person! This is a {i}person!{/i}"
     mt "What do I do?! Do I help? How {i}can{/i} I even help?"
-    mt "This... This isn't a monster at all! This is a person! I think?"
     m scared "How am I even supposed to... Uh..."
     m scared "Hello? Can you hear me?! Are you alright?!"
     mv "...?"
@@ -379,14 +374,14 @@ label start:
     mt "Why can't I move? Why am I not moving?! I need to run!"
     ## i want this to be like an establishing like panning shot like a looking up
     scene cliffvalmad with fade
-    mv "{sc=2}Who on earth are you?! What do you want?{/sc}"
+    mv "{sc=2}Who on earth are you?! What do you want from me?{/sc}"
     m scared "{sc=2}I don't want anything! I just wanted to make sure you weren't hurt...{/sc}"
-    mt "Oh god! This has got to be the worst day of my life! I think I'm going to die here... "
+    mt "This has got to be the worst day of my life!"
     mv "{i}Hurt?{/i} Why on earth would you care? You must be lying."
     m angry "{sc=2}What kind of person leaves someone on the ground like that?! Who do you take me for?{/sc}"
     scene cliffvalgasp
     mv "...?"
-    mt "That was stupid! Why can't I just hold my tongue? Am I trying to get myself killed?"
+    mt "That was stupid! Why can't I just hold my tongue? "
     scene cliffvallaugh
     mt "She's laughing? Why is she laughing at me?"
     mv "That was rather brave of you, no?"
