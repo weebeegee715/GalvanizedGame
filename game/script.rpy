@@ -230,7 +230,7 @@ label start:
     # images directory to show it.
     scene black 
     with Dissolve (3.0)
-    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.4
+    play music [ "fallingleaves.mp3", "Jonquil.mp3"  ] fadeout 2.0 fadein 3.0 volume 0.4
     scene paper1
     with Fade (out_time=1.0, hold_time=1.0, in_time=3.0)
 
@@ -383,7 +383,7 @@ label start:
     mv "...?"
     mt "That was stupid! Why can't I just hold my tongue? "
     scene cliffvallaugh
-    mt "She's laughing? Why is she laughing at me?"
+    mt "Huh? Was that {i}funny{/i}"
     mv "That was rather brave of you, no?"
     mt "That was really loud... My are ears are starting to ring."
     scene cliffvalsmirk
@@ -396,7 +396,7 @@ label start:
 
     
     scene cliffvalmeh
-    "She pauses for quite a while."
+    "..."
     mv "You're very ill-dressed for the weather, miss. Do you intend to die in this cold?"
     m sad "{size=27}...{/size}"
     scene cliffvalmad
@@ -449,15 +449,15 @@ label start:
     mv "I told you that you wouldn't like it. This was supposed to be the easy part."
     m "{sc=2}Okay...{/sc}"
     mv ""
-    scene 
-    mt "She's drawing something right in the air?"
+    scene magictime
+    mt "Huh? Don't tell me this is-"
     mv "This'll send us right back inside."
     "Every sense of where you are is ripped away. You feel..."
 
     scene black with fade
     mv "Aw, no. Are you still awake? Can you hear me? Wake up!"
 
-    play music [ "fallingleaves.mp3", "piratesong.mp3", "Jonquil.mp3" , "piratesong2.mp3" ] fadeout 2.0 fadein 3.0 volume 0.5
+    play music [ "fallingleaves.mp3", "Jonquil.mp3"] fadeout 2.0 fadein 3.0 volume 0.5
 
     scene black with fade
     "..."
@@ -479,29 +479,30 @@ label start:
     m scared "You didn't tell me you were a witch! How was I supposed to know?"
     mv "I didn't even tell you my {i}name{/i}. Also, try not to call me a witch, either."
     m sad "I didn't mean to offend you. Sorry."
-    mv "You didn't. I'm just not a witch. Either way, you fear me, do you not?"
+    mv "You didn't. I'm just not a witch. Doesn't matter, either way."
     m angry "I'm just weary of magic. I... haven't a clue how it works! Can you blame me?"
-    mt "And why on earth would she help an alchemist? I don't understand, aren't we natural enemies?"
+    mt "And why on earth would she help an alchemist? Every alchemist I know hates magic! Doesn't it go the other way?"
     m scared "..."
     mv "... {i}Fine.{/i} If you're dead set on being so wary of me, let me just take you home. Does that sound good?"
     m scared "Yes. It does."
 
     mv "Good. Here's how this is going to go. I'm going to apport us to the edge of the woods, you're going to go back to wherever you came from, and then we never have to see eachother again. Okay?"
-    m "{sc=3}Again? Like last time?{/sc}"
+    m "{sc=3}Apport? Like last time? With magic?{/sc}"
     mv "Yes, like last time. I'll take it slower, okay?"
-    m "Okay. Just once more."
+    m angry "Okay. Just once more."
     scene black with fade
     mcg "Eek!"
-    mv "You're fine."
-    "She pulls something heavy from under the table with her off-hand."
+    mv "You're {i}fine.{/i}"
+    mt "Not with being grabbed like housekeys, I'm not!"
+    mv "Let me get my things..."
     scene teleport1 with fade
-    m scared "{sc=5}Why do you have an axe?!{/sc}"
+    m scared "{sc=4}Why do you have an axe?!{/sc}"
     mv "God, stop yelling. It's my wand, and we're not going anywhere without it."
     m sad "{sc=3}Well...{/sc} okay."
     scene teleport2
     mv "This is going to take a while. Stay very still."
     m confused "...{w=0.5}Why isn't anything happening?"
-    mv "Apporting is meant to be{i}lazy{/i}, not quick. I'm just used to zipping around where I please, but, you're not."
+    mv "Apporting is supposed to be slow. I'm just used to zipping around where I please, but, you're obviously not."
     m "And it knocked me out?"
     mv "Guess so."
     m sad "It won't happen again, though?"
@@ -510,7 +511,7 @@ label start:
     m "Where are we?"
     mv "A library. A very large one."
     m "You live here?"
-    mv "You could say that."
+    mv "You could say."
     m "So, you're okay from earlier? Did you sleep?"
     mv "Huh? No. I'm fine. I usually sleep during the day. There's less people to deal with at night."
     m "Oh no! I'm not keeping you awake, am I?"
@@ -536,7 +537,7 @@ label start:
     scene teleport3 with fade
     m scared "Aah! How did we do that?!"
     mv "Magic. Quit yelling."
-    mt "That felt really, really weird! How is she used to that?!"
+    mt "That felt really, really weird! I could never get used to that!"
     scene teleport4
     mv "Well, we're here."
     mv "...I think I have a question for you, though."
@@ -545,7 +546,7 @@ label start:
     m confused "I don't think I understand...?"
     mv "Most alchemists try their luck with me because they want power. They want to take things that aren't theirs. Isn't that what you want?"
     m scared "Ah!"
-    mt "She knows? I'm caught in a lie..."
+    mt "I never said I wasn't an alchemist outright, but I didn't say so, either... "
     m scared "I..."
     mv "No, no, I get it. It's only natural to crave power when you are powerless, but..."
     mv "Why are you being so {i}nice{/i} about it?"
@@ -572,11 +573,10 @@ label start:
     m confused "Hm."
     mv "If you're serious about this, you can come use my library whenever you need."
     m happy "You mean that?"
-    mv "Yes, I do. You're annoying, but I have a feeling you know what you're talking about."
-    mt "I'm annoying??"
+    mv "Yes, I do. You're quite annoying, but I feel you know what you're doing."
+    mt "I'm annoying?"
     v "And my name is Valencia. Goodbye now."
-    "Shes gone yall"
-    mt "Where'd she go?"
+    mt ""
 
     scene black with fade
     "Part 1 'Catalyst' End."
