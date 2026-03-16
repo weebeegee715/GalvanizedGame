@@ -236,14 +236,10 @@ label start:
 
     # These display lines of dialogue.
     "{i}The Philosopher's Stone. The all-powerful stone said to grant untold powers to it's wielder.{i}"
-
-    scene paper2
-    with dissolve
-
     "{i}The Panacea, A substance to cure all illness, lift all curses, and bring perferct health to the human form. The very pinnacle of medicine.{/i}"
     "{i}You have done everything in your power to make this. There is only a single thing you haven't tried...{/i}"
 
-    scene paper3
+    scene paper2
     with dissolve
 
     "{i}The Darkheart, said to be the key to creating the mythical stone.{/i}"
@@ -374,7 +370,7 @@ label start:
     mt "Why can't I move? Why am I not moving?! I need to run!"
     ## i want this to be like an establishing like panning shot like a looking up
     scene cliffvalmad with fade
-    mv "{sc=2}Who on earth are you?! What do you want from me?{/sc}"
+    mv "{sc=2}Who are you? What do you want from me?{/sc}"
     m scared "{sc=2}I don't want anything! I just wanted to make sure you weren't hurt...{/sc}"
     mt "This has got to be the worst day of my life!"
     mv "{i}Hurt?{/i} Why on earth would you care? You must be lying."
@@ -382,11 +378,9 @@ label start:
     scene cliffvalgasp
     mv "...?"
     mt "That was stupid! Why can't I just hold my tongue? "
-    scene cliffvallaugh
-    mt "Huh? Was that {i}funny{/i}"
+    mt "..."
     mv "That was rather brave of you, no?"
     mt "That was really loud... My are ears are starting to ring."
-    scene cliffvalsmirk
     mv "It's quite refreshing for someone to speak so boldy with me... maybe you aren't lying."
 
    
@@ -406,18 +400,19 @@ label start:
     mv "Hm. And why are you poking around this place? I assume you know I don't take very kindly to it?"
     mt "How do I say this? I don't want to say I was planning to steal..."
     m angry "I came here to find the Darkheart. I hardly even know what it is, but, I seek it out. You have it, don't you?"
-    scene cliffvalsmirk
+    scene cliffvalmeh
     mv "That's a funny question. Wouldn't I be dead without it?"
     m scared "Don't tell me it's your {i}actual{/i} heart!?"
-    scene cliffvallaugh
-    mv "What on earth did you think it was? What a silly question!"
+    scene cliffvalgasp
+    mv "What on earth did you think it was?"
     mt "Come to think of it, I wasn't actually sure..."
-    scene cliffvalsmirk
+    scene cliffvalmeh
     mv "Of course it's mine. And I'm guessing you didn't come prepared to carve it out of me?"
     m sad "How awful! My books talked about it like some kind of artifact. I would've never come here if I knew, believe me."
-    scene cliffvalmeh
+    scene cliffvalmad
     mv "Well you didn't, and you did. Congrats on all your wasted time."
     m sad "Oh no..."
+    scene cliffvalmeh
     mv "I won't hurt you, if that's what you're all worked up about. No harm done, okay? "
     m sad "...I'm really sorry. No one deserves to be treated that way."
     scene cliffvalgasp
@@ -427,10 +422,11 @@ label start:
     mv "Wait."
     m scared "Huh?!"
     scene cliffvalmeh
-    mv "You won't be able to find your way out of here."
-    m confused "Really?! Even if I head back the way I came?"
-    mv "The paths in these woods... shift, especially at this hour. I'm sure you'll get lost."
-    m sad "Really?"
+    mv "Don't. It was dangerous enough for you to make your way in on foot. Do you intend to spend all night walking back?"
+    m sad "I..."
+    mt "Maybe I {i}wasn't{/i} better off without that man's horse."
+    m sad "I'm not sure..."
+    mv "Hm."
     m sad "{bt=2}What am I supposed to do?...{/bt}"
     mv "..."
     m sad "..."
@@ -443,14 +439,12 @@ label start:
     mt "What is that supposed to mean?... At least I'm being given a choice?"
     m angry "Fine."
     scene cliffvalreach
-    m scared "Huh?"
-    mv "Come on, then. There's a storm coming and I intend to be indoors for it."
-    m "Do I really have to...?"
-    mv "I told you that you wouldn't like it. This was supposed to be the easy part."
-    m "{sc=2}Okay...{/sc}"
-    mv ""
-    scene magictime
-    mt "Huh? Don't tell me this is-"
+    m scared "Eek!"
+    mv "You're {i}fine{/i}. I told you you wouldn't like it."
+    scene black
+    mt "This is the worst day of my life! Ever!"
+    mv "There we are... I hate the invasion of space as much as you, but, this spell only works in a small vicinity."
+    mt "Spell? Maigc? Don't tell me we're-"
     mv "This'll send us right back inside."
     "Every sense of where you are is ripped away. You feel..."
 
@@ -503,18 +497,20 @@ label start:
     mv "This is going to take a while. Stay very still."
     m confused "...{w=0.5}Why isn't anything happening?"
     mv "Apporting is supposed to be slow. I'm just used to zipping around where I please, but, you're obviously not."
-    m "And it knocked me out?"
+    m "And that's knocked me out?"
     mv "Guess so."
+    m sad "It wasn't like a hit to the head or anything, just like the energy was sapped right from me."
+    mv "Some spells will just do that to you."
     m sad "It won't happen again, though?"
     mv "No, no. I know what I'm doing."
     m "I guess so..."
-    m "Where are we?"
+    m confused "May I ask where we are?"
     mv "A library. A very large one."
     m "You live here?"
     mv "You could say."
     m "So, you're okay from earlier? Did you sleep?"
     mv "Huh? No. I'm fine. I usually sleep during the day. There's less people to deal with at night."
-    m "Oh no! I'm not keeping you awake, am I?"
+    m sad "Oh no! I'm not keeping you awake, am I?"
     mv "{i}Oh, believe me, you are.{/i}"
     m "Sorry..."
     m "You're still all scraped. Can't you heal yourself with magic?"
@@ -525,58 +521,66 @@ label start:
     mv "Yeah."
     m confused "Really?"
     mv "Is that odd?"
-    m "Honestly, this whole day has been odd. But I'm starting not to mind."
+    m happy "Honestly, this whole day has been odd. But I'm starting not to mind."
+    show teleport1
     mv "...hmm."
-    m confused "Why are you helping me?"
+    m confused "...Why are you helping me?"
+    hide teleport1
+    show teleport2
     mv "Huh?"
     m confused "It's just that I've heard so many bad things about you, and, you're going out of your way for me."
     mv "You hardly know me. You don't even know my name, and now you think you're fit to judge my character?"
     m sad "No, It's just..."
     m confused "{i}Do{/i} you have a name? Mine is Mira."
+    hide teleport2
+    show teleport1
     mv "...I'm bored of answering questions."
-    scene teleport3 with fade
-    m scared "Aah! How did we do that?!"
+    scene teleport3 with Fade(0.3, 1.5, 0.7) 
+    m scared "Aah! How did we do that?! How did we do that?"
     mv "Magic. Quit yelling."
     mt "That felt really, really weird! I could never get used to that!"
     scene teleport4
     mv "Well, we're here."
     mv "...I think I have a question for you, though."
-    m confused "What is it?"
+    mt "For me? I'm kind of worried..."
+    m scared "What is it?"
     mv "What are you getting out of this?"
-    m confused "I don't think I understand...?"
+    mt "What is that supposed to mean? Did I do something wrong?"
+    m scared "{sc=2}I don't understand...{/sc}"
     mv "Most alchemists try their luck with me because they want power. They want to take things that aren't theirs. Isn't that what you want?"
     m scared "Ah!"
     mt "I never said I wasn't an alchemist outright, but I didn't say so, either... "
     m scared "I..."
     mv "No, no, I get it. It's only natural to crave power when you are powerless, but..."
     mv "Why are you being so {i}nice{/i} about it?"
-    m scared "I don't understand..."
+    m scared "{sc=2}What? What do you mean?{/sc}"
     mv "Why are you pretending to care about {i}me{/i}? You care about my {i}Heart.{/i}"
-    mv "As soon as you leave, you'll probably begin to do everything in your power to find someone strong enough to kill me. So why can't you just drop the act?"
+    mv "As soon as you leave, you'll probably begin to do everything in your power to find someone strong enough to cut it out of me. So why can't you just drop the act? I don't care whether you're nice about it or not."
     mt "..."
-    m angry "You're wrong about that."
-    mv "What?"
+    m angry "You're wrong."
+    mv "Am I?"
     m angry "I learned alchemy for the same reason I learned medicine. I wanted to help people."
-    m sad "And if I get that stone, I can help everyone. {i}Cure{/i} everyone of anything and everything!."
-    m angry "I don't care if your Heart is the easiest way in the world to get the Stone. I {i}know{i} there is another way. I'll find one."
+    m sad "And if I get that stone, I can help everyone. {i}Cure{/i} everyone of anything and everything!"
+    m angry "I don't care if your Heart is the easiest way in the world to get the Stone. I {i}know{/i} there is another way. I'll find one."
     mv "...I see."
     m angry "You do?"
     mv "...I'll let you down, now."
 
 
     scene black with dissolve
-    mv "Be careful, now."
+    mv "Be careful."
     m "I will."
 
-    scene forestentrance with fade
+    scene forestentrance with Fade(0.3, 1.5, 0.7)
     mv "Mira?"
-    m confused "Hm."
+    mt "I've been walking for quite some time... Why is she calling for me now?"
+    m confused "Hm?"
     mv "If you're serious about this, you can come use my library whenever you need."
-    m happy "You mean that?"
+    m happy "Really? You mean that?"
     mv "Yes, I do. You're quite annoying, but I feel you know what you're doing."
-    mt "I'm annoying?"
+    mt "I know what I'm doing!... wait, annoying?"
     v "And my name is Valencia. Goodbye now."
-    mt ""
+    mt "Valencia? That's quite a nice name..."
 
     scene black with fade
     "Part 1 'Catalyst' End."
