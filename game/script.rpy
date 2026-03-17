@@ -380,7 +380,7 @@ label start:
     mt "That was stupid! Why can't I just hold my tongue? "
     mt "..."
     mv "That was rather brave of you, no?"
-    mt "That was really loud... My are ears are starting to ring."
+    mt "..It was?"
     mv "It's quite refreshing for someone to speak so boldy with me... maybe you aren't lying."
 
    
