@@ -1,6 +1,6 @@
 # Galvanized
 
-this is my VN for milkyway!!
+this is my VN! I previously began work on it for Milkyway, but I've decided I wanted to submit it to Sleepover!
 I had a fun time using ren'py to make it!
 It took me ~1.5 months (OML.) to do all the art for it! I used Clip Studio Paint for all hand drawn assets and anything else was free on itch.io! 
 
